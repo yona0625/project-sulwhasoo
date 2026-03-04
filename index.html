@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="시간의 흐름에 지지 않는 아름다움을 위한 여정 | 설화수"
+    />
+    <title>시간의 흐름에 지지 않는 아름다움을 위한 여정 | 설화수</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="./dist/output.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="./src/js/main.js" defer></script>
+  </head>
+  <body class="pc:bg-amber-800 mx-auto bg-orange-500 tablet:bg-purple-500">
+    <div class="wrapper relative w-full min-w-80 mx-auto bg-pink-500">
+      <header class="absolute top-0 left-0 w-full z-10">
+        <nav class="h-[60px] flex items-center justify-between bg-red-500 px-5">
+          <div class="trigger bg-blue-500 w-[30px] h-[30px]">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="logo bg-yellow-500 w-28 h-10">
+            <img src="" alt="" />
+          </div>
+          <a href="#none" class="search bg-green-500 w-6 h-6"></a>
+        </nav>
+      </header>
+      <main>
+        <div
+          class="visual swiper w-full h-[clamp(500px,149vw,1100px)] tablet:h-[clamp(250px,35vw,360px)] pc:h-[35vw] overflow-hidden"
+        >
+          <div class="swiper-wrapper h-full">
+            <div class="swiper-slide bg-purple-500 md:bg-purple-500">
+              <h2>Slide 1</h2>
+              <picture>
+                <source
+                  srcset="./public/images/pc__coverpage-main.jpg"
+                  media="(min-width: 1024px)"
+                />
+                <source
+                  srcset="./public/images/tab__coverpage-main.jpg"
+                  media="(min-width: 721px)"
+                />
+                <img
+                  src="./public/images/coverpage-main.jpg"
+                  alt="설화수 자음생크림 캠페인"
+                  class="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </picture>
+            </div>
+            <div class="swiper-slide bg-blue-500">
+              <h2>Slide 2</h2>
+            </div>
+            <div class="swiper-slide bg-green-500">
+              <h2>Slide 3</h2>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
