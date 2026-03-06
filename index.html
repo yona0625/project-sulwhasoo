@@ -14,11 +14,15 @@
     />
     <link href="./dist/output.css" rel="stylesheet" />
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
     <script src="./src/js/main.js" defer></script>
   </head>
   <body class="pc:bg-amber-800 mx-auto bg-orange-500 tablet:bg-purple-500">
     <div class="wrapper relative w-full min-w-80 mx-auto bg-pink-500">
+      <!-- header -->
       <header class="absolute top-0 left-0 w-full z-10">
         <nav class="h-[60px] flex items-center justify-between bg-red-500 px-5">
           <div class="trigger bg-blue-500 w-[30px] h-[30px]">
@@ -32,9 +36,10 @@
           <a href="#none" class="search bg-green-500 w-6 h-6"></a>
         </nav>
       </header>
+      <!-- main -->
       <main>
         <div
-          class="visual swiper w-full h-[clamp(500px,149vw,1100px)] tablet:h-[clamp(250px,35vw,360px)] pc:h-[35vw] overflow-hidden"
+          class="visual-slide swiper w-full h-[clamp(500px,149vw,1100px)] tablet:h-[clamp(250px,35vw,360px)] pc:h-[35vw] overflow-hidden"
         >
           <div class="swiper-wrapper h-full">
             <div class="swiper-slide bg-purple-500 md:bg-purple-500">
@@ -64,6 +69,110 @@
           </div>
         </div>
       </main>
+      <!-- 1 -->
+      <section
+        class="recommend w-full px-5 bg-amber-300 text-center mt-[30px] max-w-[1440px] mx-auto"
+      >
+        <h1 class="text-2xl font-semibold">설화수 추천</h1>
+        <div class="recommend-container relative bg-gray-800 mt-[22px]">
+          <div
+            class="recommend-slide swiper static w-full h-[clamp(420px,calc(100vw+95px),880px)] tablet:h-[clamp(400px,calc(33.3vw+117px),600px)]"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide flex flex-col border border-black">
+                <div class="slide-img aspect-[1/1] bg-green-600"></div>
+                <div
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                ></div>
+              </div>
+              <div class="swiper-slide flex flex-col border border-black">
+                <div class="slide-img aspect-[1/1] bg-green-600"></div>
+                <div
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                ></div>
+              </div>
+              <div class="swiper-slide flex flex-col border border-black">
+                <div class="slide-img aspect-[1/1] bg-green-600"></div>
+                <div
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                ></div>
+              </div>
+              <div class="swiper-slide flex flex-col border border-black">
+                <div class="slide-img aspect-[1/1] bg-green-600"></div>
+                <div
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                ></div>
+              </div>
+              <div class="swiper-slide flex flex-col border border-black">
+                <div class="slide-img aspect-[1/1] bg-green-600"></div>
+                <div
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                ></div>
+              </div>
+              <div class="swiper-slide flex flex-col border border-black">
+                <div class="slide-img aspect-[1/1] bg-green-600"></div>
+                <div
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                ></div>
+              </div>
+            </div>
+            <!-- pagination -->
+            <div
+              class="swiper-pagination absolute bottom-0 border-4 border-blue-800"
+            ></div>
+            <!-- prev / next -->
+            <div
+              class="swiper-button-prev top-[calc(50%-47.5px)] -translate-y-1/2 left-0 [--swiper-navigation-size:35px] mt-0 border border-black"
+            ></div>
+            <div
+              class="swiper-button-next top-[calc(50%-47.5px)] -translate-y-1/2 right-0 [--swiper-navigation-size:35px] mt-0 border border-black"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="mt-10 w-full bg-blue-500 max-w-[1440px] mx-auto px-5">
+        <div class="promo-img aspect-[280/365] bg-amber-900 tablet:aspect-[680/255]">
+          <img src="" alt="" />
+        </div>
+      </section>
+      <!-- 3 -->
+      <section class="max-w-[1440px] mx-auto px-5 mt-10 text-center">
+        <h1>설화수 시즌추천</h1>
+        <div class="season-wrapper flex flex-row flex-wrap mt-5 justify-between tablet:flex-row">
+          <div class="season-img bg-slate-800 aspect-[280/205] w-full"></div>
+          <div class="season-title mt-4 w-full bg-teal-500">
+            <h2>
+              고밀도 피부를 위한
+            </h2>
+            <p>
+              2 STEP 자생력 케어
+            </p>
+          </div>
+            <div class="item w-[49%] aspect-[135/250] bg-yellow-200"></div>
+            <div class="item w-[49%] aspect-[135/250] bg-yellow-200"></div>
+        </div>
+      </section>
+      <!-- 4 -->
+       <section class="max-w-[1440px] mx-auto px-5 mt-16 text-center">
+        <div class="store-wrapper">
+          <div class="item">
+            <div class="store-img aspect-[280/235] bg-teal-600"></div>
+            <div class="store-text bg-red-400 h-[95px]"></div>
+          </div>
+          <div class="mt-8 item">
+            <div class="store-img aspect-[280/235] bg-teal-600"></div>
+            <div class="store-text bg-red-400 h-[95px]"></div>
+          </div>
+        </div>
+       </section>
+      <!-- footer -->
+      <footer class="mt-20">
+        <div class="footer-sns flex bg-yellow-500 w-full h-[50px]"></div>
+        <div class="footer-menu hidden"></div>
+        <div class="footer-copy bg-slate-600 h-[95px]"></div>
+      </footer>
     </div>
   </body>
 </html>

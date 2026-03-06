@@ -5,6 +5,7 @@ module.exports = {
       screens: {
         'tablet': '721px',
         'pc': '1024px',
+        'wide': '1025px',
       },
     extend: {
     },
