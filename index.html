@@ -20,31 +20,205 @@
     ></script>
     <script src="./src/js/main.js" defer></script>
   </head>
-  <body class="pc:bg-amber-800 mx-auto bg-orange-500 tablet:bg-purple-500">
-    <div class="wrapper relative w-full min-w-80 mx-auto bg-pink-500">
+  <body class="mx-auto bg-orange-500 pc:bg-amber-800 tablet:bg-purple-500">
+    <div class="relative w-full mx-auto bg-pink-500 wrapper min-w-80">
       <!-- header -->
-      <header class="absolute top-0 left-0 w-full z-10">
-        <nav class="h-[60px] flex items-center justify-between bg-red-500 px-5">
-          <div class="trigger bg-blue-500 w-[30px] h-[30px]">
-            <span></span>
-            <span></span>
-            <span></span>
+      <header class="absolute top-0 left-0 z-10 w-full bg-white">
+        <nav class="h-[60px] bg-red-500 pc:h-[78px] mx-auto">
+          <!-- mobile -->
+          <div class="flex items-center justify-between h-full p-5 mobile-nav pc:hidden">
+            <div class="trigger bg-blue-500 w-[30px] h-[30px]">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="h-10 bg-yellow-500 logo w-28">
+              <img src="" alt="" />
+            </div>
+            <a href="#none" class="w-6 h-6 bg-green-500 search"></a>
           </div>
-          <div class="logo bg-yellow-500 w-28 h-10">
-            <img src="" alt="" />
+          <!-- pc -->
+          <div class="relative hidden w-full h-full border border-black pc:block px-[7%]">
+            <div class="w-full h-full pc:flex pc:justify-between max-w-[1100px] mx-auto">
+              <div class="mt-2 language">
+                한국/한국어
+              </div>
+              <div class="logo w-[165px] h-[40px] bg-slate-500 mx-auto absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
+                <img src="" alt="">
+             </div>
+              <div class="flex justify-end gap-4 mt-2 link-group">
+                <div class="store">
+                  매장찾기
+                </div>
+                <div class="buy">
+                  구매하기
+                </div>
+                <div class="search">
+                  검색
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="#none" class="search bg-green-500 w-6 h-6"></a>
         </nav>
       </header>
+      <!-- pc-menu -->
+       <div class="pc-menu relative h-[45px] w-full border border-black top-[78px] z-10 hidden pc:block">
+        <ul class="pc:max-w-[1100px] h-full bg-yellow-100 mx-auto flex items-center justify-center border border-black [&_li]:h-full [&_a]:h-full [&_a]:flex [&_a]:items-center">
+          <li>
+            <a href="#none" class="block p-4">
+              윤조
+            </a>
+          </li>
+          <li>
+            <a href="#none" class="block p-4">
+              자음생
+            </a>
+          </li>
+          <li>
+            <a href="#none" class="block p-4">
+              기프트
+            </a>
+          </li>
+          <li>
+            <a href="#none" class="block p-4">
+              베스트 셀러
+            </a>
+          </li>
+          <!-- === depth 2 === -->
+          <li>
+            <a href="#none" class="block px-4 border border-black">
+              제품
+            </a>
+            <!-- panel -->
+            <ul class="absolute left-0 flex justify-center hidden w-full bg-white top-full">
+              <li>
+                <a href="#none" class="block px-4">
+                  스킨케어
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="block px-4">
+                  메이크업
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="block px-4">
+                  남성
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#none" class="block p-4">
+              스파
+            </a>
+            <!-- panel -->
+              <ul class="absolute left-0 flex justify-center hidden w-full bg-white top-full">
+              <li>
+                <a href="#none" class="block px-4">
+                  소개
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="block px-4">
+                  스파 프로그램
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="block px-4">
+                  예약
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="block px-4">
+                  매장 찾기
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#none" class="block p-4">
+              플래그십 스토어
+            </a>
+              <!-- panel -->
+              <ul class="absolute left-0 flex justify-center hidden w-full bg-white top-full">
+              <li>
+                <a href="#none" class="block px-4">
+                  플래그십 스토어
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="block px-4">
+                  설화수 북촌
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="block px-4">
+                  설화수 도산
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#none" class="block p-4">
+              ABOUT 설화수
+            </a>
+            <!-- panel -->
+              <ul class="absolute left-0 flex justify-center w-full bg-white top-full">
+              <li>
+                <a href="#none" class="block px-4">
+                  브랜드 스토리
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="block px-4">
+                  브랜드 지속가능성
+                </a>
+                <a href="#none" class="block px-4">
+                  지속가능성
+                </a>
+                <a href="#none" class="block px-4">
+                  위조품 방지
+                </a>
+              </li>
+              <li>
+                <a href="#none" class="block px-4">
+                  설화문화전
+                </a>
+              </li>
+                <li>
+                <a href="#none" class="block px-4">
+                  살롱 설화수
+                </a>
+              </li>
+                <li>
+                <a href="#none" class="block px-4">
+                  컬처프로젝트
+                </a>
+              </li>
+                <li>
+                <a href="#none" class="block px-4">
+                  브랜드 뉴스
+                </a>
+              </li>
+                <li>
+                <a href="#none" class="block px-4">
+                  명작컬렉션
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+       </div>
       <!-- mobile-menu -->
-      <div class="mobile-menu fixed hidden w-full h-dvh bg-white z-30">
+      <div class="fixed z-30 hidden w-full bg-white mobile-menu h-dvh">
         <div
           class="title-area h-[60px] bg-red-400 w-full flex items-center justify-between p-4"
         >
           <!-- logo -->
           <div class="logo w-[80px] h-[40px] bg-slate-500"></div>
           <!-- exit button -->
-          <div class="exit-btn w-6 h-6 bg-blue-600"></div>
+          <div class="w-6 h-6 bg-blue-600 exit-btn"></div>
         </div>
         <!-- menu -->
         <ul>
@@ -76,9 +250,9 @@
             <a href="#none" class="block p-4"> ABOUT 설화수 </a>
           </li>
         </ul>
-        <div class="footer h-full bg-black">
+        <div class="h-full bg-black footer">
           <!-- login/store search -->
-          <ul class="border-b border-b-white px-4 py-2">
+          <ul class="px-4 py-2 border-b border-b-white">
             <li>
               <a href="#none" class="block py-2 text-white">
                 <span class="underline"> 로그인 </span>
@@ -89,7 +263,7 @@
             </li>
           </ul>
           <div class="language">
-            <ul class="px-4 py-4 flex justify-between">
+            <ul class="flex justify-between px-4 py-4">
               <li>
                 <a href="#none" class="text-white"> LANGUAGE </a>
               </li>
@@ -110,8 +284,8 @@
         <div
           class="visual-slide swiper w-full h-[clamp(500px,149vw,1100px)] tablet:h-[clamp(250px,35vw,360px)] pc:h-[35vw] overflow-hidden"
         >
-          <div class="swiper-wrapper h-full">
-            <div class="swiper-slide bg-purple-500 md:bg-purple-500">
+          <div class="h-full swiper-wrapper">
+            <div class="bg-purple-500 swiper-slide md:bg-purple-500">
               <h2>Slide 1</h2>
               <picture>
                 <source
@@ -125,14 +299,14 @@
                 <img
                   src="./public/images/coverpage-main.jpg"
                   alt="설화수 자음생크림 캠페인"
-                  class="absolute inset-0 w-full h-full object-cover object-center"
+                  class="absolute inset-0 object-cover object-center w-full h-full"
                 />
               </picture>
             </div>
-            <div class="swiper-slide bg-blue-500">
+            <div class="bg-blue-500 swiper-slide">
               <h2>Slide 2</h2>
             </div>
-            <div class="swiper-slide bg-green-500">
+            <div class="bg-green-500 swiper-slide">
               <h2>Slide 3</h2>
             </div>
           </div>
@@ -142,43 +316,43 @@
       <section
         class="recommend w-full px-5 bg-amber-300 text-center mt-[30px] max-w-[1440px] mx-auto"
       >
-        <h1 class="text-2xl font-semibold">설화수 추천</h1>
+        <h2 class="text-2xl font-semibold">설화수 추천</h1>
         <div class="recommend-container relative bg-gray-800 mt-[22px]">
           <div
             class="recommend-slide swiper static w-full h-[clamp(420px,calc(100vw+95px),880px)] tablet:h-[clamp(400px,calc(33.3vw+117px),600px)]"
           >
             <div class="swiper-wrapper">
-              <div class="swiper-slide flex flex-col border border-black">
+              <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
                   class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
                 ></div>
               </div>
-              <div class="swiper-slide flex flex-col border border-black">
+              <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
                   class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
                 ></div>
               </div>
-              <div class="swiper-slide flex flex-col border border-black">
+              <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
                   class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
                 ></div>
               </div>
-              <div class="swiper-slide flex flex-col border border-black">
+              <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
                   class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
                 ></div>
               </div>
-              <div class="swiper-slide flex flex-col border border-black">
+              <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
                   class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
                 ></div>
               </div>
-              <div class="swiper-slide flex flex-col border border-black">
+              <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
                   class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
@@ -187,7 +361,7 @@
             </div>
             <!-- pagination -->
             <div
-              class="swiper-pagination absolute bottom-0 border-4 border-blue-800"
+              class="absolute bottom-0 border-4 border-blue-800 swiper-pagination"
             ></div>
             <!-- prev / next -->
             <div
@@ -210,7 +384,7 @@
       </section>
       <!-- 3 -->
       <section class="max-w-[1440px] mx-auto px-5 mt-10 text-center">
-        <h1>설화수 시즌추천</h1>
+        <h2>설화수 시즌추천</h1>
         <div
           class="season-wrapper mt-5 grid grid-cols-2 tablet:grid-cols-[158fr_328fr_158fr] tablet:items-center tablet:gap-x-4"
         >
@@ -219,7 +393,7 @@
               class="season-img bg-slate-800 aspect-[280/205] w-full tablet:aspect-[328/288]"
             ></div>
             <div
-              class="season-title mt-4 w-full bg-teal-500 tablet:absolute tablet:bottom-4 tablet:left-0 tablet:right-0 tablet:mt-0"
+              class="w-full mt-4 bg-teal-500 season-title tablet:absolute tablet:bottom-4 tablet:left-0 tablet:right-0 tablet:mt-0"
             >
               <h2>고밀도 피부를 위한</h2>
               <p>2 STEP 자생력 케어</p>
@@ -237,7 +411,7 @@
       </section>
       <!-- 4 -->
       <section class="max-w-[1440px] mx-auto px-5 mt-16 text-center">
-        <div class="store-wrapper grid tablet:grid-cols-2 tablet:gap-x-5">
+        <div class="grid store-wrapper tablet:grid-cols-2 tablet:gap-x-5">
           <div class="item">
             <div class="store-img aspect-[280/235] bg-teal-600"></div>
             <div class="store-text bg-red-400 h-[95px]">테스트입니다.</div>
@@ -250,9 +424,128 @@
       </section>
       <!-- footer -->
       <footer class="mt-20">
-        <div class="footer-sns flex bg-yellow-500 w-full h-[50px]"></div>
-        <div class="footer-menu hidden"></div>
-        <div class="footer-copy bg-slate-600 h-[95px]"></div>
+        <!-- mobile -->
+        <div class="block bg-green-400 footer-mobile pc:hidden">
+          <div class="px-5 footer-inner">
+            <div class="footer-sns flex bg-yellow-500 w-full h-[50px]">
+            <ul class="flex items-center justify-center mx-auto">
+              <li class="block">
+                <a href="#none">1</a>
+              </li>
+               <li class="block">
+                <a href="#none">1</a>
+              </li>
+               <li class="block">
+                <a href="#none">1</a>
+              </li>
+               <li class="block">
+                <a href="#none">1</a>
+              </li>
+            </ul>
+            </div>
+            <div class="footer-copy bg-slate-600 h-[55px] flex items-center gap-1">
+              @
+              <span class="font-bold">AMOREPACIFIC</span> 
+              CORPORATION. All rights reserved.
+            </div>
+            <div class="py-10 bg-blue-500 footer-menu">
+              <ul class="flex gap-4">
+                <li>
+                  <a href="#none">
+                    회사소개
+                  </a>
+                </li>
+                <li>
+                  <a href="#none">
+                    서비스이용약관
+                  </a>
+                </li>
+                <li>
+                  <a href="#none">
+                    개인정보처리방침
+                  </a>
+                </li>
+                <li>
+                  <a href="#none">
+                    영상정보처리방침
+                  </a>
+                </li>
+                <li>
+                  <a href="#none">
+                    사이트맵
+                  </a>
+                </li>
+                <li>
+                  <a href="#none">
+                    위조품 방지
+                  </a>
+                </li>
+              </ul>
+              <div class="info">
+                <div class="relative flex gap-2 py-5 footer-pc bg-slate-500">
+                  <a href="#none">
+                    고객서비스센터(수신자요금부담) : 080-023-5454
+                  </a>
+                  <span>
+                    (월~금: AM 09:00~PM 06:00)
+                  </span>
+                   <div class="absolute bottom-0 right-0 w-20 h-full bg-yellow-400 mark"></div>
+                </div>
+              </div>
+            </div>    
+          </div>
+        </div>
+        <!-- pc -->
+         <div class="hidden footer-pc pc:block">
+          <div class="px-5 footer-inner">
+            <div class="footer-menu h-[55px] bg-teal-600 w-full">
+              <ul class="flex items-center h-full gap-4">
+                <li>
+                  <a href="#none">
+                    회사 소개
+                  </a>
+                </li>
+                <li>
+                  <a href="#none">
+                    서비스이용약관
+                  </a>
+                </li>
+                 <li>
+                  <a href="#none">
+                    개인정보처리방침
+                  </a>
+                </li>
+                <li>
+                  <a href="#none">
+                    영상정보처리방침
+                  </a>
+                </li>
+                 <li>
+                  <a href="#none">
+                    사이트맵
+                  </a>
+                </li>
+                <li>
+                  <a href="#none">
+                    로그인
+                  </a>
+                </li>
+                <li>
+                  <a href="#none">
+                    위조품 방지
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="relative pt-5 pb-8 bg-yellow-300 info">
+              고객서비스센터(수신자요금부담) : 080-023-5454 (월~금: AM 09:00~PM 06:00)
+              <span class="block">
+                © AMOREPACIFIC CORPORATION. All rights reserved.
+              </span>
+                <div class="absolute w-40 footer-sns h-[55px] bg-slate-500 right-0 bottom-4"></div>
+            </div>
+          </div>
+         </div>
       </footer>
     </div>
   </body>
