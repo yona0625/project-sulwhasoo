@@ -281,6 +281,7 @@
       </div>
       <!-- main -->
       <main>
+        <!-- ============= 수정 필요 ============== -->
         <div
           class="visual-slide swiper w-full h-[clamp(500px,149vw,1100px)] tablet:h-[clamp(250px,35vw,360px)] pc:h-[35vw] overflow-hidden"
         >
@@ -314,54 +315,54 @@
       </main>
       <!-- 1 -->
       <section
-        class="recommend w-full px-5 bg-amber-300 text-center mt-[30px] max-w-[1440px] mx-auto"
+        class="recommend w-full px-5 bg-amber-300 mt-[30px] max-w-[1440px] mx-auto"
       >
-        <h2 class="text-2xl font-semibold">설화수 추천</h1>
-        <div class="recommend-container relative bg-gray-800 mt-[22px]">
+        <h2 class="text-2xl font-semibold text-center tablet:text-left">설화수 추천</h1>
+        <div class="relative mb-4 bg-gray-800 recommend-container mt-[30px]">
           <div
-            class="recommend-slide swiper static w-full h-[clamp(420px,calc(100vw+95px),880px)] tablet:h-[clamp(400px,calc(33.3vw+117px),600px)]"
+            class="static w-full recommend-slide swiper pb-[30px]"
           >
             <div class="swiper-wrapper">
               <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
-                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[105px] wide:h-[135px]"
                 ></div>
               </div>
               <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
-                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[105px] wide:h-[135px]"
                 ></div>
               </div>
               <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
-                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[105px] wide:h-[135px]"
                 ></div>
               </div>
               <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
-                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[105px] wide:h-[135px]"
                 ></div>
               </div>
               <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
-                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[105px] wide:h-[135px]"
                 ></div>
               </div>
               <div class="flex flex-col border border-black swiper-slide">
                 <div class="slide-img aspect-[1/1] bg-green-600"></div>
                 <div
-                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[85px] pc:h-[115px]"
+                  class="slide-text bg-purple-400 w-full h-[95px] tablet:h-[105px] wide:h-[135px]"
                 ></div>
               </div>
             </div>
             <!-- pagination -->
             <div
-              class="absolute bottom-0 border-4 border-blue-800 swiper-pagination"
+              class="absolute [.recommend-slide_&]:bottom-0 border-4 border-red-800 swiper-pagination h-[30px]"
             ></div>
             <!-- prev / next -->
             <div
@@ -377,14 +378,25 @@
       <!-- 2 -->
       <section class="mt-10 w-full bg-blue-500 max-w-[1440px] mx-auto px-5">
         <div
-          class="promo-img aspect-[280/365] bg-amber-900 tablet:aspect-[680/255]"
+          class="promo-img aspect-[280/365] bg-amber-900 tablet:aspect-[680/255] relative"
         >
           <img src="" alt="" />
+          <div class="text-inner w-[175px] flex flex-col gap-2 absolute bottom-[10%] left-[10%] tablet:bottom-[15%]">
+            <h2 class="text-[22px] font-bold tracking-[-1.5px]">
+              베스트 셀러
+            </h2>
+            <p class="text-[14px] tracking-[-1.8px]">
+              건강하게 빛나고 힘 있게 채우는 설화수의 시그니처 케어
+            </p>
+            <a href="#none" class="px-5 py-2 border border-black w-fit text-[12px] tracking-[-1.5px] mt-3">
+              자세히 보기
+            </a>
+          </div>
         </div>
       </section>
       <!-- 3 -->
-      <section class="max-w-[1440px] mx-auto px-5 mt-10 text-center">
-        <h2>설화수 시즌추천</h1>
+      <section class="max-w-[1440px] mx-auto px-5 mt-10">
+        <h2 class="text-center tablet:text-left">설화수 시즌추천</h1>
         <div
           class="season-wrapper mt-5 grid grid-cols-2 tablet:grid-cols-[158fr_328fr_158fr] tablet:items-center tablet:gap-x-4"
         >
@@ -393,32 +405,78 @@
               class="season-img bg-slate-800 aspect-[280/205] w-full tablet:aspect-[328/288]"
             ></div>
             <div
-              class="w-full mt-4 bg-teal-500 season-title tablet:absolute tablet:bottom-4 tablet:left-0 tablet:right-0 tablet:mt-0"
+              class="w-full mt-4 text-center bg-teal-500 season-title tablet:absolute tablet:mt-0 mb-[15px] tablet:w-fit tablet:bottom-[3%] tablet:left-[5%] tablet:text-left tablet:leading-8"
             >
-              <h2>고밀도 피부를 위한</h2>
-              <p>2 STEP 자생력 케어</p>
+              <h2 class="text-[20px] font-bold tracking-[-1.5px]">
+                고밀도 피부를 위한
+              </h2>
+              <p class="text-[12px] tracking-[-1.1px]">
+                2 STEP 자생력 케어
+              </p>
             </div>
           </div>
           <div
-            class="aspect-[135/250] bg-yellow-200 border border-black tablet:aspect-auto tablet:h-full tablet:col-start-1 tablet:row-start-1"
-          ></div>
-          <div
-            class="aspect-[135/250] bg-yellow-200 border border-black tablet:aspect-auto tablet:h-full tablet:col-start-3 tablet:row-start-1"
+            class="aspect-[135/250] bg-yellow-200 border border-black tablet:aspect-auto tablet:h-full tablet:col-start-1 tablet:row-start-1 relative"
           >
-            테스트입니다.
+          <div class="text-center text-inner absolute bottom-[10%] flex flex-col gap-1 w-full">
+            <h2 class="tracking-[-1.5px] font-bold">
+              자음생캡슐세럼
+            </h2>
+            <p class="text-[11px]">
+              Concentrated Ginseng 
+              <span class="block">
+                Rejuvenating Serum
+              </span>
+            </p>
+            <span class="text-[12px] block mt-2">
+              155,000원
+            </span>
+          </div>
+         </div>
+          <div
+            class="aspect-[135/250] bg-yellow-200 border border-black tablet:aspect-auto tablet:h-full tablet:col-start-3 tablet:row-start-1 relative"
+          >
+            <div class="text-center text-inner absolute bottom-[10%] flex flex-col gap-1 w-full border border-black">
+              <h2 class="tracking-[-1.5px] font-bold">
+                자음생크림 리치
+              </h2>
+              <p class="text-[11px]">
+                Concentrated Ginseng
+                <span class="block">
+                  Rejuvenating Cream Rich
+                </span>
+              </p>
+              <span class="text-[12px] block mt-2">
+                270,000원
+              </span>
+            </div>
           </div>
         </div>
       </section>
       <!-- 4 -->
       <section class="max-w-[1440px] mx-auto px-5 mt-16 text-center">
-        <div class="grid store-wrapper tablet:grid-cols-2 tablet:gap-x-5">
+        <div class="grid store-wrapper tablet:grid-cols-2 tablet:gap-x-5 gap-y-8">
           <div class="item">
             <div class="store-img aspect-[280/235] bg-teal-600"></div>
-            <div class="store-text bg-red-400 h-[95px]">테스트입니다.</div>
+            <div class="store-text bg-red-400 h-[95px] tablet:h-[80px] pt-[15px] border border-black relative flex justify-center tablet:pt-[9px] tracking-[-1.5px]">
+              <h2 class="text-[22px] font-bold tablet:text-[20px]">
+                설화수 북촌 플래그십 스토어
+              </h2>
+              <a href="#none" class="absolute bottom-0 block border border-black text-[12px] px-5 py-1 tracking-[-1.5px] tablet:text-[10px]">
+                자세히 보기
+              </a>
+            </div>
           </div>
           <div class="item">
             <div class="store-img aspect-[280/235] bg-teal-600"></div>
-            <div class="store-text bg-red-400 h-[95px]">테스트입니다.</div>
+            <div class="store-text bg-red-400 h-[95px] tablet:h-[80px] pt-[15px] border border-black relative flex justify-center tablet:pt-[9px] tracking-[-1.5px]">
+              <h2 class="text-[22px] font-bold tablet:text-[20px]">
+                설화수 도산 플래그십 스토어
+              </h2>
+              <a href="#none" class="absolute bottom-0 block border border-black text-[12px] px-5 py-1 tracking-[-1.5px] tablet:text-[10px]">
+                자세히 보기
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -443,15 +501,15 @@
               </li>
             </ul>
             </div>
-            <div class="footer-copy bg-slate-600 h-[55px] flex items-center gap-1">
+            <div class="footer-copy bg-slate-600 h-[50px] tablet-footer:h-[55px] flex items-center gap-1 text-[3.4vw] tablet-footer:text-[1.2vw]">
               @
               <span class="font-bold">AMOREPACIFIC</span> 
               CORPORATION. All rights reserved.
             </div>
-            <div class="py-10 bg-blue-500 footer-menu">
-              <ul class="flex gap-4">
+            <div class="flex-wrap bg-blue-500">
+              <ul class="flex flex-wrap gap-x-4 gap-y-2 text-[3vw] tablet-footer:flex-nowrap tablet-footer:text-[1.2vw]">
                 <li>
-                  <a href="#none">
+                  <a href="#none" class="border border-black ">
                     회사소개
                   </a>
                 </li>
@@ -465,6 +523,7 @@
                     개인정보처리방침
                   </a>
                 </li>
+                <li class="w-full h-0 tablet-footer:hidden"></li>
                 <li>
                   <a href="#none">
                     영상정보처리방침
@@ -476,13 +535,13 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#none">
+                  <a href="#none" class="border border-black">
                     위조품 방지
                   </a>
                 </li>
               </ul>
               <div class="info">
-                <div class="relative flex gap-2 py-5 footer-pc bg-slate-500">
+                <div class="relative flex flex-col gap-2 py-5 footer-pc bg-slate-500 text-[3vw] tablet-footer:text-[1.2vw] tablet-footer:flex-row">
                   <a href="#none">
                     고객서비스센터(수신자요금부담) : 080-023-5454
                   </a>
@@ -537,7 +596,7 @@
                 </li>
               </ul>
             </div>
-            <div class="relative pt-5 pb-8 bg-yellow-300 info">
+            <div class="relative pt-5 pb-8 bg-yellow-300 info text-[1vw]">
               고객서비스센터(수신자요금부담) : 080-023-5454 (월~금: AM 09:00~PM 06:00)
               <span class="block">
                 © AMOREPACIFIC CORPORATION. All rights reserved.
