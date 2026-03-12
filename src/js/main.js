@@ -1,44 +1,44 @@
-/* visual */
-const visual_slide = new Swiper(".visual-slide", {
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
+const allSearch = {
+  init: function () {
+    const searchBar = document.querySelector(".search-bar")
+    const searchBtn = document.querySelector(".search-btn")
+    searchBtn.addEventListener("click", () => {
+      searchBar.classList.toggle('h-[60px]');
+    }) 
   },
-  loop: true,
-  speed: 1000,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-    observer: true,
-    observeParents: true,
-  },
-  on: {
-    resize: function () {
-      this.update();
-    },
-  },
-});
+};
+allSearch.init();
 
-/* recommend */
-const recommend_slide = new Swiper(".recommend-slide", {
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-    enabled: true,
-  },
-  breakpoints: {
-    721: {
-      slidesPerView: 3,
+const mobileAllmenu = {
+  init: function () {
+    const trigger = document.querySelector(".trigger");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const exitbtn = document.querySelector(".exit-btn")
+
+    const toggleMenu = () => {
+      mobileMenu.classList.toggle('-translate-x-full');
+      mobileMenu.classList.toggle('translate-x-0');
     }
-  },
-  on: {
-    resize: function () {
-      this.update();
-    },
-  },
-});
+
+    trigger.addEventListener("click", toggleMenu);
+    exitbtn.addEventListener("click", toggleMenu);
+  }
+}
+mobileAllmenu.init();
+
+const footerInfo = {
+  init: function () {
+    const footerInfoBtn = document.querySelector(".footer-btn")
+    const footerAllInfo = document.querySelector(".footer-wrap")
+    footerInfoBtn.addEventListener("click", () => {
+      footerToggle = footerAllInfo.style;
+      if(footerToggle.maxHeight === '') {
+        footerToggle.maxHeight = footerAllInfo.scrollHeight + 'px';
+      }
+      else {
+        footerToggle.maxHeight = '';
+      }
+    })
+  }
+}
+footerInfo.init();
