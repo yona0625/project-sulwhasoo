@@ -6,12 +6,22 @@ const visual_slide = new Swiper(".visual-slide", {
   },
   loop: true,
   speed: 1000,
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  //   observer: true,
-  //   observeParents: true,
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    observer: true,
+    observeParents: true,
+  },
+  pagination: {
+    el: ".visual-pagination",
+    type: "progressbar",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".visual-button-next",
+    prevEl: ".visual-button-prev",
+    enabled: true,
+  },
   on: {
     resize: function () {
       this.update();
@@ -35,7 +45,7 @@ const recommend_slide = new Swiper(".recommend-slide", {
   breakpoints: {
     721: {
       slidesPerView: 3,
-    }
+    },
   },
   on: {
     resize: function () {
