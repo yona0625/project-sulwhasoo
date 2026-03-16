@@ -33,8 +33,15 @@ const visual_slide = new Swiper(".visual-slide", {
 const recommend_slide = new Swiper(".recommend-slide", {
   loop: true,
   speed: 1000,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    observer: true,
+    observeParents: true,
+  },
   pagination: {
     el: ".swiper-pagination",
+    type: "progressbar",
     clickable: true,
   },
   navigation: {
@@ -45,6 +52,8 @@ const recommend_slide = new Swiper(".recommend-slide", {
   breakpoints: {
     721: {
       slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 20,
     },
   },
   on: {

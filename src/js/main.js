@@ -10,7 +10,7 @@ const allSearch = {
         searchBar.classList.toggle("active");
       });
     });
-
+    
     document.addEventListener("click", (e) => {
       if (!searchBar.contains(e.target)) {
         searchBar.classList.remove("active");
