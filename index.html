@@ -18,8 +18,8 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
       defer
     ></script>
-    <script src="./src/js/main.js" defer></script>
     <script src="./src/js/swiper.js" defer></script>
+    <script src="./src/js/main.js" defer></script>
   </head>
   <body class="mx-auto bg-white">
     <div class="relative w-full mx-auto wrapper min-w-80">
@@ -33,7 +33,7 @@
             class="flex items-center justify-between h-full p-5 mobile-nav pc:hidden"
           >
             <div
-              class="trigger w-[25px] h-[20px] relative [&_span]:absolute"
+              class="trigger w-[25px] h-[18px] relative [&_span]:absolute [&_span]:group-hover:bg-gray-400"
             >
               <span class="top-0 w-full h-[2px] bg-white"></span>
               <span class="w-full h-[2px] bg-white top-[50%]"></span>
@@ -42,7 +42,16 @@
             <div class="flex items-center justify-center h-10 logo w-28">
               <span class="text-[24px]"> SulWhasoo </span>
             </div>
-            <a href="#none" class="w-6 h-6 bg-green-500 mobile-search"></a>
+            <a
+              href="#none"
+              class="flex items-center justify-center w-6 h-6 mobile-search"
+            >
+              <img
+                src="public/images/search-icon.svg"
+                alt="검색 아이콘"
+                class="brightness-0 invert group-hover:brightness-100 group-hover:invert-0"
+              />
+            </a>
           </div>
 
           <!-- search-bar -->
@@ -61,15 +70,19 @@
 
           <!-- pc -->
           <div class="relative hidden w-full h-full pc:block px-[7%]">
-            <div
-              class="w-full pc:flex pc:justify-between max-w-[1100px] mx-auto"
-            >
-              <div class="flex flex-col mt-2 language">
+            <div class="w-full flex justify-between max-w-[1100px]">
+              <div class="flex flex-col mt-4 language">
                 <div class="flex">
                   한국/한국어
-                  <span
-                    class="w-5 h-5 mt-1 ml-2 cursor-pointer bg-slate-400 language-btn"
-                  ></span>
+                  <div
+                    class="flex items-center justify-center w-5 h-5 mt-1 ml-2 cursor-pointer language-btn"
+                  >
+                    <img
+                      src="public/images/dropdown-icon.png"
+                      alt="언어 메뉴 펼치기"
+                      class="brightness-0 invert group-hover:invert-0"
+                    />
+                  </div>
                 </div>
                 <ul
                   class="border border-black [&_a]:py-1 [&_a]:px-4 [&_a:hover]:bg-gray-300 bg-white py-2 mt-2 z-30 language-list hidden"
@@ -111,14 +124,21 @@
                 </ul>
               </div>
               <div
-                class="logo w-[165px] h-[40px] bg-slate-500 mx-auto absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+                class="logo w-[165px] h-[40px] flex justify-center items-center mx-auto absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
               >
+                <span class="text-[30px]"> Sulwhasoo </span>
                 <img src="" alt="" />
               </div>
-              <div class="flex justify-end gap-4 mt-2 link-group h-fit">
+              <div class="flex items-center gap-4 mt-4 link-group h-fit">
                 <div class="store">매장찾기</div>
                 <div class="buy">구매하기</div>
-                <div class="cursor-pointer pc-search">검색</div>
+                <div class="cursor-pointer pc-search w-[20px] h-[20]px mt-1">
+                  <img
+                    src="public/images/search-icon.svg"
+                    alt="검색 아이콘"
+                    class="brightness-0 invert group-hover:invert-0"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -147,7 +167,7 @@
               <a href="#none" class="block px-4"> 제품 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
+                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden border-t border-t-gray"
               >
                 <li>
                   <a href="#none" class="block px-4"> 스킨케어 </a>
@@ -164,7 +184,7 @@
               <a href="#none" class="block p-4"> 스파 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
+                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden border-t border-t-gray"
               >
                 <li>
                   <a href="#none" class="block px-4"> 소개 </a>
@@ -184,7 +204,7 @@
               <a href="#none" class="block p-4"> 플래그십 스토어 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
+                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden border-t border-t-gray"
               >
                 <li>
                   <a href="#none" class="block px-4"> 플래그십 스토어 </a>
@@ -201,7 +221,7 @@
               <a href="#none" class="block p-4"> ABOUT 설화수 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
+                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden border-t border-t-gray"
               >
                 <li>
                   <a href="#none" class="block px-4"> 브랜드 스토리 </a>
@@ -233,50 +253,138 @@
           </ul>
         </div>
         <!-- mobile-menu -->
+        <!-- 테스트 후 translate-x-0 삭제 -->
         <div
-          class="fixed z-30 w-full transition-transform duration-300 -translate-x-full bg-white mobile-menu h-dvh"
+          class="fixed top-0 z-30 flex flex-col w-full h-screen overflow-y-auto text-black transition-transform duration-300 -translate-x-full bg-white border border-black mobile-menu"
         >
           <div
-            class="title-area h-[60px] bg-red-400 w-full flex items-center justify-between p-4"
+            class="title-area h-[60px] bg-white w-full flex items-center justify-between p-4 border-b border-b-gray-200"
           >
             <!-- logo -->
-            <div class="logo w-[80px] h-[40px] bg-slate-500"></div>
+            <div class="flex items-center justify-center logo">
+              <span class="text-[20px]"> SulWhasoo </span>
+            </div>
             <!-- exit button -->
             <div class="w-6 h-6 bg-blue-600 exit-btn"></div>
           </div>
           <!-- menu -->
-          <ul>
+          <ul class="flex-none [&>li>a]:p-4">
             <!-- 1~3 -->
-            <li class="border border-black">
-              <a href="#none" class="block p-4"> 윤조 </a>
+            <li>
+              <a href="#none" class="block"> 윤조 </a>
             </li>
-            <li class="border border-black">
-              <a href="#none" class="block p-4"> 자음생 </a>
+            <li>
+              <a href="#none" class="block"> 자음생 </a>
             </li>
-            <li class="border border-black">
-              <a href="#none" class="block p-4"> 기프트 </a>
+            <li>
+              <a href="#none" class="block"> 기프트 </a>
             </li>
             <!-- 3~6 -->
-            <li class="border border-black">
-              <a href="#none" class="block p-4"> 베스트 셀러 </a>
+            <li>
+              <a href="#none" class="block"> 베스트 셀러 </a>
             </li>
-            <li class="border border-black">
-              <a href="#none" class="block p-4"> 제품 </a>
+            <li class="openMenu">
+              <a href="#none" class="block"> 제품 </a>
+              <!-- panel -->
+              <ul
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-yellow-100 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-blue-400"
+              >
+                <li>
+                  <a href="#none" class="block"> 스킨케어 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 메이크업 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 남성 </a>
+                </li>
+              </ul>
             </li>
-            <li class="border border-black">
-              <a href="#none" class="block p-4"> 스파 </a>
+            <li class="openMenu">
+              <a href="#none" class="block"> 스파 </a>
+              <!-- panel -->
+              <ul
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-yellow-100 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-blue-400"
+              >
+                <li>
+                  <a href="#none" class="block"> 소개 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 스파 프로그램 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 예약 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 매장 찾기 </a>
+                </li>
+              </ul>
             </li>
             <!-- 7~8 -->
-            <li class="border border-black">
-              <a href="#none" class="block p-4"> 플래그십 스토어 </a>
+            <li class="openMenu">
+              <a href="#none" class="block"> 플래그십 스토어 </a>
+              <!-- panel -->
+              <ul
+                class="overflow-hidden transition-all duration-300 bg-yellow-100 max-h-0 [&.active]:max-h-[500px] [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-blue-400"
+              >
+                <li>
+                  <a href="#none" class="block"> 플래그십 스토어 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 설화수 북촌 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 설화수 도산 </a>
+                </li>
+              </ul>
             </li>
-            <li class="border border-black">
-              <a href="#none" class="block p-4"> ABOUT 설화수 </a>
+            <li class="openMenu">
+              <a href="#none" class="block [&.bold]:font-bold">
+                ABOUT 설화수
+              </a>
+              <!-- panel -->
+              <ul
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-yellow-100 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-blue-400"
+              >
+                <li>
+                  <a href="#none" class="block"> 브랜드 스토리 </a>
+                </li>
+                <!-- + more -->
+                <li class="openSubMenu">
+                  <a href="#none" class="block [&.bold]:font-bold">
+                    브랜드 지속 가능성
+                  </a>
+                  <ul
+                    class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-yellow-100 [&>li>a]:mx-4 [&>li>a]:px-8 [&>li>a]:py-1 [&>li:last-child>a]:border-b [&>li>a]:border-b-blue-400"
+                  >
+                    <li>
+                      <a href="#none" class="block"> 지속 가능성 </a>
+                    </li>
+                    <li>
+                      <a href="#none" class="block"> 위조품 방지 </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 설화문화전 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 살롱 설화수 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 컬처프로젝트 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 브랜드 뉴스 </a>
+                </li>
+                <li>
+                  <a href="#none" class="block"> 명작컬렉션 </a>
+                </li>
+              </ul>
             </li>
           </ul>
-          <div class="h-full bg-black footer">
-            <!-- login/store search -->
-            <ul class="px-4 py-2 border-b border-b-white">
+          <div class="flex-1 bg-black mobile-footer">
+            <ul class="flex-1 px-4 py-2 border-b border-b-gray-700">
               <li>
                 <a href="#none" class="block py-2 text-white">
                   <span class="underline"> 로그인 </span>
@@ -424,20 +532,37 @@
             <!-- autoplay btn -->
             <!-- 겉에 wrapper 추가했으니 위치 잡는 거 다시 해볼 것 - 완료 -->
             <div
-              class="z-10 items-center justify-center hidden w-5 h-5 text-white border border-white cursor-pointer visual-autoplay-btn tablet:flex"
+              class="z-10 items-center justify-center hidden w-5 h-5 text-white border border-white cursor-pointer visual-autoplay tablet:flex"
             >
-              <!-- 아이콘으로 대체 -->
-              <span class="play-icon">▶</span>
-              <span class="hidden pause-icon">⏸</span>
+              <!-- 아이콘으로 대체 - 완료 -->
+              <div class="hidden play-btn">
+                <img
+                  src="public/images/autoplay-play.png"
+                  alt="슬라이드 재생"
+                />
+              </div>
+              <div class="pause-btn">
+                <img
+                  src="public/images/autoplay-pause.png"
+                  alt="슬라이드 멈춤"
+                />
+              </div>
             </div>
           </div>
 
           <div
-            class="hidden swiper-button-prev visual-button-prev tablet:block"
-          ></div>
+            class="hidden swiper-button-prev visual-button-prev w-[50px] h-[50px] left-0 tablet:flex justify-center items-center after:hidden bg-white/50"
+          >
+            <img src="public/images/slide-arrow-left.png" alt="이전 슬라이드" />
+          </div>
           <div
-            class="hidden swiper-button-next visual-button-next tablet:block"
-          ></div>
+            class="hidden swiper-button-next visual-button-next w-[50px] h-[50px] right-0 tablet:flex justify-center items-center after:hidden bg-white/50"
+          >
+            <img
+              src="public/images/slide-arrow-right.png"
+              alt="다음 슬라이드"
+            />
+          </div>
         </div>
       </main>
 
@@ -577,21 +702,38 @@
               class="relative [.recommend-slide_&]:top-auto swiper-pagination tablet:[.recommend-slide_&]:w-[300px] [&_.swiper-pagination-progressbar-fill]:bg-black"
             ></div>
             <div
-              class="z-10 items-center justify-center hidden w-5 h-5 text-black border border-black cursor-pointer reco-autoplay-btn tablet:flex"
+              class="z-10 items-center justify-center hidden w-5 h-5 text-black border border-black cursor-pointer reco-autoplay tablet:flex"
             >
               <!-- 아이콘으로 대체 -->
-              <span class="play-icon">▶</span>
-              <span class="hidden pause-icon">⏸</span>
+              <div class="hidden play-btn">
+                <img
+                  src="public/images/autoplay-play_b.svg"
+                  alt="슬라이드 재생"
+                />
+              </div>
+              <div class="pause-btn">
+                <img
+                  src="public/images/autoplay-pause_b.svg"
+                  alt="슬라이드 멈춤"
+                />
+              </div>
             </div>
           </div>
 
           <!-- prev / next -->
           <div
-            class="swiper-button-prev top-[calc(50%-47.5px)] -translate-y-1/2 left-0 [--swiper-navigation-size:35px] mt-0 border border-black"
-          ></div>
+            class="swiper-button-prev top-[calc(50%-47.5px)] -translate-y-1/2 left-0 w-[50px] h-[50px] mt-0 bg-white/50 after:hidden flex justify-center items-center"
+          >
+            <img src="public/images/slide-arrow-left.png" alt="이전 슬라이드" />
+          </div>
           <div
-            class="swiper-button-next top-[calc(50%-47.5px)] -translate-y-1/2 right-0 [--swiper-navigation-size:35px] mt-0 border border-black"
-          ></div>
+            class="swiper-button-next top-[calc(50%-47.5px)] -translate-y-1/2 right-0 w-[50px] h-[50px] mt-0 bg-white/50 after:hidden flex justify-center items-center"
+          >
+            <img
+              src="public/images/slide-arrow-right.png"
+              alt="다음 슬라이드"
+            />
+          </div>
         </div>
       </section>
 
@@ -636,7 +778,7 @@
         >
           <div class="relative col-span-2 tablet:col-span-1">
             <div
-              class="season-img aspect-[280/205] w-full tablet:aspect-[328/288]"
+              class="season-img aspect-[280/205] w-full tablet:aspect-[328/255]"
             >
               <picture>
                 <source
@@ -660,9 +802,11 @@
             </div>
           </div>
           <div
-            class="aspect-[135/250] bg-yellow-200 tablet:aspect-auto tablet:h-full tablet:col-start-1 tablet:row-start-1 relative"
+            class="aspect-[135/215] bg-[#ededed] tablet:aspect-auto tablet:h-full tablet:col-start-1 tablet:row-start-1 relative"
           >
-            <picture>
+            <picture
+              class="block w-full overflow-hidden aspect-square pc:mt-[20px]"
+            >
               <source
                 media="(min-width: 721px)"
                 srcset="public/images/season_item1.jpg"
@@ -685,9 +829,11 @@
             </div>
           </div>
           <div
-            class="aspect-[135/250] bg-yellow-200 tablet:aspect-auto tablet:h-full tablet:col-start-3 tablet:row-start-1 relative"
+            class="aspect-[135/215] bg-[#ededed] tablet:aspect-auto tablet:h-full tablet:col-start-3 tablet:row-start-1 relative"
           >
-            <picture>
+            <picture
+              class="block w-full overflow-hidden aspect-square pc:mt-[20px]"
+            >
               <source
                 media="(min-width: 721px)"
                 srcset="public/images/season_item2.jpg"
@@ -721,7 +867,7 @@
               <img
                 src="public/images/store_bukchon.jpg"
                 alt=""
-                class="object-cover w-full h-full"
+                class="object-contain w-full h-full"
               />
             </div>
             <div
@@ -743,7 +889,7 @@
               <img
                 src="public/images/store_dosan.jpg"
                 alt=""
-                class="object-cover w-full h-full"
+                class="object-contain w-full h-full"
               />
             </div>
             <div
@@ -768,47 +914,71 @@
         <div
           class="block bg-white border-t footer-mobile pc:hidden border-t-gray"
         >
-          <div class="px-5 footer-inner">
+          <div class="footer-inner">
             <div class="footer-sns flex bg-white w-full h-[50px]">
-              <ul class="flex items-center justify-center mx-auto">
+              <ul class="flex items-center justify-center gap-2 mx-auto">
                 <li class="block">
-                  <a href="#none">1</a>
+                  <a href="#none">
+                    <img
+                      src="public/images/facebook-icon.png"
+                      alt="페이스북 바로가기"
+                    />
+                  </a>
                 </li>
                 <li class="block">
-                  <a href="#none">1</a>
+                  <a href="#none">
+                    <img
+                      src="public/images/insta-icon.png"
+                      alt="인스타그램 바로가기"
+                    />
+                  </a>
                 </li>
                 <li class="block">
-                  <a href="#none">1</a>
+                  <a href="#none">
+                    <img
+                      src="public/images/youtube-icon.png"
+                      alt="유튜브 바로가기"
+                    />
+                  </a>
                 </li>
                 <li class="block">
-                  <a href="#none">1</a>
+                  <a href="#none">
+                    <img
+                      src="public/images/kakao-icon.png"
+                      alt="카카오 채널 바로가기"
+                    />
+                  </a>
                 </li>
               </ul>
             </div>
+            <!-- copy -->
             <div
-              class="footer-copy bg-slate-600 h-[50px] tablet-footer:h-[55px] flex items-center gap-1 text-[3.4vw] tablet-footer:text-[1.2vw] relative border-t border-t-gray"
+              class="footer-copy bg-gray-100 flex items-center gap-1 text-[3.4vw] tablet-footer:text-[1.2vw] relative border-t border-t-gray px-4 py-[5%] tablet:h-[55px] tablet:py-0"
             >
               @
               <span class="font-bold">AMOREPACIFIC</span>
               CORPORATION. All rights reserved.
               <div
-                class="absolute right-0 w-5 h-5 bg-red-400 cursor-pointer footer-btn"
-              ></div>
+                class="absolute right-0 flex items-center justify-center w-5 h-5 mx-4 cursor-pointer footer-btn"
+              >
+              <img src="public/images/footer-more.png" alt="footer 더 보기">
             </div>
+            </div>
+
             <div
-              class="flex-wrap overflow-hidden transition-all duration-300 bg-blue-500 footer-wrap max-h-0"
+              class="flex-wrap px-4 overflow-hidden transition-all duration-300 bg-gray-100 border-t footer-wrap max-h-0 border-t-gray"
             >
               <ul
-                class="flex flex-wrap gap-x-4 gap-y-2 text-[3vw] tablet-footer:flex-nowrap tablet-footer:text-[1.2vw]"
+                class="flex flex-wrap gap-x-4 gap-y-1 mt-[15px] text-[3vw] tablet-footer:flex-nowrap tablet-footer:text-[1.2vw]"
               >
                 <li>
-                  <a href="#none" class="border border-black"> 회사소개 </a>
+                  <a href="#none"> 회사소개 </a>
                 </li>
                 <li>
                   <a href="#none"> 서비스이용약관 </a>
                 </li>
                 <li>
-                  <a href="#none"> 개인정보처리방침 </a>
+                  <a href="#none" class="font-bold"> 개인정보처리방침 </a>
                 </li>
                 <li class="w-full h-0 tablet-footer:hidden"></li>
                 <li>
@@ -818,20 +988,24 @@
                   <a href="#none"> 사이트맵 </a>
                 </li>
                 <li>
-                  <a href="#none" class="border border-black"> 위조품 방지 </a>
+                  <a href="#none"> 위조품 방지 </a>
                 </li>
               </ul>
-              <div class="info">
-                <div
-                  class="relative flex flex-col gap-2 py-5 footer-pc bg-slate-500 text-[3vw] tablet-footer:text-[1.2vw] tablet-footer:flex-row"
-                >
+              <!-- info -->
+              <div
+                class="info relative flex flex-row gap-2 py-5 footer-pc text-[3vw] tablet-footer:text-[1.2vw] w-full justify-between"
+              >
+                <div>
                   <a href="#none">
                     고객서비스센터(수신자요금부담) : 080-023-5454
                   </a>
-                  <span> (월~금: AM 09:00~PM 06:00) </span>
-                  <div
-                    class="absolute bottom-0 right-0 w-20 h-full bg-yellow-400 mark"
-                  ></div>
+                  <span class="block"> (월~금: AM 09:00~PM 06:00) </span>
+                </div>
+                <div class="w-[15%] h-[15%] mark bottom-0 border border-black tablet:w-[50px] tablet:h-[40px]">
+                  <img
+                    src="public/images/web-mark.png"
+                    alt="웹 접근성 통과 마크"
+                  />
                 </div>
               </div>
             </div>

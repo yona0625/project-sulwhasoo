@@ -10,7 +10,6 @@ const allSearch = {
         searchBar.classList.toggle("active");
       });
     });
-    
     document.addEventListener("click", (e) => {
       if (!searchBar.contains(e.target)) {
         searchBar.classList.remove("active");
@@ -31,38 +30,45 @@ const selectLang = {
 };
 selectLang.init();
 
-const slideAutoPlay = {
-  init: function () {
-    const playBtn = document.querySelector(".visual-autoplay-btn");
-    playBtn.addEventListener("click", () => {
-      if (visual_slide.autoplay.running) {
-        visual_slide.autoplay.stop();
-      } else {
-        visual_slide.autoplay.start();
-      }
-    });
-  },
+const slideAutoPlay = (autoBtn, swiper) => {
+  /* 화살표 시 객체 메서드 함수 불가 */
+  const autoPlay = document.querySelector(autoBtn);
+  const playBtn = autoPlay.querySelector(".play-btn");
+  const pauseBtn = autoPlay.querySelector(".pause-btn");
+  autoPlay.addEventListener("click", () => {
+    /* swiper로 변경 */
+    if (swiper.autoplay.running) {
+      swiper.autoplay.stop();
+      pauseBtn.classList.add("hidden");
+      playBtn.classList.remove("hidden");
+    } else {
+      swiper.autoplay.start();
+      playBtn.classList.add("hidden");
+      pauseBtn.classList.remove("hidden");
+    }
+  });
 };
-slideAutoPlay.init();
+slideAutoPlay(".visual-autoplay", visual_slide);
+slideAutoPlay(".reco-autoplay", recommend_slide);
 
 const pcMenu = {
   init: function () {
-    const pcMenuItems = document.querySelectorAll('.pc-menu > ul > li');
+    const pcMenuItems = document.querySelectorAll(".pc-menu > ul > li");
 
-    pcMenuItems.forEach(item => {
-      const pcMenuPanel = item.querySelector('ul');
+    pcMenuItems.forEach((item) => {
+      const pcMenuPanel = item.querySelector("ul");
       if (!pcMenuPanel) return;
 
-      item.addEventListener('mouseenter', () => {
-        pcMenuPanel.classList.add('active');
+      item.addEventListener("mouseenter", () => {
+        pcMenuPanel.classList.add("active");
       });
 
-      item.addEventListener('mouseleave', () => {
-        pcMenuPanel.classList.remove('active');
+      item.addEventListener("mouseleave", () => {
+        pcMenuPanel.classList.remove("active");
       });
     });
-  }
-}
+  },
+};
 pcMenu.init();
 
 const mobileAllmenu = {
@@ -81,6 +87,53 @@ const mobileAllmenu = {
   },
 };
 mobileAllmenu.init();
+
+const mobileMenuToggle = {
+  init: function () {
+    const openMainMenu = document.querySelectorAll(".openMenu");
+    const openSubMenu = document.querySelectorAll(".openSubMenu");
+    openSubMenu.forEach((subItem) => {
+      subItem.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const subMenu = subItem.querySelector("ul");
+        const subBold = subItem.querySelector("a");
+        subMenu.classList.toggle("active");
+        subBold.classList.toggle("bold");
+      });
+    });
+    openMainMenu.forEach((mainItem) => {
+      mainItem.addEventListener("click", (e) => {
+        /* 이중 아코디언 이벤트 버블링 방지 */
+        e.stopPropagation();
+        const mainMenu = mainItem.querySelector("ul");
+        const mainBold = mainItem.querySelector("a");
+        /* 이중 아코디언 메뉴가 아니라면 이벤트 발생 안 함 */
+        if (mainMenu.contains(e.target)) return;
+        /* 쿼리 셀렉터와 달리 toggle의 특성 상 변수 선언을 했어도 실행이 됨. 실행하고 변수 저장 -> 따라서 1단 아코디언도 실행 가능 */
+        const isOpen = mainMenu.classList.toggle("active");
+        mainBold.classList.toggle("bold");
+
+        /* 자동 열림 */
+        const openSubMenu = mainItem.querySelector(".openSubMenu ul");
+        const subBold = mainItem.querySelector(".openSubMenu > a");
+        if (!openSubMenu) return;
+
+        if (isOpen) {
+          setTimeout(() => {
+            if (mainMenu.classList.contains("active")) {
+              openSubMenu.classList.add("active");
+              subBold.classList.add("bold");
+            }
+          }, 500);
+        } else {
+          openSubMenu.classList.remove("active");
+          subBold.classList.remove("bold");
+        }
+      });
+    });
+  },
+};
+mobileMenuToggle.init();
 
 const footerInfo = {
   init: function () {
