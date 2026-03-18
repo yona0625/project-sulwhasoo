@@ -1,19 +1,66 @@
+const goTop = {
+  init: function () {
+    const goTopBtn = document.querySelector(".go-top");
+
+    goTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const totalScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const bottomAni = totalScroll - scrollY < 150;
+      /* top fade */
+      if (scrollY > 100) {
+        goTopBtn.classList.add("active");
+      } else {
+        goTopBtn.classList.remove("active");
+      }
+      /* bottom animation */
+      if (bottomAni) {
+        goTopBtn.classList.remove("bottom-0");
+        goTopBtn.classList.add("bottom-20");
+      } else {
+        goTopBtn.classList.remove("bottom-20");
+        goTopBtn.classList.add("bottom-0");
+      }
+    });
+  },
+};
+goTop.init();
+
 const allSearch = {
   init: function () {
     /* mobile */
     const searchBar = document.querySelector(".search-bar");
     const searchBtn = document.querySelectorAll(".mobile-search, .pc-search");
+    const searchCloseBtn = document.querySelector(".search-close");
+    const header = document.querySelector("header");
+    const headerNav = document.querySelectorAll("header, .pc-menu");
 
     searchBtn.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         searchBar.classList.toggle("active");
+        headerNav.forEach((item) => item.classList.toggle("bg-white"));
       });
     });
     document.addEventListener("click", (e) => {
       if (!searchBar.contains(e.target)) {
         searchBar.classList.remove("active");
       }
+      if (
+        !header.contains(e.target) &&
+        searchBar.classList.contains("active")
+      ) {
+        headerNav.forEach((item) => item.classList.toggle("bg-white"));
+      }
+    });
+    searchCloseBtn.addEventListener("click", () => {
+      searchBar.classList.remove("active");
     });
   },
 };
@@ -92,42 +139,59 @@ const mobileMenuToggle = {
   init: function () {
     const openMainMenu = document.querySelectorAll(".openMenu");
     const openSubMenu = document.querySelectorAll(".openSubMenu");
+
+    const openItem = (item) => {
+      /* 메뉴 / 볼드체 / 플러스 아이콘 순 */
+      item.querySelector("ul").classList.add("active");
+      item.querySelector("a").classList.add("bold");
+      item.querySelector(".menuPlus")?.classList.add("icon-active");
+    };
+    const closeItem = (item) => {
+      item.querySelector("ul").classList.remove("active");
+      item.querySelector("a").classList.remove("bold");
+      item.querySelector(".menuPlus")?.classList.remove("icon-active");
+    };
+    const toggleItem = (item) => {
+      item.querySelector("ul").classList.toggle("active");
+      item.querySelector("a").classList.toggle("bold");
+      item.querySelector(".menuPlus")?.classList.toggle("icon-active");
+    };
+
+    /* 2단 아코디언 */
     openSubMenu.forEach((subItem) => {
       subItem.addEventListener("click", (e) => {
         e.stopPropagation();
-        const subMenu = subItem.querySelector("ul");
-        const subBold = subItem.querySelector("a");
-        subMenu.classList.toggle("active");
-        subBold.classList.toggle("bold");
+        toggleItem(subItem);
       });
     });
+    /* 1단 아코디언 */
     openMainMenu.forEach((mainItem) => {
       mainItem.addEventListener("click", (e) => {
         /* 이중 아코디언 이벤트 버블링 방지 */
         e.stopPropagation();
         const mainMenu = mainItem.querySelector("ul");
-        const mainBold = mainItem.querySelector("a");
         /* 이중 아코디언 메뉴가 아니라면 이벤트 발생 안 함 */
         if (mainMenu.contains(e.target)) return;
-        /* 쿼리 셀렉터와 달리 toggle의 특성 상 변수 선언을 했어도 실행이 됨. 실행하고 변수 저장 -> 따라서 1단 아코디언도 실행 가능 */
-        const isOpen = mainMenu.classList.toggle("active");
-        mainBold.classList.toggle("bold");
+        /* 쿼리 셀렉터와 달리 toggle의 특성 상 변수 선언을 했어도 실행이 됨. 실행하고 변수 저장 -> 따라서 1단 아코디언도 실행 가능(toggle) */
+        /* + 해당 요소 빼고 나머지를 닫아야 하므로 isOpen: toggle -> contain, 나머지는 remove로 변경 */
+        const isOpen = mainMenu.classList.contains("active");
 
-        /* 자동 열림 */
-        const openSubMenu = mainItem.querySelector(".openSubMenu ul");
-        const subBold = mainItem.querySelector(".openSubMenu > a");
-        if (!openSubMenu) return;
+        /* 전부 닫고 선택한 것만 열게 함
+        foreach로 전부 돌면서 닫고, 닫혀 있을 때 열면서(!isOpen) + openItem(mainItem) toggle 역할 */
+        openMainMenu.forEach(closeItem);
 
-        if (isOpen) {
+        const currentSubItem = mainItem.querySelector(".openSubMenu");
+        if (!isOpen) {
+          openItem(mainItem);
+          if (!currentSubItem) return;
+          /* 자동 열림 */
           setTimeout(() => {
             if (mainMenu.classList.contains("active")) {
-              openSubMenu.classList.add("active");
-              subBold.classList.add("bold");
+              openItem(currentSubItem);
             }
           }, 500);
         } else {
-          openSubMenu.classList.remove("active");
-          subBold.classList.remove("bold");
+          closeItem(currentSubItem);
         }
       });
     });

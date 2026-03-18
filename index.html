@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" class="text-base">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,19 +21,27 @@
     <script src="./src/js/swiper.js" defer></script>
     <script src="./src/js/main.js" defer></script>
   </head>
-  <body class="mx-auto bg-white">
+  <body class="mx-auto bg-white min-w-[320px]">
     <div class="relative w-full mx-auto wrapper min-w-80">
+      <!-- top -->
+       <div class="go-top max-w-[1100px] w-full left-1/2 -translate-x-1/2 fixed z-30 bottom-20 transition-all opacity-0 [&.active]:opacity-100">
+        <div class="w-[40px] h-[40px] pc:w-[60px] pc:h-[60px] ml-auto bg-black/50">
+          <img src="public/images/top-btn.png" alt="상단으로 이동">
+        </div>
+       </div>
       <!-- header -->
       <header
-        class="absolute top-0 left-0 z-20 w-full text-white transition-all duration-300 group hover:bg-white hover:text-black"
+        class="absolute top-0 left-0 z-20 w-full text-white transition-all duration-300 group hover:bg-white hover:text-black [&.bg-white]:text-black"
       >
-        <nav class="h-[60px] pc:h-[78px] mx-auto relative z-20 w-full">
+        <nav
+          class="h-[60px] pc:h-[78px] mx-auto relative z-20 w-full [&.bg-white]:bg-white"
+        >
           <!-- mobile -->
           <div
             class="flex items-center justify-between h-full p-5 mobile-nav pc:hidden"
           >
             <div
-              class="trigger w-[25px] h-[18px] relative [&_span]:absolute [&_span]:group-hover:bg-gray-400"
+              class="trigger w-[25px] h-[18px] relative [&_span]:absolute [&_span]:group-hover:bg-gray-400 [&_span]:group-[.bg-white]:bg-gray-400 cursor-pointer"
             >
               <span class="top-0 w-full h-[2px] bg-white"></span>
               <span class="w-full h-[2px] bg-white top-[50%]"></span>
@@ -49,38 +57,52 @@
               <img
                 src="public/images/search-icon.svg"
                 alt="검색 아이콘"
-                class="brightness-0 invert group-hover:brightness-100 group-hover:invert-0"
+                class="brightness-0 invert group-hover:brightness-100 group-hover:invert-0 group-[.bg-white]:brightness-100 group-[.bg-white]:invert-0"
               />
             </a>
           </div>
 
           <!-- search-bar -->
           <div
-            class="absolute z-30 flex items-center w-full h-0 px-4 overflow-hidden transition-all duration-500 ease-in-out bg-white search-bar top-full [&.active]:h-[60px] [&.active]:pc:h-[210px] pc:px-60"
+            class="absolute z-30 flex items-center w-full h-0 px-4 overflow-hidden transition-all duration-300 ease-in-out bg-white search-bar top-full [&.active]:h-[60px] [&.active]:pc:h-[210px] pc:px-60"
           >
+            <img
+              src="public/images/search-icon.svg"
+              alt="검색 아이콘"
+              class="absolute ml-[15px] hidden pc:block"
+            />
             <input
               type="text"
               placeholder="검색어를 입력해주세요"
-              class="w-full border-b border-b-black outline-none placeholder:text-gray-500 h-[40px]"
+              class="w-full border-b-[1px] pc:border-b-[3px] border-b-black outline-none placeholder:text-gray-500 h-[40px] pc:pl-[50px] pb-1"
             />
             <button class="shrink-0 ml-2 w-[70px] h-[40px] bg-black text-white">
               검색
             </button>
+            <div
+              class="absolute bottom-[10px] w-5 h-5 search-close left-1/2 flex items-center justify-center"
+            >
+              <img
+                src="public/images/search-close.png"
+                alt="검색창 닫기"
+                class="hidden rotate-180 pc:block"
+              />
+            </div>
           </div>
 
           <!-- pc -->
           <div class="relative hidden w-full h-full pc:block px-[7%]">
-            <div class="w-full flex justify-between max-w-[1100px]">
+            <div class="w-full flex justify-between max-w-[1100px] mx-auto">
               <div class="flex flex-col mt-4 language">
                 <div class="flex">
-                  한국/한국어
+                  <a href="#none"> 한국/한국어 </a>
                   <div
                     class="flex items-center justify-center w-5 h-5 mt-1 ml-2 cursor-pointer language-btn"
                   >
                     <img
                       src="public/images/dropdown-icon.png"
                       alt="언어 메뉴 펼치기"
-                      class="brightness-0 invert group-hover:invert-0"
+                      class="brightness-0 invert group-hover:invert-0 group-[&.bg-white]:invert-0"
                     />
                   </div>
                 </div>
@@ -130,13 +152,13 @@
                 <img src="" alt="" />
               </div>
               <div class="flex items-center gap-4 mt-4 link-group h-fit">
-                <div class="store">매장찾기</div>
-                <div class="buy">구매하기</div>
+                <a href="#none"> 매장찾기 </a>
+                <a href="#none"> 구매하기 </a>
                 <div class="cursor-pointer pc-search w-[20px] h-[20]px mt-1">
                   <img
                     src="public/images/search-icon.svg"
                     alt="검색 아이콘"
-                    class="brightness-0 invert group-hover:invert-0"
+                    class="brightness-0 invert group-hover:invert-0 group-[&.bg-white]:invert-0"
                   />
                 </div>
               </div>
@@ -255,7 +277,7 @@
         <!-- mobile-menu -->
         <!-- 테스트 후 translate-x-0 삭제 -->
         <div
-          class="fixed top-0 z-30 flex flex-col w-full h-screen overflow-y-auto text-black transition-transform duration-300 -translate-x-full bg-white border border-black mobile-menu"
+          class="fixed top-0 z-30 flex flex-col w-full h-screen overflow-y-auto text-black transition-transform duration-300 -translate-x-full bg-white mobile-menu"
         >
           <div
             class="title-area h-[60px] bg-white w-full flex items-center justify-between p-4 border-b border-b-gray-200"
@@ -265,7 +287,11 @@
               <span class="text-[20px]"> SulWhasoo </span>
             </div>
             <!-- exit button -->
-            <div class="w-6 h-6 bg-blue-600 exit-btn"></div>
+            <div
+              class="flex items-center justify-center w-6 h-6 cursor-pointer exit-btn"
+            >
+              <img src="public/images/sidebar-close.png" alt="사이드바 닫기" />
+            </div>
           </div>
           <!-- menu -->
           <ul class="flex-none [&>li>a]:p-4">
@@ -284,13 +310,23 @@
               <a href="#none" class="block"> 베스트 셀러 </a>
             </li>
             <li class="openMenu">
-              <a href="#none" class="block"> 제품 </a>
+              <a href="#none" class="relative flex [&.bold]:font-bold">
+                제품
+                <div class="absolute w-5 h-5 right-5 menuPlus">
+                  <span
+                    class="w-full h-[1px] bg-black rotate-180 block top-1/2 absolute"
+                  ></span>
+                  <span
+                    class="w-full h-[1px] bg-black rotate-90 block absolute top-1/2 transition-all [.icon-active_&]:rotate-0"
+                  ></span>
+                </div>
+              </a>
               <!-- panel -->
               <ul
-                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-yellow-100 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-blue-400"
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-gray-200"
               >
                 <li>
-                  <a href="#none" class="block"> 스킨케어 </a>
+                  <a href="#none" class="block"> 스킨케어</a>
                 </li>
                 <li>
                   <a href="#none" class="block"> 메이크업 </a>
@@ -301,10 +337,20 @@
               </ul>
             </li>
             <li class="openMenu">
-              <a href="#none" class="block"> 스파 </a>
+              <a href="#none" class="relative flex [&.bold]:font-bold">
+                스파
+                <div class="absolute w-5 h-5 right-5 menuPlus">
+                  <span
+                    class="w-full h-[1px] bg-black rotate-180 block top-1/2 absolute"
+                  ></span>
+                  <span
+                    class="w-full h-[1px] bg-black rotate-90 block absolute top-1/2 transition-all [.icon-active_&]:rotate-0"
+                  ></span>
+                </div>
+              </a>
               <!-- panel -->
               <ul
-                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-yellow-100 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-blue-400"
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-gray-200"
               >
                 <li>
                   <a href="#none" class="block"> 소개 </a>
@@ -322,13 +368,23 @@
             </li>
             <!-- 7~8 -->
             <li class="openMenu">
-              <a href="#none" class="block"> 플래그십 스토어 </a>
+              <a href="#none" class="relative flex [&.bold]:font-bold">
+                플래그십 스토어
+                <div class="absolute w-5 h-5 right-5 menuPlus">
+                  <span
+                    class="w-full h-[1px] bg-black rotate-180 block top-1/2 absolute"
+                  ></span>
+                  <span
+                    class="w-full h-[1px] bg-black rotate-90 block absolute top-1/2 transition-all [.icon-active_&]:rotate-0"
+                  ></span>
+                </div>
+              </a>
               <!-- panel -->
               <ul
-                class="overflow-hidden transition-all duration-300 bg-yellow-100 max-h-0 [&.active]:max-h-[500px] [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-blue-400"
+                class="overflow-hidden transition-all duration-300 bg-gray-50 max-h-0 [&.active]:max-h-[500px] [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-gray-200"
               >
                 <li>
-                  <a href="#none" class="block"> 플래그십 스토어 </a>
+                  <a href="#none" class="block"> 플래그십 스토어</a>
                 </li>
                 <li>
                   <a href="#none" class="block"> 설화수 북촌 </a>
@@ -339,23 +395,39 @@
               </ul>
             </li>
             <li class="openMenu">
-              <a href="#none" class="block [&.bold]:font-bold">
+              <a href="#none" class="relative flex [&.bold]:font-bold">
                 ABOUT 설화수
+                <div class="absolute w-5 h-5 more right-5 menuPlus">
+                  <span
+                    class="w-full h-[1px] bg-black rotate-180 block top-1/2 absolute"
+                  ></span>
+                  <span
+                    class="w-full h-[1px] bg-black rotate-90 block absolute top-1/2 transition-all [.icon-active_&]:rotate-0"
+                  ></span>
+                </div>
               </a>
               <!-- panel -->
               <ul
-                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-yellow-100 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-blue-400"
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-gray-200"
               >
                 <li>
                   <a href="#none" class="block"> 브랜드 스토리 </a>
                 </li>
                 <!-- + more -->
                 <li class="openSubMenu">
-                  <a href="#none" class="block [&.bold]:font-bold">
+                  <a href="#none" class="relative flex [&.bold]:font-bold">
                     브랜드 지속 가능성
+                    <div class="absolute right-0 w-5 h-5 menuPlus">
+                      <span
+                        class="w-full h-[1px] bg-black rotate-180 block top-1/2 absolute"
+                      ></span>
+                      <span
+                        class="w-full h-[1px] bg-black rotate-90 block absolute top-1/2 transition-all [.icon-active_&]:rotate-0"
+                      ></span>
+                    </div>
                   </a>
                   <ul
-                    class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-yellow-100 [&>li>a]:mx-4 [&>li>a]:px-8 [&>li>a]:py-1 [&>li:last-child>a]:border-b [&>li>a]:border-b-blue-400"
+                    class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 [&>li>a]:mx-4 [&>li>a]:px-8 [&>li>a]:py-1 [&>li:last-child>a]:border-b [&>li>a]:border-b-gray-200"
                   >
                     <li>
                       <a href="#none" class="block"> 지속 가능성 </a>
@@ -400,7 +472,17 @@
                   <a href="#none" class="text-white"> LANGUAGE </a>
                 </li>
                 <li>
-                  <a href="#none" class="text-white"> 한국/한국어 </a>
+                  <a href="#none" class="flex items-center gap-2 text-white">
+                    한국/한국어
+                    <div class="flex flex-col justify-center w-4 h-4">
+                      <span
+                        class="w-full h-[1px] bg-gray-500 rotate-180 block"
+                      ></span>
+                      <span
+                        class="w-full h-[1px] bg-gray-500 rotate-90 block"
+                      ></span>
+                    </div>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -416,7 +498,7 @@
           <div class="h-full swiper-wrapper">
             <div class="flex flex-col swiper-slide">
               <div
-                class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] flex flex-col justify-end tablet:absolute tablet:bottom-[20%] tablet:left-[5%] tablet:text-left"
+                class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] flex flex-col justify-end tablet:absolute tablet:bottom-[20%] tablet:text-left max-w-[1440px] w-full tablet:left-1/2 tablet:-translate-x-1/2 px-[5%]"
               >
                 <h2 class="text-[13px]">
                   다시 짙어지지 않고* 맑게 이어지는 피부
@@ -444,7 +526,7 @@
             </div>
             <div class="flex flex-col swiper-slide">
               <div
-                class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] flex flex-col justify-end tablet:absolute tablet:bottom-[20%] tablet:left-[5%] tablet:text-left"
+                class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] flex flex-col justify-end tablet:absolute tablet:bottom-[20%] tablet:text-left max-w-[1440px] w-full tablet:left-1/2 tablet:-translate-x-1/2 px-[5%]"
               >
                 <h2 class="text-[13px]">리버스에이징의 궁극적 테크놀로지</h2>
                 <p class="text-[22px] mt-1 font-bold tablet:text-[24px]">
@@ -470,7 +552,7 @@
             </div>
             <div class="flex flex-col swiper-slide">
               <div
-                class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] flex flex-col justify-end tablet:absolute tablet:bottom-[20%] tablet:left-[5%] tablet:text-left"
+                class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] flex flex-col justify-end tablet:absolute tablet:bottom-[20%] tablet:text-left max-w-[1440px] w-full tablet:left-1/2 tablet:-translate-x-1/2 px-[5%]"
               >
                 <h2 class="text-[13px]">
                   스스로 탄력을 채워 모든 시간을 밀도 있게
@@ -498,7 +580,7 @@
             </div>
             <div class="flex flex-col swiper-slide">
               <div
-                class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] flex flex-col justify-end tablet:absolute tablet:bottom-[20%] tablet:left-[5%] tablet:text-left"
+                class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] flex flex-col justify-end tablet:absolute tablet:bottom-[20%] tablet:text-left max-w-[1440px] w-full tablet:left-1/2 tablet:-translate-x-1/2 px-[5%]"
               >
                 <h2 class="text-[13px]">AMORE MALL (3/9~ 3/15)</h2>
                 <p class="text-[22px] mt-1 font-bold tablet:text-[24px]">
@@ -524,7 +606,7 @@
             </div>
           </div>
           <div
-            class="absolute flex v__paginations bottom-[10%] left-[5%] gap-3 items-center"
+            class="absolute flex v__paginations bottom-[10%] gap-3 items-center w-full z-50 max-w-[1440px] left-1/2 -translate-x-1/2 px-[5%]"
           >
             <div
               class="relative [.visual-slide_&]:w-[300px] [.visual-slide_&]:bg-transparent [.visual-slide_&]:border border-white [&_.swiper-pagination-progressbar-fill]:bg-white hidden visual-pagination tablet:block z-40"
@@ -961,8 +1043,8 @@
               <div
                 class="absolute right-0 flex items-center justify-center w-5 h-5 mx-4 cursor-pointer footer-btn"
               >
-              <img src="public/images/footer-more.png" alt="footer 더 보기">
-            </div>
+                <img src="public/images/footer-more.png" alt="footer 더 보기" />
+              </div>
             </div>
 
             <div
@@ -1001,7 +1083,9 @@
                   </a>
                   <span class="block"> (월~금: AM 09:00~PM 06:00) </span>
                 </div>
-                <div class="w-[15%] h-[15%] mark bottom-0 border border-black tablet:w-[50px] tablet:h-[40px]">
+                <div
+                  class="w-[15%] h-[15%] mark bottom-0 border border-black tablet:w-[50px] tablet:h-[40px]"
+                >
                   <img
                     src="public/images/web-mark.png"
                     alt="웹 접근성 통과 마크"
@@ -1013,7 +1097,7 @@
         </div>
         <!-- pc -->
         <div class="hidden bg-white footer-pc pc:block">
-          <div class="px-5 footer-inner max-w-[1100px] mx-auto">
+          <div class="footer-inner max-w-[1100px] mx-auto">
             <div class="footer-menu h-[55px] bg-teal-600 w-full">
               <ul class="flex items-center h-full gap-4">
                 <li>
