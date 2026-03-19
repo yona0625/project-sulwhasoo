@@ -39,28 +39,38 @@ const allSearch = {
     const searchBtn = document.querySelectorAll(".mobile-search, .pc-search");
     const searchCloseBtn = document.querySelector(".search-close");
     const header = document.querySelector("header");
-    const headerNav = document.querySelectorAll("header, .pc-menu");
+    const pcMenu = document.querySelector(".pc-menu");
+    const headerNav = [header, pcMenu];
 
+    /* 검색창 활성화 시 */
     searchBtn.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
-        searchBar.classList.toggle("active");
-        headerNav.forEach((item) => item.classList.toggle("bg-white"));
+        e.preventDefault();
+
+        searchBar.classList.add("active");
+        headerNav.forEach((item) => item.classList.add("bg-white"));
       });
     });
-    document.addEventListener("click", (e) => {
-      if (!searchBar.contains(e.target)) {
-        searchBar.classList.remove("active");
-      }
-      if (
-        !header.contains(e.target) &&
-        searchBar.classList.contains("active")
-      ) {
-        headerNav.forEach((item) => item.classList.toggle("bg-white"));
-      }
-    });
-    searchCloseBtn.addEventListener("click", () => {
+    /* 검색창 닫을 시 */
+    searchCloseBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
       searchBar.classList.remove("active");
+    });
+    document.addEventListener("click", (e) => {
+      const currentHeader = header.contains(e.target);
+      const currentSearchBar = searchBar.contains(e.target);
+
+      /* 검색창 활성화인 상태에서 검색창을 벗어나면, 검색창만 닫음 */
+      if (searchBar.classList.contains("active") && !currentSearchBar) {
+        searchBar.classList.remove("active");
+        /* return이 없다면 바로 밑의 if문이 실행되어서 순차적으로 배경 해제가 이루어지지 않음. */
+        return;
+      }
+      /* 검색창이 닫히고, 헤더를 벗어나면 헤더 배경 해제 */
+      if (!currentSearchBar && !currentHeader) {
+        headerNav.forEach((item) => item.classList.remove("bg-white"));
+      }
     });
   },
 };
@@ -204,10 +214,14 @@ const footerInfo = {
     const footerInfoBtn = document.querySelector(".footer-btn");
     const footerAllInfo = document.querySelector(".footer-wrap");
     footerInfoBtn.addEventListener("click", () => {
+      /* 버튼 */
+      footerInfoBtn.classList.toggle("footer-btn-active");
       footerToggle = footerAllInfo.style;
       if (footerToggle.maxHeight === "") {
+        footerAllInfo.classList.add("footer-open");
         footerToggle.maxHeight = footerAllInfo.scrollHeight + "px";
       } else {
+        footerAllInfo.classList.remove("footer-open");
         footerToggle.maxHeight = "";
       }
     });

@@ -24,11 +24,15 @@
   <body class="mx-auto bg-white min-w-[320px]">
     <div class="relative w-full mx-auto wrapper min-w-80">
       <!-- top -->
-       <div class="go-top max-w-[1100px] w-full left-1/2 -translate-x-1/2 fixed z-30 bottom-20 transition-all opacity-0 [&.active]:opacity-100">
-        <div class="w-[40px] h-[40px] pc:w-[60px] pc:h-[60px] ml-auto bg-black/50">
-          <img src="public/images/top-btn.png" alt="상단으로 이동">
+      <div
+        class="go-top max-w-[1100px] w-full left-1/2 -translate-x-1/2 fixed z-30 bottom-20 transition-all opacity-0 [&.active]:opacity-100 pointer-events-none"
+      >
+        <div
+          class="w-[40px] h-[40px] pc:w-[60px] pc:h-[60px] ml-auto bg-black/50 pointer-events-auto cursor-pointer"
+        >
+          <img src="public/images/top-btn.png" alt="상단으로 이동" />
         </div>
-       </div>
+      </div>
       <!-- header -->
       <header
         class="absolute top-0 left-0 z-20 w-full text-white transition-all duration-300 group hover:bg-white hover:text-black [&.bg-white]:text-black"
@@ -57,7 +61,12 @@
               <img
                 src="public/images/search-icon.svg"
                 alt="검색 아이콘"
-                class="brightness-0 invert group-hover:brightness-100 group-hover:invert-0 group-[.bg-white]:brightness-100 group-[.bg-white]:invert-0"
+                class="brightness-0 invert group-hover:brightness-100 group-hover:invert-0 group-[.bg-white]:brightness-100 group-[.bg-white]:invert-0 [.search-active_&]:hidden"
+              />
+              <img
+                src="public/images/search-close-x.png"
+                alt="검색 닫기 아이콘"
+                class="hidden [.search-active_&]:block"
               />
             </a>
           </div>
@@ -158,7 +167,12 @@
                   <img
                     src="public/images/search-icon.svg"
                     alt="검색 아이콘"
-                    class="brightness-0 invert group-hover:invert-0 group-[&.bg-white]:invert-0"
+                    class="brightness-0 invert group-hover:invert-0 group-[&.bg-white]:invert-0 [.search-active_&]:hidden"
+                  />
+                  <img
+                    src="public/images/search-close-x.png"
+                    alt="검색 닫기 아이콘"
+                    class="hidden [.search-active_&]:block"
                   />
                 </div>
               </div>
@@ -170,7 +184,7 @@
           class="pc-menu absolute h-[45px] w-full top-[78px] z-10 hidden pc:block group-hover:bg-white transition-all duration-300 [&>li>a]:text-white group-hover:[&>li>a]:text-black"
         >
           <ul
-            class="pc:max-w-[1100px] h-full mx-auto flex items-center justify-center [&_li]:h-full [&_a]:h-full [&_a]:flex [&_a]:items-center [&>li:hover]:bg-red-300"
+            class="pc:max-w-[1100px] h-full mx-auto flex items-center justify-center [&_li]:h-full [&_a]:h-full [&_a]:flex [&_a]:items-center [&_a]:relative [&_a:after]:content-[''] [&_a:after]:absolute [&_a:after]:bottom-0 [&_a:after]:inset-x-4 [&_a:after]:h-[2px] [&_a:after]:bg-black [&_a:after]:opacity-0 hover:[&_a:after]:opacity-100 [&_a:after]:transition-opacity [&_a:after]:duration-500 group-hover:border-b group-hover:border-b-gray-200"
           >
             <li>
               <a href="#none" class="block p-4"> 윤조 </a>
@@ -189,7 +203,7 @@
               <a href="#none" class="block px-4"> 제품 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden border-t border-t-gray"
+                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
               >
                 <li>
                   <a href="#none" class="block px-4"> 스킨케어 </a>
@@ -206,7 +220,7 @@
               <a href="#none" class="block p-4"> 스파 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden border-t border-t-gray"
+                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
               >
                 <li>
                   <a href="#none" class="block px-4"> 소개 </a>
@@ -226,7 +240,7 @@
               <a href="#none" class="block p-4"> 플래그십 스토어 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden border-t border-t-gray"
+                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
               >
                 <li>
                   <a href="#none" class="block px-4"> 플래그십 스토어 </a>
@@ -243,7 +257,7 @@
               <a href="#none" class="block p-4"> ABOUT 설화수 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden border-t border-t-gray"
+                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
               >
                 <li>
                   <a href="#none" class="block px-4"> 브랜드 스토리 </a>
@@ -650,7 +664,7 @@
 
       <!-- 1 -->
       <section
-        class="recommend w-full px-5 bg-white mt-[30px] max-w-[1440px] mx-auto pc:mt-[120px]"
+        class="recommend w-full px-5 bg-white mt-[30px] max-w-[1440px] mx-auto pc:mt-[120px] [&_p]:leading-tight"
       >
         <h2 class="text-2xl font-semibold text-center tablet:text-left">
           설화수 추천
@@ -666,12 +680,12 @@
                 />
               </div>
               <div
-                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center justify-center text-center"
+                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center text-center mt-[5%]"
               >
                 <h2 class="font-bold tracking-[-1.5px] text-[15px]">
                   진설크림 리치
                 </h2>
-                <p class="text-[11px] tracking-[-0.3px]">
+                <p class="text-[11px] tracking-[-0.3px] px-[20px]"">
                   The Ultimate S Cream Rich
                 </p>
                 <span class="text-[12px] mt-2"> 520,000원 </span>
@@ -686,7 +700,7 @@
                 />
               </div>
               <div
-                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center justify-center text-center"
+                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center text-center mt-[5%]"
               >
                 <h2 class="font-bold tracking-[-1.5px] text-[15px]">
                   자음생앰플
@@ -706,7 +720,7 @@
                 />
               </div>
               <div
-                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center justify-center text-center"
+                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center text-center mt-[5%]"
               >
                 <h2 class="font-bold tracking-[-1.5px] text-[15px]">백삼팩</h2>
                 <p class="text-[11px] tracking-[-0.3px]">
@@ -724,7 +738,7 @@
                 />
               </div>
               <div
-                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center justify-center text-center"
+                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center text-center mt-[5%]"
               >
                 <h2 class="font-bold tracking-[-1.5px] text-[15px]">
                   퍼펙팅 립컬러
@@ -744,7 +758,7 @@
                 />
               </div>
               <div
-                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center justify-center text-center"
+                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center text-center mt-[5%]"
               >
                 <h2 class="font-bold tracking-[-1.5px] text-[15px]">
                   퍼펙팅 트윈케이크
@@ -764,7 +778,7 @@
                 />
               </div>
               <div
-                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center justify-center text-center"
+                class="slide-text bg-white w-full h-[95px] tablet:h-[105px] wide:h-[135px] flex flex-col items-center text-center mt-[5%]"
               >
                 <h2 class="font-bold tracking-[-1.5px] text-[15px]">
                   순행클렌징오일
@@ -784,7 +798,7 @@
               class="relative [.recommend-slide_&]:top-auto swiper-pagination tablet:[.recommend-slide_&]:w-[300px] [&_.swiper-pagination-progressbar-fill]:bg-black"
             ></div>
             <div
-              class="z-10 items-center justify-center hidden w-5 h-5 text-black border border-black cursor-pointer reco-autoplay tablet:flex"
+              class="z-10 flex items-center justify-center w-5 h-5 text-black border border-black cursor-pointer reco-autoplay"
             >
               <!-- 아이콘으로 대체 -->
               <div class="hidden play-btn">
@@ -997,7 +1011,7 @@
           class="block bg-white border-t footer-mobile pc:hidden border-t-gray"
         >
           <div class="footer-inner">
-            <div class="footer-sns flex bg-white w-full h-[50px]">
+            <div class="flex w-full bg-white footer-sns h-[55px]">
               <ul class="flex items-center justify-center gap-2 mx-auto">
                 <li class="block">
                   <a href="#none">
@@ -1035,20 +1049,20 @@
             </div>
             <!-- copy -->
             <div
-              class="footer-copy bg-gray-100 flex items-center gap-1 text-[3.4vw] tablet-footer:text-[1.2vw] relative border-t border-t-gray px-4 py-[5%] tablet:h-[55px] tablet:py-0"
+              class="footer-copy bg-gray-100 flex items-center gap-1 text-[3.4vw] tablet-footer:text-[1.2vw] relative border-t border-t-gray px-4 py-[5%] tablet-footer:h-[55px] tablet-footer:py-0"
             >
               @
               <span class="font-bold">AMOREPACIFIC</span>
               CORPORATION. All rights reserved.
               <div
-                class="absolute right-0 flex items-center justify-center w-5 h-5 mx-4 cursor-pointer footer-btn"
+                class="absolute right-0 flex items-center justify-center w-5 h-5 mx-4 cursor-pointer footer-btn [&.footer-btn-active]:rotate-180 transition-all"
               >
-                <img src="public/images/footer-more.png" alt="footer 더 보기" />
+                <img src="public/images/footer-more.png" alt="푸터 더 보기" />
               </div>
             </div>
-
+            <!-- info -->
             <div
-              class="flex-wrap px-4 overflow-hidden transition-all duration-300 bg-gray-100 border-t footer-wrap max-h-0 border-t-gray"
+              class="flex-wrap px-4 overflow-hidden transition-all duration-300 bg-gray-100 border-t footer-wrap max-h-0 border-t-gray [&.footer-open]:min-h-[340px]"
             >
               <ul
                 class="flex flex-wrap gap-x-4 gap-y-1 mt-[15px] text-[3vw] tablet-footer:flex-nowrap tablet-footer:text-[1.2vw]"
@@ -1081,10 +1095,12 @@
                   <a href="#none">
                     고객서비스센터(수신자요금부담) : 080-023-5454
                   </a>
-                  <span class="block"> (월~금: AM 09:00~PM 06:00) </span>
+                  <span class="block tablet-footer:inline">
+                    (월~금: AM 09:00~PM 06:00)
+                  </span>
                 </div>
                 <div
-                  class="w-[15%] h-[15%] mark bottom-0 border border-black tablet:w-[50px] tablet:h-[40px]"
+                  class="w-[15%] h-[15%] mark tablet:w-[50px] tablet:h-[40px] self-end"
                 >
                   <img
                     src="public/images/web-mark.png"
@@ -1097,41 +1113,91 @@
         </div>
         <!-- pc -->
         <div class="hidden bg-white footer-pc pc:block">
-          <div class="footer-inner max-w-[1100px] mx-auto">
-            <div class="footer-menu h-[55px] bg-teal-600 w-full">
-              <ul class="flex items-center h-full gap-4">
-                <li>
-                  <a href="#none"> 회사 소개 </a>
-                </li>
-                <li>
-                  <a href="#none"> 서비스이용약관 </a>
-                </li>
-                <li>
-                  <a href="#none"> 개인정보처리방침 </a>
-                </li>
-                <li>
-                  <a href="#none"> 영상정보처리방침 </a>
-                </li>
-                <li>
-                  <a href="#none"> 사이트맵 </a>
-                </li>
-                <li>
-                  <a href="#none"> 로그인 </a>
-                </li>
-                <li>
-                  <a href="#none"> 위조품 방지 </a>
-                </li>
-              </ul>
-            </div>
-            <div class="relative pt-5 pb-8 bg-yellow-300 info text-[1vw]">
-              고객서비스센터(수신자요금부담) : 080-023-5454 (월~금: AM 09:00~PM
-              06:00)
-              <span class="block">
-                © AMOREPACIFIC CORPORATION. All rights reserved.
-              </span>
+          <div class="w-full border-t footer-wrap border-t-gray-200">
+            <div class="footer-inner">
               <div
-                class="absolute w-40 footer-sns h-[55px] bg-slate-500 right-0 bottom-4"
-              ></div>
+                class="footer-menu h-[55px] bg-white w-full px-10 max-w-[1100px] mx-auto"
+              >
+                <ul class="flex items-center h-full gap-4">
+                  <li>
+                    <a href="#none"> 회사 소개 </a>
+                  </li>
+                  <li>
+                    <a href="#none"> 서비스이용약관 </a>
+                  </li>
+                  <li>
+                    <a href="#none" class="font-bold"> 개인정보처리방침 </a>
+                  </li>
+                  <li>
+                    <a href="#none"> 영상정보처리방침 </a>
+                  </li>
+                  <li>
+                    <a href="#none"> 사이트맵 </a>
+                  </li>
+                  <li>
+                    <a href="#none"> 로그인 </a>
+                  </li>
+                  <li>
+                    <a href="#none"> 위조품 방지 </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-full border-t info-wrap border-t-gray-200">
+                <div
+                  class="relative pt-5 pb-8 bg-white info text-[1vw] p-10 max-w-[1100px] mx-auto"
+                >
+                  고객서비스센터(수신자요금부담) : 080-023-5454 (월~금: AM
+                  09:00~PM 06:00)
+                  <span class="block">
+                    © AMOREPACIFIC CORPORATION. All rights reserved.
+                  </span>
+                  <!-- icon, 1171에서 위로 이동 (임시 처리)-->
+                  <ul
+                    class="flex [&_li]:w-10 [&_li]:h-10 absolute right-10 gap-[3px] bottom-0 min-[1171px]:bottom-[102px]"
+                  >
+                    <li class="block mr-3">
+                      <a href="#none">
+                        <img
+                          src="public/images/web-mark.png"
+                          alt="웹 접근성 마크"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#none">
+                        <img
+                          src="public/images/facebook-icon.png"
+                          alt="페이스북 바로가기"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#none">
+                        <img
+                          src="public/images/insta-icon.png"
+                          alt="인스타그램 바로가기"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#none">
+                        <img
+                          src="public/images/youtube-icon.png"
+                          alt="유튜브 바로가기"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#none">
+                        <img
+                          src="public/images/kakao-icon.png"
+                          alt="카카오 채널 바로가기"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
