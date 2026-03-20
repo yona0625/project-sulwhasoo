@@ -160,7 +160,12 @@
                 <span class="text-[30px]"> Sulwhasoo </span>
                 <img src="" alt="" />
               </div>
-              <div class="flex items-center gap-4 mt-4 link-group h-fit">
+              <div class="flex items-center gap-4 mt-4 link-group h-fit
+                [&>a]:relative
+                [&>a]:flex [&>a]:items-center
+                [&>a:after]:content-[''] 
+                [&>a:after]:w-[1px] [&>a:after]:h-[13px] 
+              [&>a:after]:bg-gray-300 [&>a:after]:ml-3">
                 <a href="#none"> 매장찾기 </a>
                 <a href="#none"> 구매하기 </a>
                 <div class="cursor-pointer pc-search w-[20px] h-[20]px mt-1">
@@ -184,7 +189,14 @@
           class="pc-menu absolute h-[45px] w-full top-[78px] z-10 hidden pc:block group-hover:bg-white transition-all duration-300 [&>li>a]:text-white group-hover:[&>li>a]:text-black"
         >
           <ul
-            class="pc:max-w-[1100px] h-full mx-auto flex items-center justify-center [&_li]:h-full [&_a]:h-full [&_a]:flex [&_a]:items-center [&_a]:relative [&_a:after]:content-[''] [&_a:after]:absolute [&_a:after]:bottom-0 [&_a:after]:inset-x-4 [&_a:after]:h-[2px] [&_a:after]:bg-black [&_a:after]:opacity-0 hover:[&_a:after]:opacity-100 [&_a:after]:transition-opacity [&_a:after]:duration-500 group-hover:border-b group-hover:border-b-gray-200"
+            class="pc:max-w-[1100px] h-full mx-auto flex items-center justify-center [&_li]:h-full
+            [&>li>a]:h-full [&>li>a]:flex [&>li>a]:items-center
+            [&>li>a]:relative
+            [&>li>a:after]:content-[''] [&>li>a:after]:absolute [&>li>a:after]:bottom-0
+            [&>li>a:after]:inset-x-4 [&>li>a:after]:h-[2px]
+            [&>li>a:after]:bg-black [&>li>a:after]:opacity-0 hover:[&>li>a:after]:opacity-100
+            [&>li>a:after]:transition-opacity
+            [&>li>a:after]:duration-500 group-hover:border-b group-hover:border-b-gray-200"
           >
             <li>
               <a href="#none" class="block p-4"> 윤조 </a>
@@ -203,7 +215,8 @@
               <a href="#none" class="block px-4"> 제품 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
+                class="absolute left-0 flex justify-center w-full bg-white top-full
+                [&>li]:py-2 transition-all duration-300 max-h-0 [&.active]:max-h-[300px] overflow-hidden"
               >
                 <li>
                   <a href="#none" class="block px-4"> 스킨케어 </a>
@@ -220,7 +233,8 @@
               <a href="#none" class="block p-4"> 스파 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
+                class="absolute left-0 flex justify-center w-full bg-white top-full
+                [&>li]:py-2 transition-all duration-300 max-h-0 [&.active]:max-h-[300px] overflow-hidden"
               >
                 <li>
                   <a href="#none" class="block px-4"> 소개 </a>
@@ -240,7 +254,8 @@
               <a href="#none" class="block p-4"> 플래그십 스토어 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
+                class="absolute left-0 flex justify-center w-full bg-white top-full
+                [&>li]:py-2 transition-all duration-300 max-h-0 [&.active]:max-h-[300px] overflow-hidden"
               >
                 <li>
                   <a href="#none" class="block px-4"> 플래그십 스토어 </a>
@@ -257,13 +272,14 @@
               <a href="#none" class="block p-4"> ABOUT 설화수 </a>
               <!-- panel -->
               <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full transition-all duration-500 invisible opacity-0 max-h-0 [&.active]:opacity-100 [&.active]:visible [&.active]:max-h-[100px] overflow-hidden"
+                class="absolute left-0 flex justify-center w-full bg-white top-full
+                [&>li]:py-2 transition-all duration-300 max-h-0 [&.active]:max-h-[300px] overflow-hidden"
               >
                 <li>
                   <a href="#none" class="block px-4"> 브랜드 스토리 </a>
                 </li>
                 <li>
-                  <div>
+                  <div class="space-y-2">
                     <a href="#none" class="block px-4"> 브랜드 지속가능성 </a>
                     <a href="#none" class="block px-4"> 지속가능성 </a>
                     <a href="#none" class="block px-4"> 위조품 방지 </a>
@@ -337,7 +353,7 @@
               </a>
               <!-- panel -->
               <ul
-                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-gray-200"
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 px-4 [&>li>a]:py-4 divide-y divide-gray-200"
               >
                 <li>
                   <a href="#none" class="block"> 스킨케어</a>
@@ -364,7 +380,7 @@
               </a>
               <!-- panel -->
               <ul
-                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-gray-200"
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 px-4 [&>li>a]:py-4 divide-y divide-gray-200"
               >
                 <li>
                   <a href="#none" class="block"> 소개 </a>
@@ -395,7 +411,7 @@
               </a>
               <!-- panel -->
               <ul
-                class="overflow-hidden transition-all duration-300 bg-gray-50 max-h-0 [&.active]:max-h-[500px] [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-gray-200"
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 px-4 [&>li>a]:py-4 divide-y divide-gray-200"
               >
                 <li>
                   <a href="#none" class="block"> 플래그십 스토어</a>
@@ -422,13 +438,13 @@
               </a>
               <!-- panel -->
               <ul
-                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 [&>li>a]:mx-4 [&>li>a]:py-4 [&>li>a]:border-b [&>li>a]:border-b-gray-200"
+                class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 px-4 [&>li>a]:py-4 divide-y divide-gray-200"
               >
                 <li>
                   <a href="#none" class="block"> 브랜드 스토리 </a>
                 </li>
                 <!-- + more -->
-                <li class="openSubMenu">
+                <li class="border-b openSubMenu border-b-gray-200">
                   <a href="#none" class="relative flex [&.bold]:font-bold">
                     브랜드 지속 가능성
                     <div class="absolute right-0 w-5 h-5 menuPlus">
@@ -441,9 +457,9 @@
                     </div>
                   </a>
                   <ul
-                    class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 [&>li>a]:mx-4 [&>li>a]:px-8 [&>li>a]:py-1 [&>li:last-child>a]:border-b [&>li>a]:border-b-gray-200"
+                    class="overflow-hidden transition-all duration-300 max-h-0 [&.active]:max-h-[500px] bg-gray-50 [&>li>a]:px-4 [&>li>a]:py-4"
                   >
-                    <li>
+                    <li class="border-t border-t-gray-200">
                       <a href="#none" class="block"> 지속 가능성 </a>
                     </li>
                     <li>
@@ -1062,10 +1078,17 @@
             </div>
             <!-- info -->
             <div
-              class="flex-wrap px-4 overflow-hidden transition-all duration-300 bg-gray-100 border-t footer-wrap max-h-0 border-t-gray [&.footer-open]:min-h-[340px]"
+              class="px-4 overflow-hidden transition-all duration-300 bg-gray-100 border-t footer-wrap max-h-0 border-t-gray [&.footer-open]:min-h-[340px]"
             >
+            
+            <div class="tablet-footer:flex tablet-footer:gap-x-3">
               <ul
-                class="flex flex-wrap gap-x-4 gap-y-1 mt-[15px] text-[3vw] tablet-footer:flex-nowrap tablet-footer:text-[1.2vw]"
+                class="flex gap-x-3 gap-y-1 mt-[15px] text-[3vw] tablet-footer:text-[1.2vw]
+                [&>li>a:hover]:underline
+                [&>li]:relative [&>li]:flex [&>li]:items-center
+                [&>li:after]:content-['']
+                [&>li:after]:w-[1px] [&>li:after]:h-[15px] 
+              [&>li:after]:bg-gray-300 [&>li:after]:ml-3"
               >
                 <li>
                   <a href="#none"> 회사소개 </a>
@@ -1076,7 +1099,14 @@
                 <li>
                   <a href="#none" class="font-bold"> 개인정보처리방침 </a>
                 </li>
-                <li class="w-full h-0 tablet-footer:hidden"></li>
+              </ul>
+              <ul
+                class="flex gap-x-3 gap-y-1 mt-[15px] text-[3vw] tablet-footer:text-[1.2vw]
+                [&>li>a:hover]:underline
+                [&>li]:relative [&>li]:flex [&>li]:items-center
+                [&>li:not(:last-child):after]:content-['']
+                [&>li:after]:w-[1px] [&>li:after]:h-[15px] 
+              [&>li:after]:bg-gray-300 [&>li:after]:ml-3">
                 <li>
                   <a href="#none"> 영상정보처리방침 </a>
                 </li>
@@ -1087,12 +1117,13 @@
                   <a href="#none"> 위조품 방지 </a>
                 </li>
               </ul>
-              <!-- info -->
+            </div>
+             
               <div
-                class="info relative flex flex-row gap-2 py-5 footer-pc text-[3vw] tablet-footer:text-[1.2vw] w-full justify-between"
+                class="info relative flex flex-row gap-2 py-5 footer-pc text-[3vw] tablet-footer:text-[1.2vw] w-full justify-between text-gray-400"
               >
                 <div>
-                  <a href="#none">
+                  <a href="#none" class="[&:hover]:underline">
                     고객서비스센터(수신자요금부담) : 080-023-5454
                   </a>
                   <span class="block tablet-footer:inline">
@@ -1116,11 +1147,16 @@
           <div class="w-full border-t footer-wrap border-t-gray-200">
             <div class="footer-inner">
               <div
-                class="footer-menu h-[55px] bg-white w-full px-10 max-w-[1100px] mx-auto"
+                class="footer-menu h-[55px] bg-white w-full px-10 max-w-[1100px] mx-auto text-gray-500"
               >
-                <ul class="flex items-center h-full gap-4">
+                <ul class="flex items-center h-full gap-4
+                  [&>li]:relative [&>li]:flex [&>li]:items-center
+                  [&>li>a:hover]:underline
+                  [&>li:not(:last-child):after]:content-['']
+                  [&>li:after]:w-[1px] [&>li:after]:h-[15px] 
+                [&>li:after]:bg-gray-300 [&>li:after]:ml-3">
                   <li>
-                    <a href="#none"> 회사 소개 </a>
+                    <a href="#none"> 회사소개 </a>
                   </li>
                   <li>
                     <a href="#none"> 서비스이용약관 </a>
@@ -1144,11 +1180,11 @@
               </div>
               <div class="w-full border-t info-wrap border-t-gray-200">
                 <div
-                  class="relative pt-5 pb-8 bg-white info text-[1vw] p-10 max-w-[1100px] mx-auto"
+                  class="relative pt-5 pb-8 bg-white info text-[1vw] p-10 max-w-[1100px] mx-auto text-gray-500"
                 >
                   고객서비스센터(수신자요금부담) : 080-023-5454 (월~금: AM
                   09:00~PM 06:00)
-                  <span class="block">
+                  <span class="block [&:hover]:text-black">
                     © AMOREPACIFIC CORPORATION. All rights reserved.
                   </span>
                   <!-- icon, 1171에서 위로 이동 (임시 처리)-->
