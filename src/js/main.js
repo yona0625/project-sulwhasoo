@@ -34,10 +34,14 @@ goTop.init();
 
 const allSearch = {
   init: function () {
+    /* 클래스명 좀 더 직관적으로 알기 쉽게 바꾸기.
+    현재
+    1. 아이콘이 눌렸을 때: search-active
+    2. 검색창이 열렸을 때: active */
+
     /* mobile */
     const searchBar = document.querySelector(".search-bar");
     const searchBtn = document.querySelectorAll(".mobile-search, .pc-search");
-    const searchCloseBtn = document.querySelector(".search-close");
     const header = document.querySelector("header");
     const pcMenu = document.querySelector(".pc-menu");
     const headerNav = [header, pcMenu];
@@ -48,15 +52,17 @@ const allSearch = {
         e.stopPropagation();
         e.preventDefault();
 
-        searchBar.classList.add("active");
-        headerNav.forEach((item) => item.classList.add("bg-white"));
+        /* 검색 아이콘, 검색 창 토글 - html 구조 상 add/remove(X) */
+        searchBar.classList.toggle("active");
+        header.classList.toggle("search-active");
+
+        /* 헤더 활성화 시 배경 유지하도록 */
+        const headerOpen = header.classList.contains("active");
+        headerNav.forEach((item) => item.classList.add("bg-white"), headerOpen);
       });
     });
-    /* 검색창 닫을 시 */
-    searchCloseBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      searchBar.classList.remove("active");
-    });
+
+    /* 하위 메뉴 컨트롤 */
     document.addEventListener("click", (e) => {
       const currentHeader = header.contains(e.target);
       const currentSearchBar = searchBar.contains(e.target);
@@ -65,6 +71,7 @@ const allSearch = {
       if (searchBar.classList.contains("active") && !currentSearchBar) {
         searchBar.classList.remove("active");
         /* return이 없다면 바로 밑의 if문이 실행되어서 순차적으로 배경 해제가 이루어지지 않음. */
+        header.classList.remove("search-active");
         return;
       }
       /* 검색창이 닫히고, 헤더를 벗어나면 헤더 배경 해제 */
