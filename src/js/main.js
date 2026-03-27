@@ -40,9 +40,12 @@ const allSearch = {
     2. 검색창이 열렸을 때: active */
 
     /* mobile */
+    const body = document.body;
+    const dimmed = document.querySelector(".dimmed");
     const searchBar = document.querySelector(".search-bar");
     const searchBtn = document.querySelectorAll(".mobile-search, .pc-search");
     const header = document.querySelector("header");
+    const searchFold = document.querySelector(".search-close");
     const pcMenu = document.querySelector(".pc-menu");
     const headerNav = [header, pcMenu];
 
@@ -52,14 +55,34 @@ const allSearch = {
         e.stopPropagation();
         e.preventDefault();
 
-        /* 검색 아이콘, 검색 창 토글 - html 구조 상 add/remove(X) */
+        /* 검색 아이콘, 검색 창, 배경 딤드 토글 - html 구조 상 add/remove(X) */
         searchBar.classList.toggle("active");
         header.classList.toggle("search-active");
+        dimmed.classList.toggle("hidden");
+
+        /* 딤드 시 스크롤 방지 */
+        if(!dimmed.classList.contains("hidden")) {
+          body.style.overflow = "hidden";
+        } else {
+          /* 스크롤 해제 */
+          body.style.overflow = "";
+        }
 
         /* 헤더 활성화 시 배경 유지하도록 */
         const headerOpen = header.classList.contains("active");
-        headerNav.forEach((item) => item.classList.add("bg-white"), headerOpen);
+        const searchOpen = header.classList.contains("search-active");
+        if (headerOpen || searchOpen) {
+          headerNav.forEach((item) => item.classList.add("bg-white"));
+        } else {
+          headerNav.forEach((item) => item.classList.remove("bg-white"));
+        }
       });
+    });
+
+    searchFold.addEventListener("click", () => {
+      searchBar.classList.remove("active");
+      dimmed.classList.add("hidden");
+      body.style.overflow = "";
     });
 
     /* 하위 메뉴 컨트롤 */
@@ -72,6 +95,8 @@ const allSearch = {
         searchBar.classList.remove("active");
         /* return이 없다면 바로 밑의 if문이 실행되어서 순차적으로 배경 해제가 이루어지지 않음. */
         header.classList.remove("search-active");
+        dimmed.classList.add("hidden");
+        body.style.overflow = "";
         return;
       }
       /* 검색창이 닫히고, 헤더를 벗어나면 헤더 배경 해제 */
@@ -85,10 +110,12 @@ allSearch.init();
 
 const selectLang = {
   init: function () {
-    const langBtn = document.querySelector(".language-btn");
+    const openLang = document.querySelector(".language > div");
     const langList = document.querySelector(".language-list");
-    langBtn.addEventListener("click", () => {
+    const langBtn = document.querySelector(".language-btn");
+    openLang.addEventListener("click", () => {
       langList.classList.toggle("hidden");
+      langBtn.classList.toggle("open");
     });
   },
 };
