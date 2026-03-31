@@ -9,7 +9,7 @@
     />
     <title>시간의 흐름에 지지 않는 아름다움을 위한 여정 | 설화수</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -31,7 +31,7 @@
       <div class="fixed inset-0 z-[5] hidden bg-black/50 dimmed"></div>
       <!-- top -->
       <div
-        class="go-top max-w-[1200px] w-full left-1/2 -translate-x-1/2 fixed z-30 bottom-20 transition-all opacity-0 [&.active]:opacity-100 pointer-events-none"
+        class="go-top pc:w-[1100px] w-full left-1/2 -translate-x-1/2 fixed z-30 bottom-0 transition-all opacity-0 translate-y-10 [&.active]:translate-y-0 [&.active]:opacity-100 pointer-events-none duration-300 active"
       >
         <div
           class="w-[40px] h-[40px] pc:w-[60px] pc:h-[60px] ml-auto bg-black/50 pointer-events-auto cursor-pointer"
@@ -115,9 +115,9 @@
           <div class="relative hidden w-full h-full pc:block px-[7%]">
             <div class="w-full flex justify-between max-w-[1100px] mx-auto">
               <!-- 언어 선택 -->
-              <div class="relative flex flex-col mt-4 language">
+              <div class="relative z-30 flex flex-col mt-4 language">
                 <div class="flex [&>a]:text-[15px]">
-                  <a href="#none"> 한국/한국어 </a>
+                  <a href="#none" class="font-light"> 한국/한국어 </a>
                   <div
                     class="flex items-center justify-center w-5 h-5 mt-1 ml-2 cursor-pointer language-btn [&.open]:rotate-180"
                   >
@@ -129,7 +129,7 @@
                   </div>
                 </div>
                 <ul
-                  class="border border-black [&>li_a]:text-black [&>li_a]:text-[13px] [&_a]:py-[3px] [&_a]:px-4 [&_a:hover]:bg-gray-200 bg-white mt-[28px] py-3 z-30 language-list hidden w-[230px] shadow-[0_4px_10px_rgba(0,0,0,0.3)] absolute"
+                  class="border border-black [&>li_a]:text-black [&>li_a]:text-[13px] [&_a]:py-[3px] [&_a]:px-4 [&_a:hover]:bg-gray-200 bg-white mt-[28px] py-3 z-50 language-list hidden w-[230px] shadow-[0_4px_10px_rgba(0,0,0,0.3)] absolute"
                 >
                   <!-- 1~5 -->
                   <li>
@@ -175,8 +175,8 @@
               <div
                 class="flex items-center gap-4 mt-4 link-group h-fit [&>a]:relative [&>a]:flex [&>a]:items-center [&>a:after]:content-[''] [&>a:after]:w-[1px] [&>a:after]:h-[13px] [&>a:after]:bg-gray-300 [&>a:after]:ml-3 [&>a]:text-[15px]"
               >
-                <a href="#none"> 매장찾기 </a>
-                <a href="#none"> 구매하기 </a>
+                <a href="#none" class="font-light"> 매장찾기 </a>
+                <a href="#none" class="font-light"> 구매하기 </a>
                 <div class="cursor-pointer pc-search w-[20px] h-[20]px mt-1">
                   <img
                     src="public/images/search-icon.svg"
@@ -198,7 +198,7 @@
           class="pc-menu absolute h-[45px] w-full top-[78px] z-10 hidden pc:block group-hover:bg-white transition-all duration-500 [&>li>a]:text-white group-hover:[&>li>a]:text-black"
         >
           <ul
-            class="pc:max-w-[1100px] h-full mx-auto flex items-center justify-center [&_li]:h-full [&>li>a]:h-full [&>li>a]:flex [&>li>a]:items-center [&>li>a]:relative [&>li>a:after]:content-[''] [&>li>a:after]:absolute [&>li>a:after]:bottom-0 [&>li>a:after]:inset-x-4 [&>li>a:after]:h-[2px] [&>li>a:after]:bg-black [&>li>a:after]:opacity-0 hover:[&>li>a:after]:opacity-100 [&>li>a:after]:transition-opacity [&>li>a:after]:duration-500 gap-x-2"
+            class="pc:max-w-[1100px] h-full mx-auto flex items-center justify-center [&_li]:h-full [&>li>a]:h-full [&>li>a]:flex [&>li>a]:items-center [&>li>a]:relative [&>li>a:after]:content-[''] [&>li>a:after]:absolute [&>li>a:after]:bottom-0 [&>li>a:after]:inset-x-4 [&>li>a:after]:h-[2px] [&>li>a:after]:bg-black [&>li>a:after]:opacity-0 hover:[&>li>a:after]:opacity-100 [&>li>a:after]:transition-opacity [&>li>a:after]:duration-500 gap-x-2 [&>li>a]:font-light"
           >
             <li>
               <a href="#none" class="block p-4"> 윤조 </a>
@@ -212,95 +212,70 @@
             <li>
               <a href="#none" class="block p-4"> 베스트 셀러 </a>
             </li>
-            <!-- === depth 2 === -->
-            <li>
-              <a href="#none" class="block px-4"> 제품 </a>
-              <!-- panel -->
-              <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full [&>li]:py-2 transition-all duration-300 max-h-0 [&.active]:max-h-[300px] overflow-hidden group-hover:border-t group-hover:border-t-gray-200 [&>li_a]:text-gray-500 [&>li_a]:text-[14px] [&>li>a:hover]:text-black [&>li>a:hover]:font-bold"
-              >
-                <li>
-                  <a href="#none" class="block px-4"> 스킨케어 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 메이크업 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 남성 </a>
-                </li>
-              </ul>
+
+            <li data-menu="product">
+              <a href="#none" class="block px-4">제품</a>
             </li>
-            <li>
-              <a href="#none" class="block p-4"> 스파 </a>
-              <!-- panel -->
-              <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full [&>li]:py-2 transition-all duration-300 max-h-0 [&.active]:max-h-[300px] overflow-hidden group-hover:border-t group-hover:border-t-gray-200 [&>li_a]:text-gray-500 [&>li_a]:text-[14px] [&>li>a:hover]:text-black [&>li>a:hover]:font-bold"
-              >
-                <li>
-                  <a href="#none" class="block px-4"> 소개 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 스파 프로그램 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 예약 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 매장 찾기 </a>
-                </li>
-              </ul>
+            <li data-menu="spa">
+              <a href="#none" class="block px-4">스파</a>
             </li>
-            <li>
-              <a href="#none" class="block p-4"> 플래그십 스토어 </a>
-              <!-- panel -->
-              <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full [&>li]:py-2 transition-all duration-300 max-h-0 [&.active]:max-h-[300px] overflow-hidden group-hover:border-t group-hover:border-t-gray-200 [&>li_a]:text-gray-500 [&>li_a]:text-[14px] [&>li>a:hover]:text-black [&>li>a:hover]:font-bold"
-              >
-                <li>
-                  <a href="#none" class="block px-4"> 플래그십 스토어 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 설화수 북촌 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 설화수 도산 </a>
-                </li>
-              </ul>
+            <li data-menu="store">
+              <a href="#none" class="block px-4">플래그십 스토어</a>
             </li>
-            <li>
-              <a href="#none" class="block p-4"> ABOUT 설화수 </a>
-              <!-- panel -->
-              <ul
-                class="absolute left-0 flex justify-center w-full bg-white top-full [&>li]:py-2 transition-all duration-300 max-h-0 [&.active]:max-h-[300px] overflow-hidden group-hover:border-t group-hover:border-t-gray-200 [&>li_a]:text-gray-500 [&>li_a]:text-[14px] [&>li>a:hover]:text-black [&>li>a:hover]:font-bold"
-              >
-                <li>
-                  <a href="#none" class="block px-4"> 브랜드 스토리 </a>
-                </li>
-                <li>
-                  <div class="space-y-2 [&>a:hover]:text-black [&>a:hover]:font-bold">
-                    <a href="#none" class="block px-4"> 브랜드 지속가능성 </a>
-                    <a href="#none" class="block px-4"> 지속가능성 </a>
-                    <a href="#none" class="block px-4"> 위조품 방지 </a>
-                  </div>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 설화문화전 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 살롱 설화수 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 컬처프로젝트 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 브랜드 뉴스 </a>
-                </li>
-                <li>
-                  <a href="#none" class="block px-4"> 명작컬렉션 </a>
-                </li>
-              </ul>
+            <li data-menu="about">
+              <a href="#none" class="block p-4">ABOUT 설화수</a>
             </li>
           </ul>
+
+          <!-- 공통 패널 -->
+          <div
+            id="pc-allmenu"
+            class="absolute left-0 w-full bg-white overflow-hidden h-0 transition-[height] duration-300 ease-in-out [&>ul>li]:font-light"
+          >
+            <ul
+              id="panel-product"
+              class="hidden flex-row justify-center py-1 [&>li]:px-4 [&_a]:text-gray-500 [&_a]:text-[14px] [&_a:hover]:text-black [&_a:hover]:font-semibold border-t border-t-gray-200"
+            >
+              <li><a href="#none" class="block py-1">스킨케어</a></li>
+              <li><a href="#none" class="block py-1">메이크업</a></li>
+              <li><a href="#none" class="block py-1">남성</a></li>
+            </ul>
+            <ul
+              id="panel-spa"
+              class="hidden flex-row justify-center py-1 [&>li]:px-4 [&_a]:text-gray-500 [&_a]:text-[14px] [&_a:hover]:text-black [&_a:hover]:font-semibold border-t border-t-gray-200"
+            >
+              <li><a href="#none" class="block py-1">소개</a></li>
+              <li><a href="#none" class="block py-1">스파 프로그램</a></li>
+              <li><a href="#none" class="block py-1">예약</a></li>
+              <li><a href="#none" class="block py-1">매장 찾기</a></li>
+            </ul>
+            <ul
+              id="panel-store"
+              class="hidden flex-row justify-center py-1 [&>li]:px-4 [&_a]:text-gray-500 [&_a]:text-[14px] [&_a:hover]:text-black [&_a:hover]:font-semibold border-t border-t-gray-200"
+            >
+              <li><a href="#none" class="block py-1">플래그십 스토어</a></li>
+              <li><a href="#none" class="block py-1">설화수 북촌</a></li>
+              <li><a href="#none" class="block py-1">설화수 도산</a></li>
+            </ul>
+            <ul
+              id="panel-about"
+              class="hidden flex-row justify-center py-1 [&>li]:px-4 [&_a]:text-gray-500 [&_a]:text-[14px] [&_a:hover]:text-black [&_a:hover]:font-semibold border-t border-t-gray-200"
+            >
+              <li><a href="#none" class="block py-1">브랜드 스토리</a></li>
+              <li>
+                <div class="px-4 py-1 space-y-3">
+                  <a href="#none" class="block">브랜드 지속가능성</a>
+                  <a href="#none" class="block">지속가능성</a>
+                  <a href="#none" class="block">위조품 방지</a>
+                </div>
+              </li>
+              <li><a href="#none" class="block py-1">설화문화전</a></li>
+              <li><a href="#none" class="block py-1">살롱 설화수</a></li>
+              <li><a href="#none" class="block py-1">컬처프로젝트</a></li>
+              <li><a href="#none" class="block py-1">브랜드 뉴스</a></li>
+              <li><a href="#none" class="block py-1">명작컬렉션</a></li>
+            </ul>
+          </div>
         </div>
         <!-- mobile-menu -->
         <!-- 테스트 후 translate-x-0 삭제 -->
@@ -340,7 +315,7 @@
               <a href="#none" class="block"> 베스트 셀러 </a>
             </li>
             <li class="openMenu">
-              <a href="#none" class="relative flex [&.bold]:font-bold">
+              <a href="#none" class="relative flex [&.bold]:font-semibold">
                 제품
                 <div class="absolute w-5 h-5 right-5 menuPlus">
                   <span
@@ -367,7 +342,7 @@
               </ul>
             </li>
             <li class="openMenu">
-              <a href="#none" class="relative flex [&.bold]:font-bold">
+              <a href="#none" class="relative flex [&.bold]:font-semibold">
                 스파
                 <div class="absolute w-5 h-5 right-5 menuPlus">
                   <span
@@ -398,7 +373,7 @@
             </li>
             <!-- 7~8 -->
             <li class="openMenu">
-              <a href="#none" class="relative flex [&.bold]:font-bold">
+              <a href="#none" class="relative flex [&.bold]:font-semibold">
                 플래그십 스토어
                 <div class="absolute w-5 h-5 right-5 menuPlus">
                   <span
@@ -425,7 +400,7 @@
               </ul>
             </li>
             <li class="openMenu">
-              <a href="#none" class="relative flex [&.bold]:font-bold">
+              <a href="#none" class="relative flex [&.bold]:font-semibold">
                 ABOUT 설화수
                 <div class="absolute w-5 h-5 more right-5 menuPlus">
                   <span
@@ -445,7 +420,7 @@
                 </li>
                 <!-- + more -->
                 <li class="border-b openSubMenu border-b-gray-200">
-                  <a href="#none" class="relative flex [&.bold]:font-bold">
+                  <a href="#none" class="relative flex [&.bold]:font-semibold">
                     브랜드 지속 가능성
                     <div class="absolute right-0 w-5 h-5 menuPlus">
                       <span
@@ -528,16 +503,16 @@
           <div class="h-full swiper-wrapper">
             <div class="flex flex-col swiper-slide">
               <div
-                class="text-area flex-[3_3_0%] text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.2)] flex flex-col justify-end tablet:absolute tablet:bottom-[30%] tablet:text-left max-w-[1440px] w-full tablet:left-1/2 tablet:-translate-x-1/2 px-[5%] wide:bottom-[24%] wide:px-0 tablet:px-[50px] z-10 wide:pl-[140px] min-[1661px]:pl-0"
+                class="text-area flex-[3_3_0%] text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.2)] flex flex-col justify-end tablet:absolute tablet:bottom-[30%] tablet:text-left max-w-[1440px] w-full tablet:left-1/2 tablet:-translate-x-1/2 px-[5%] wide:bottom-[24%] wide:px-0 tablet:px-[50px] z-10 wide:pl-[140px] min-[1661px]:pl-0 pc:pl-[80px]"
               >
-                <div class="py-[7px] text-wrap">
+                <div class="mb-[10px] text-wrap pc:mb-[5px] flex flex-col gap-y-2">
                   <h2
-                    class="text-[14px] translate-y-10 opacity-0 transition-all delay-[800ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[19px] mb-[8px] tablet:mb-[12px] wide:mb-[20px]"
+                    class="text-[18px] translate-y-10 opacity-0 transition-all delay-[800ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[19px] mb-[8px] tablet:mb-[12px] wide:mb-[20px] font-light"
                   >
                     다시 짙어지지 않고* 맑게 이어지는 피부
                   </h2>
                   <p
-                    class="text-[22px] font-bold tablet:text-[26px] translate-y-10 opacity-0 transition-all delay-[900ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[35px]"
+                    class="text-[26px] font-semibold tablet:text-[26px] translate-y-10 opacity-0 transition-all delay-[900ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[35px]"
                   >
                     설화수 자정앰플세럼
                   </p>
@@ -564,14 +539,14 @@
               <div
                 class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-black drop-shadow-[0_0_2px_rgba(0,0,0,0.2)] flex flex-col justify-end tablet:absolute tablet:bottom-[30%] tablet:text-left max-w-[1440px] w-full tablet:left-1/2 tablet:-translate-x-1/2 px-[5%] wide:bottom-[24%] wide:px-0 tablet:px-[50px] wide:pl-[140px] min-[1661px]:pl-0"
               >
-                <div class="py-[7px] text-wrap">
+                <div class="mb-[10px] text-wrap pc:mb-[5px] flex flex-col gap-y-2">
                   <h2
-                    class="text-[14px] translate-y-10 opacity-0 transition-all delay-[800ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[19px] mb-[8px] tablet:mb-[12px] wide:mb-[20px]"
+                    class="text-[18px] translate-y-10 opacity-0 transition-all delay-[800ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[19px] mb-[8px] tablet:mb-[12px] wide:mb-[20px] font-light"
                   >
                     리버스에이징의 궁극적 테크놀로지
                   </h2>
                   <p
-                    class="text-[22px] font-bold tablet:text-[26px] translate-y-10 opacity-0 transition-all delay-[900ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[35px]"
+                    class="text-[26px] font-semibold translate-y-10 opacity-0 transition-all delay-[900ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[35px]"
                   >
                     NEW 진설 인퓨전 트리트먼트
                   </p>
@@ -598,14 +573,14 @@
               <div
                 class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-white drop-shadow-[0_0_2px_rgba(0,0,0,0.2)] flex flex-col justify-end tablet:absolute tablet:bottom-[30%] tablet:text-left max-w-[1440px] w-full tablet:left-1/2 tablet:-translate-x-1/2 px-[5%] wide:bottom-[24%] wide:px-0 tablet:px-[50px] wide:pl-[140px] min-[1661px]:pl-0"
               >
-                <div class="py-[7px] text-wrap">
+                <div class="mb-[10px] text-wrap pc:mb-[5px] flex flex-col gap-y-2">
                   <h2
-                    class="text-[14px] translate-y-10 opacity-0 transition-all delay-[800ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[19px] mb-[8px] tablet:mb-[12px] wide:mb-[20px]"
+                    class="text-[18px] translate-y-10 opacity-0 transition-all delay-[800ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[19px] mb-[8px] tablet:mb-[12px] wide:mb-[20px] font-light"
                   >
                     스스로 탄력을 채워 모든 시간을 밀도 있게
                   </h2>
                   <p
-                    class="text-[22px] font-bold tablet:text-[26px] translate-y-10 opacity-0 transition-all delay-[900ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[35px]"
+                    class="text-[26px] font-semibold translate-y-10 opacity-0 transition-all delay-[900ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[35px]"
                   >
                     자음생크림
                   </p>
@@ -632,14 +607,14 @@
               <div
                 class="text-area flex-[3_3_0%] z-10 text-center tracking-[-1.5px] text-black drop-shadow-[0_0_2px_rgba(0,0,0,0.2)] flex flex-col justify-end tablet:absolute tablet:bottom-[30%] tablet:text-left max-w-[1440px] w-full tablet:left-1/2 tablet:-translate-x-1/2 px-[5%] wide:bottom-[24%] wide:px-0 tablet:px-[50px] wide:pl-[140px] min-[1661px]:pl-0"
               >
-                <div class="py-[7px] text-wrap">
+                <div class="mb-[10px] text-wrap pc:mb-[5px] flex flex-col gap-y-2">
                   <h2
-                    class="text-[14px] translate-y-10 opacity-0 transition-all delay-[800ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[19px] mb-[8px] tablet:mb-[12px] wide:mb-[20px]"
+                    class="text-[18px] translate-y-10 opacity-0 transition-all delay-[800ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[19px] mb-[8px] tablet:mb-[12px] wide:mb-[20px] font-light"
                   >
                     AMORE MALL (3/23 ~ 3/29)
                   </h2>
                   <p
-                    class="text-[22px] font-bold tablet:text-[26px] translate-y-10 opacity-0 transition-all delay-[900ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[35px]"
+                    class="text-[26px] font-semibold translate-y-10 opacity-0 transition-all delay-[900ms] duration-1000 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100 wide:text-[35px]"
                   >
                     오픈런 [설화수]
                   </p>
@@ -664,7 +639,7 @@
             </div>
           </div>
           <div
-            class="absolute flex v__paginations bottom-[5%] tablet:bottom-[17%] gap-3 items-center w-full z-50 max-w-[1440px] left-1/2 -translate-x-1/2 px-[5%] wide:px-0 tablet:px-[50px] wide:bottom-[13%] wide:pl-[140px] min-[1661px]:pl-0"
+            class="absolute flex v__paginations bottom-[5%] tablet:bottom-[17%] gap-3 items-center w-full z-50 max-w-[1440px] left-1/2 -translate-x-1/2 px-[5%] wide:px-0 tablet:px-[50px] wide:bottom-[13%] wide:pl-[140px] min-[1661px]:pl-0 pc:pl-[80px]"
           >
             <div
               class="relative [.visual-slide_&]:flex-1 tablet:[.visual-slide_&]:w-[300px] tablet:[.visual-slide_&]:flex-none [.visual-slide_&]:bg-transparent [.visual-slide_&]:border border-white [&_.swiper-pagination-progressbar-fill]:bg-white flex visual-pagination tablet:block z-40 wide:[.visual-slide_&]:w-[420px]"
@@ -731,7 +706,7 @@
                 class="slide-text bg-white w-full h-[95px] tablet:h-[105px] pc:h-[135px] wide:h-[95px] flex flex-col items-center text-center mt-[20px] tablet:mt-[15px] wide:pt-[5px]"
               >
                 <h2
-                  class="font-bold tracking-[-1.5px] text-[15px] wide:text-[20px]"
+                  class="font-semibold tracking-[-1.5px] text-[15px] wide:text-[20px]"
                 >
                   진설크림 리치
                 </h2>
@@ -757,7 +732,7 @@
                 class="slide-text bg-white w-full h-[95px] tablet:h-[105px] pc:h-[135px] wide:h-[95px] flex flex-col items-center text-center mt-[20px] tablet:mt-[15px] wide:pt-[5px]"
               >
                 <h2
-                  class="font-bold tracking-[-1.5px] text-[15px] wide:text-[20px]"
+                  class="font-semibold tracking-[-1.5px] text-[15px] wide:text-[20px]"
                 >
                   자음생앰플
                 </h2>
@@ -783,7 +758,7 @@
                 class="slide-text bg-white w-full h-[95px] tablet:h-[105px] pc:h-[135px] wide:h-[95px] flex flex-col items-center text-center mt-[20px] tablet:mt-[15px] wide:pt-[5px]"
               >
                 <h2
-                  class="font-bold tracking-[-1.5px] text-[15px] wide:text-[20px]"
+                  class="font-semibold tracking-[-1.5px] text-[15px] wide:text-[20px]"
                 >
                   백삼팩
                 </h2>
@@ -809,7 +784,7 @@
                 class="slide-text bg-white w-full h-[95px] tablet:h-[105px] pc:h-[135px] wide:h-[95px] flex flex-col items-center text-center mt-[20px] tablet:mt-[15px] wide:pt-[5px]"
               >
                 <h2
-                  class="font-bold tracking-[-1.5px] text-[15px] wide:text-[20px]"
+                  class="font-semibold tracking-[-1.5px] text-[15px] wide:text-[20px]"
                 >
                   퍼펙팅 립컬러
                 </h2>
@@ -835,7 +810,7 @@
                 class="slide-text bg-white w-full h-[95px] tablet:h-[105px] pc:h-[135px] wide:h-[95px] flex flex-col items-center text-center mt-[20px] tablet:mt-[15px] wide:pt-[5px]"
               >
                 <h2
-                  class="font-bold tracking-[-1.5px] text-[15px] wide:text-[20px]"
+                  class="font-semibold tracking-[-1.5px] text-[15px] wide:text-[20px]"
                 >
                   퍼펙팅 트윈케이크
                 </h2>
@@ -861,7 +836,7 @@
                 class="slide-text bg-white w-full h-[95px] tablet:h-[105px] pc:h-[135px] wide:h-[95px] flex flex-col items-center text-center mt-[20px] tablet:mt-[15px] wide:pt-[5px]"
               >
                 <h2
-                  class="font-bold tracking-[-1.5px] text-[15px] wide:text-[20px]"
+                  class="font-semibold tracking-[-1.5px] text-[15px] wide:text-[20px]"
                 >
                   순행클렌징오일
                 </h2>
@@ -937,21 +912,21 @@
           </picture>
           <!-- text -->
           <div
-            class="text-inner w-[170px] flex flex-col gap-3 wide:gap-5 absolute bottom-[8%] left-[10%] tablet:bottom-[15%] wide:w-[220px]"
+            class="text-inner w-[170px] flex flex-col gap-2 wide:gap-5 absolute bottom-[8%] left-[10%] tablet:bottom-[15%] wide:w-[230px]"
           >
             <h2
-              class="text-[22px] font-bold tracking-[-1.5px] wide:text-[30px]"
+              class="text-[22px] font-semibold tracking-[-1.2px] wide:text-[30px]"
             >
               베스트 셀러
             </h2>
             <p
-              class="text-[15px] tracking-[-1.8px] wide:text-[19px] leading-[1.5]"
+              class="text-[14px] tracking-[-1.2px] wide:text-[19px] leading-[1.7] font-light wide:leading-[1.5]"
             >
               건강하게 빛나고 힘 있게 채우는 설화수의 시그니처 케어
             </p>
             <a
               href="#none"
-              class="px-5 py-1 border border-black w-fit text-[11px] tracking-[-1.5px] mt-3 wide:text-[14px] wide:py-2 wide:px-6"
+              class="px-7 py-1 border border-gray-500 w-fit text-[11px] tracking-[-1.2px] mt-3 wide:text-[14px] wide:py-2 font-normal"
             >
               자세히 보기
             </a>
@@ -962,7 +937,7 @@
       <!-- 3 -->
       <section class="max-w-[1440px] mx-auto px-5 mt-[85px] wide:mt-[130px]">
         <h2
-          class="font-bold tracking-tight text-center tablet:text-left wide:text-[26px] text-[22px] tablet:text-[20px]"
+          class="font-semibold tracking-tight text-center tablet:text-left wide:text-[26px] text-[22px] tablet:text-[20px]"
         >
           설화수 시즌추천
         </h2>
@@ -984,15 +959,15 @@
               </picture>
             </div>
             <div
-              class="w-full text-center season-title tablet:absolute tablet:mt-0 tablet:mb-0 mb-[15px] tablet:w-fit tablet:bottom-0 tablet:left-[5%] tablet:text-left tablet:leading-8 tablet:py-5 mt-5 flex flex-col wide:gap-y-2"
+              class="w-full text-center season-title tablet:absolute tablet:mt-0 tablet:mb-0 mb-[15px] tablet:w-fit tablet:bottom-0 tablet:left-[5%] tablet:text-left tablet:leading-8 tablet:py-5 mt-5 flex flex-col wide:gap-y-2 gap-y-1 wide:bottom-[3%] wide:left-[8%]"
             >
               <h2
-                class="text-[20px] font-bold tracking-[-1.5px] wide:text-[24px] tablet:text-[18px]"
+                class="text-[20px] font-semibold tracking-[-1px] wide:text-[24px] tablet:text-[18px]"
               >
                 고밀도 피부를 위한
               </h2>
               <p
-                class="text-[14px] tracking-[-1.1px] tablet:text-[12px] wide:text-[15px] text-gray-500"
+                class="text-[14px] tracking-[-0.6px] tablet:text-[12px] wide:text-[15px] text-gray-500"
               >
                 2 STEP 자생력 케어
               </p>
@@ -1013,15 +988,15 @@
               />
             </picture>
             <div
-              class="flex flex-col w-full text-center py-[8%] text-inner px-[7%] tablet:py-[12%] wide:gap-y-2"
+              class="flex flex-col w-full text-center py-[12%] text-inner px-[7%] tablet:py-[12%] wide:gap-y-2 gap-y-1"
             >
               <h2
-                class="tracking-[-0.5px] font-bold wide:text-[20px] text-[16px]"
+                class="tracking-[-0.5px] font-semibold wide:text-[20px] text-[16px]"
               >
                 자음생캡슐세럼
               </h2>
               <p
-                class="text-[11px] wide:text-[14px] text-gray-400 leading-4 truncate wide:leading-6"
+                class="text-[11px] wide:text-[14px] text-gray-600 leading-4 truncate wide:leading-6 font-light"
               >
                 Concentrated Ginseng
                 <span class="block truncate"> Rejuvenating Serum </span>
@@ -1046,15 +1021,15 @@
               />
             </picture>
             <div
-              class="flex flex-col w-full text-center py-[8%] text-inner px-[7%] tablet:py-[12%] wide:gap-y-2"
+              class="flex flex-col w-full text-center py-[12%] text-inner px-[7%] tablet:py-[12%] wide:gap-y-2 gap-y-1"
             >
               <h2
-                class="tracking-[-0.5px] font-bold wide:text-[20px] text-[16px]"
+                class="tracking-[-0.5px] font-semibold wide:text-[20px] text-[16px]"
               >
                 자음생크림 리치
               </h2>
               <p
-                class="text-[11px] wide:text-[14px] text-gray-400 leading-4 truncate wide:leading-6"
+                class="text-[11px] wide:text-[14px] text-gray-600 leading-4 truncate wide:leading-6 font-light"
               >
                 Concentrated Ginseng
                 <span class="block truncate"> Rejuvenating Cream Rich </span>
@@ -1080,16 +1055,16 @@
               />
             </div>
             <div
-              class="store-text bg-white h-[95px] tablet:h-[80px] pt-[25px] wide:h-[100px] relative flex justify-center tablet:pt-[15px] tracking-[-1.5px] wide:mt-[15px]"
+              class="store-text bg-white h-[95px] tablet:h-[80px] pt-[25px] wide:h-[100px] relative flex justify-center tablet:pt-[15px] tracking-[-1.2px] wide:mt-[15px]"
             >
               <h2
-                class="text-[22px] font-bold tablet:text-[20px] wide:text-[28px]"
+                class="text-[22px] font-semibold tablet:text-[20px] wide:text-[28px]"
               >
                 설화수 북촌 플래그십 스토어
               </h2>
               <a
                 href="#none"
-                class="absolute bottom-0 block border border-black text-[11px] px-5 py-[1px] tracking-[-1.5px] tablet:text-[10px] wide:text-[13px] wide:py-[5px] wide:px-6"
+                class="absolute bottom-0 block border border-gray-500 text-[11px] px-5 py-[2px] tracking-[-1.2px] tablet:text-[10px] wide:text-[13px] wide:py-[5px] wide:px-6"
               >
                 자세히 보기
               </a>
@@ -1104,16 +1079,16 @@
               />
             </div>
             <div
-              class="store-text bg-white h-[95px] tablet:h-[80px] pt-[25px] wide:h-[100px] relative flex justify-center tablet:pt-[15px] tracking-[-1.5px] wide:mt-[15px]"
+              class="store-text bg-white h-[95px] tablet:h-[80px] pt-[25px] wide:h-[100px] relative flex justify-center tablet:pt-[15px] tracking-[-1.2px] wide:mt-[15px]"
             >
               <h2
-                class="text-[22px] font-bold tablet:text-[20px] wide:text-[28px]"
+                class="text-[22px] font-semibold tablet:text-[20px] wide:text-[28px]"
               >
                 설화수 도산 플래그십 스토어
               </h2>
               <a
                 href="#none"
-                class="absolute bottom-0 block border border-black text-[11px] px-5 py-[1px] tracking-[-1.5px] tablet:text-[10px] wide:text-[13px] wide:py-[5px] wide:px-6"
+                class="absolute bottom-0 block border border-gray-500 text-[11px] px-5 py-[2px] tracking-[-1.2px] tablet:text-[10px] wide:text-[13px] wide:py-[5px] wide:px-6"
               >
                 자세히 보기
               </a>
@@ -1169,8 +1144,8 @@
               class="footer-copy bg-[#f8f7f5] flex items-center gap-1 text-[3.3vw] tablet-footer:text-[1.2vw] relative border-t border-t-gray px-4 py-[5%] tablet-footer:h-[55px] tablet-footer:py-0 text-gray-500"
             >
               @
-              <span class="font-bold"> AMOREPACIFIC </span>
-              CORPORATION. All rights reserved.
+              <span class="font-semibold"> AMOREPACIFIC </span>
+              <span class="font-light"> CORPORATION. All rights reserved. </span>
               <div
                 class="absolute right-0 flex items-center justify-center w-5 h-5 mx-4 cursor-pointer footer-btn [&.footer-btn-active]:rotate-180 transition-all"
               >
@@ -1179,13 +1154,13 @@
             </div>
             <!-- info -->
             <div
-              class="px-4 overflow-hidden transition-all duration-300 bg-[#f8f7f5] border-t footer-wrap max-h-0 border-t-gray [&.footer-open]:min-h-[340px]"
+              class="px-4 overflow-hidden transition-all duration-300 bg-[#f8f7f5] border-t footer-wrap max-h-0 border-t-gray [&.footer-open]:min-h-[340px] font-light"
             >
               <div
-                class="tablet-footer:gap-x-3 mt-[5vw] leading-[2] flex flex-col tablet-footer:flex-row text-gray-700 tablet-footer:mt-[20px]"
+                class="tablet-footer:gap-x-3 mt-[5vw] leading-[2] flex flex-col tablet-footer:flex-row text-gray-900 tablet-footer:mt-[20px]"
               >
                 <ul
-                  class="flex gap-x-2 text-[3.2vw] tablet-footer:text-[1.2vw] [&>li>a:hover]:underline [&>li]:relative [&>li]:flex [&>li]:items-center [&>li:after]:content-[''] [&>li:after]:w-[1px] [&>li:after]:h-[3vw] [&>li:after]:bg-gray-300 [&>li:after]:ml-2 tablet-footer:[&>li:after]:h-[1.2vw]"
+                  class="flex text-[3.2vw] tablet-footer:text-[1.2vw] [&>li>a:hover]:underline [&>li]:relative [&>li]:flex [&>li]:items-center [&>li:after]:content-[''] [&>li:after]:w-[1px] [&>li:after]:h-[3vw] [&>li:after]:bg-gray-300 tablet-footer:[&>li:after]:h-[1.2vw] [&>li:after]:mx-3 [&>li:last-child:after]:mr-0"
                 >
                   <li>
                     <a href="#none"> 회사소개 </a>
@@ -1194,11 +1169,11 @@
                     <a href="#none"> 서비스이용약관 </a>
                   </li>
                   <li>
-                    <a href="#none" class="font-bold"> 개인정보처리방침 </a>
+                    <a href="#none" class="font-semibold"> 개인정보처리방침 </a>
                   </li>
                 </ul>
                 <ul
-                  class="flex gap-x-2 text-[3.2vw] tablet-footer:text-[1.2vw] [&>li>a:hover]:underline [&>li]:relative [&>li]:flex [&>li]:items-center [&>li:not(:last-child):after]:content-[''] [&>li:after]:w-[1px] [&>li:after]:h-[3vw] [&>li:after]:bg-gray-300 [&>li:after]:ml-2 tablet-footer:[&>li:after]:h-[1.2vw]"
+                  class="flex text-[3.2vw] tablet-footer:text-[1.2vw] [&>li>a:hover]:underline [&>li]:relative [&>li]:flex [&>li]:items-center [&>li:not(:last-child):after]:content-[''] [&>li:after]:w-[1px] [&>li:after]:h-[3vw] [&>li:after]:bg-gray-300 tablet-footer:[&>li:after]:h-[1.2vw] [&>li:after]:mx-3 [&>li:last-child:after]:mr-0"
                 >
                   <li>
                     <a href="#none"> 영상정보처리방침 </a>
@@ -1213,7 +1188,7 @@
               </div>
 
               <div
-                class="info relative flex mt-[5vw] footer-pc text-[3.2vw] tablet-footer:text-[1.2vw] w-full justify-between text-gray-400 tablet-footer:mt-[10px]"
+                class="info relative flex mt-[5vw] footer-pc text-[3.2vw] tablet-footer:text-[1.2vw] w-full justify-between text-gray-500 tablet-footer:mt-[10px]"
               >
                 <div
                   class="flex flex-col leading-[2] tablet-footer:flex-row tablet-footer:gap-x-3"
@@ -1242,7 +1217,7 @@
           <div class="w-full border-t footer-wrap border-t-gray-200">
             <div class="footer-inner">
               <div
-                class="footer-menu h-[55px] bg-white w-full px-10 max-w-[1200px] mx-auto text-gray-500"
+                class="footer-menu h-[55px] bg-white w-full px-10 max-w-[1200px] mx-auto text-gray-700 font-light"
               >
                 <ul
                   class="flex items-center h-full gap-4 [&>li]:relative [&>li]:flex [&>li]:items-center [&>li>a:hover]:underline [&>li:not(:last-child):after]:content-[''] [&>li:after]:w-[1px] [&>li:after]:h-[15px] [&>li:after]:bg-gray-300 [&>li:after]:ml-4 [&>li_a]:text-[15px]"
@@ -1254,7 +1229,7 @@
                     <a href="#none"> 서비스이용약관 </a>
                   </li>
                   <li>
-                    <a href="#none" class="font-bold"> 개인정보처리방침 </a>
+                    <a href="#none" class="font-semibold"> 개인정보처리방침 </a>
                   </li>
                   <li>
                     <a href="#none"> 영상정보처리방침 </a>

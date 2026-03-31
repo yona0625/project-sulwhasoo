@@ -1,8 +1,21 @@
 const goTop = {
   init: function () {
-    const goTopBtn = document.querySelector(".go-top");
+    const goTopWrapper = document.querySelector(".go-top");
+    const footer = document.querySelector("footer");
+    const goTopBtn = goTopWrapper.querySelector("div");
 
-    goTopBtn.addEventListener("click", () => {
+    const topInitPosition = () => {
+      if(window.innerWidth > 1023) {
+        goTopWrapper.style.bottom = "";
+        return;
+      }
+      goTopWrapper.style.bottom = footer.offsetHeight - goTopBtn.offsetHeight + "px";
+    }
+
+    topInitPosition();
+    window.addEventListener("resize", topInitPosition);
+
+    goTopWrapper.addEventListener("click", () => {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -12,20 +25,20 @@ const goTop = {
       const scrollY = window.scrollY;
       const totalScroll =
         document.documentElement.scrollHeight - window.innerHeight;
-      const bottomAni = totalScroll - scrollY < 150;
+      const bottomAni = totalScroll - scrollY < 100;
       /* top fade */
       if (scrollY > 100) {
-        goTopBtn.classList.add("active");
+        goTopWrapper.classList.add("active");
       } else {
-        goTopBtn.classList.remove("active");
+        goTopWrapper.classList.remove("active");
       }
       /* bottom animation */
+      if (window.innerWidth >= 1024) return;
+
       if (bottomAni) {
-        goTopBtn.classList.remove("bottom-0");
-        goTopBtn.classList.add("bottom-20");
+        goTopWrapper.style.bottom = footer.offsetHeight - goTopBtn.offsetHeight + "px";
       } else {
-        goTopBtn.classList.remove("bottom-20");
-        goTopBtn.classList.add("bottom-0");
+        goTopWrapper.style.bottom = "0px";
       }
     });
   },
@@ -61,7 +74,7 @@ const allSearch = {
         dimmed.classList.toggle("hidden");
 
         /* 딤드 시 스크롤 방지 */
-        if(!dimmed.classList.contains("hidden")) {
+        if (!dimmed.classList.contains("hidden")) {
           body.style.overflow = "hidden";
         } else {
           /* 스크롤 해제 */
@@ -144,22 +157,64 @@ slideAutoPlay(".reco-autoplay", recommend_slide);
 
 const pcMenu = {
   init: function () {
-    const pcMenuItems = document.querySelectorAll(".pc-menu > ul > li");
+    const header = document.querySelector("header");
+    const pcAllMenu = document.getElementById("pc-allmenu");
+    const pcMainMenu = document.querySelector(".pc-menu ul");
+    let activeMenuName = null;
 
-    pcMenuItems.forEach((item) => {
-      const pcMenuPanel = item.querySelector("ul");
-      if (!pcMenuPanel) return;
+    // 메뉴 영역(ul) 위에서 마우스가 움직일 때만 감시
+    pcMainMenu.addEventListener("mouseover", (e) => {
+      /* li의 data-menu를 정확히 찾기 위해 closest */
+      const dataMenu = e.target.closest("li");
+      if (!dataMenu) return;
 
-      item.addEventListener("mouseenter", () => {
-        pcMenuPanel.classList.add("active");
-      });
+      /* dataset.menu = data-menu */
+      const subMenuName = dataMenu.dataset.menu;
 
-      item.addEventListener("mouseleave", () => {
-        pcMenuPanel.classList.remove("active");
-      });
+      // 하위 메뉴가 없는 메뉴일 때 닫음
+      if (!subMenuName) {
+        pcAllMenu.style.height = "0";
+        /* 이전 activeMenuName을 null로 지워 '초기화'함. */
+        /* 하위 메뉴가 없어서 0으로 닫더라도, 다음 동작을 이전에 저장된 정보를 갖지 않고 원활하게 하기 위해 초기화를 하면서 0으로 닫는다. */
+        if (activeMenuName !== null) {
+          const otherMenu = document.getElementById(`panel-${activeMenuName}`);
+          otherMenu.classList.remove("flex");
+          otherMenu.classList.add("hidden");
+          activeMenuName = null;
+        }
+        return;
+      }
+
+      /* 하위 메뉴 포함 */
+      const haveSubMenu = document.getElementById(`panel-${subMenuName}`);
+
+      if (activeMenuName !== null && activeMenuName !== subMenuName) {
+        /* ★★★ 여기서는 초기화가 이루어지지 않음. 하위 메뉴 포함 -> 하위 메뉴 포함 간 이동이기 때문에 null로 지워버리면 작동을 안 함. */
+        const otherMenu = document.getElementById(`panel-${activeMenuName}`);
+        otherMenu.classList.remove("flex");
+        otherMenu.classList.add("hidden");
+      }
+
+      /* 실제 실행이 이루어지는 곳 */
+      haveSubMenu.classList.remove("hidden");
+      haveSubMenu.classList.add("flex");
+      pcAllMenu.style.height = haveSubMenu.scrollHeight + "px";
+      activeMenuName = subMenuName;
+    });
+
+    // 헤더 전체를 나갈 때만 닫기
+    header.addEventListener("mouseleave", () => {
+      pcAllMenu.style.height = "0";
+      if (activeMenuName !== null) {
+        const currentPanel = document.getElementById(`panel-${activeMenuName}`);
+        currentPanel.classList.remove("flex");
+        currentPanel.classList.add("hidden");
+        activeMenuName = null;
+      }
     });
   },
 };
+
 pcMenu.init();
 
 const mobileAllmenu = {
