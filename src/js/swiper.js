@@ -42,13 +42,13 @@ const recommend_slide = new Swiper(".recommend-slide", {
     observeParents: true,
   },
   pagination: {
-    el: ".swiper-pagination",
+    el: ".reco-pagination",
     type: "progressbar",
     clickable: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".reco-button-next",
+    prevEl: ".reco-button-prev",
     enabled: true,
   },
   breakpoints: {

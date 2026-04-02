@@ -10,7 +10,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        korean: [
+        main: [
           "'Noto Sans KR'",
           "Malgun Gothic",
           "맑은 고딕",

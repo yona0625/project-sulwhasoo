@@ -2,15 +2,16 @@ const goTop = {
   init: function () {
     const goTopWrapper = document.querySelector(".go-top");
     const footer = document.querySelector("footer");
-    const goTopBtn = goTopWrapper.querySelector("div");
+    const goTopBtn = goTopWrapper.querySelector(".go-top-btn");
 
     const topInitPosition = () => {
-      if(window.innerWidth > 1023) {
+      if (window.innerWidth > 1023) {
         goTopWrapper.style.bottom = "";
         return;
       }
-      goTopWrapper.style.bottom = footer.offsetHeight - goTopBtn.offsetHeight + "px";
-    }
+      goTopWrapper.style.bottom =
+        footer.offsetHeight - goTopBtn.offsetHeight + "px";
+    };
 
     topInitPosition();
     window.addEventListener("resize", topInitPosition);
@@ -33,10 +34,11 @@ const goTop = {
         goTopWrapper.classList.remove("active");
       }
       /* bottom animation */
-      if (window.innerWidth >= 1024) return;
+      if (window.innerWidth > 1023) return;
 
       if (bottomAni) {
-        goTopWrapper.style.bottom = footer.offsetHeight - goTopBtn.offsetHeight + "px";
+        goTopWrapper.style.bottom =
+          footer.offsetHeight - goTopBtn.offsetHeight + "px";
       } else {
         goTopWrapper.style.bottom = "0px";
       }
@@ -161,6 +163,7 @@ const pcMenu = {
     const pcAllMenu = document.getElementById("pc-allmenu");
     const pcMainMenu = document.querySelector(".pc-menu ul");
     let activeMenuName = null;
+    
 
     // 메뉴 영역(ul) 위에서 마우스가 움직일 때만 감시
     pcMainMenu.addEventListener("mouseover", (e) => {
@@ -190,7 +193,6 @@ const pcMenu = {
 
       if (activeMenuName !== null && activeMenuName !== subMenuName) {
         /* ★★★ 여기서는 초기화가 이루어지지 않음. 하위 메뉴 포함 -> 하위 메뉴 포함 간 이동이기 때문에 null로 지워버리면 작동을 안 함. */
-        const otherMenu = document.getElementById(`panel-${activeMenuName}`);
         otherMenu.classList.remove("flex");
         otherMenu.classList.add("hidden");
       }
@@ -199,7 +201,6 @@ const pcMenu = {
       haveSubMenu.classList.remove("hidden");
       haveSubMenu.classList.add("flex");
       pcAllMenu.style.height = haveSubMenu.scrollHeight + "px";
-      activeMenuName = subMenuName;
     });
 
     // 헤더 전체를 나갈 때만 닫기
@@ -212,6 +213,7 @@ const pcMenu = {
         activeMenuName = null;
       }
     });
+
   },
 };
 
