@@ -49,11 +49,6 @@ goTop.init();
 
 const allSearch = {
   init: function () {
-    /* 클래스명 좀 더 직관적으로 알기 쉽게 바꾸기.
-    현재
-    1. 아이콘이 눌렸을 때: search-active
-    2. 검색창이 열렸을 때: active */
-
     /* mobile */
     const body = document.body;
     const dimmed = document.querySelector(".dimmed");
@@ -64,58 +59,52 @@ const allSearch = {
     const pcMenu = document.querySelector(".pc-menu");
     const headerNav = [header, pcMenu];
 
+    function openSearch() {
+      searchBar.classList.add("active");
+      header.classList.add("searchBtn-active");
+      dimmed.classList.remove("hidden");
+      body.style.overflow = "hidden";
+      /* closeSearch가 아니라 외부 클릭에서 제어 */
+      headerNav.forEach((item) => item.classList.add("bg-white"));
+    }
+    function closeSearch() {
+      searchBar.classList.remove("active");
+      header.classList.remove("searchBtn-active");
+      dimmed.classList.add("hidden");
+      body.style.overflow = "";
+    }
+
     /* 검색창 활성화 시 */
     searchBtn.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         e.preventDefault();
 
-        /* 검색 아이콘, 검색 창, 배경 딤드 토글 - html 구조 상 add/remove(X) */
-        searchBar.classList.toggle("active");
-        header.classList.toggle("search-active");
-        dimmed.classList.toggle("hidden");
-
-        /* 딤드 시 스크롤 방지 */
-        if (!dimmed.classList.contains("hidden")) {
-          body.style.overflow = "hidden";
+        const searchActived = searchBar.classList.contains("active");
+        if (searchActived) {
+          closeSearch();
         } else {
-          /* 스크롤 해제 */
-          body.style.overflow = "";
-        }
-
-        /* 헤더 활성화 시 배경 유지하도록 */
-        const headerOpen = header.classList.contains("active");
-        const searchOpen = header.classList.contains("search-active");
-        if (headerOpen || searchOpen) {
-          headerNav.forEach((item) => item.classList.add("bg-white"));
-        } else {
-          headerNav.forEach((item) => item.classList.remove("bg-white"));
+          openSearch();
         }
       });
     });
 
-    searchFold.addEventListener("click", () => {
-      searchBar.classList.remove("active");
-      dimmed.classList.add("hidden");
-      body.style.overflow = "";
-    });
+    searchFold.addEventListener("click", closeSearch);
 
-    /* 하위 메뉴 컨트롤 */
+    /* 검색창 하위 메뉴 컨트롤 */
     document.addEventListener("click", (e) => {
-      const currentHeader = header.contains(e.target);
-      const currentSearchBar = searchBar.contains(e.target);
+      const isInHeader = header.contains(e.target);
+      const isInSearchBar = searchBar.contains(e.target);
+      const isSearchOpen = searchBar.classList.contains("active");
 
       /* 검색창 활성화인 상태에서 검색창을 벗어나면, 검색창만 닫음 */
-      if (searchBar.classList.contains("active") && !currentSearchBar) {
-        searchBar.classList.remove("active");
-        /* return이 없다면 바로 밑의 if문이 실행되어서 순차적으로 배경 해제가 이루어지지 않음. */
-        header.classList.remove("search-active");
-        dimmed.classList.add("hidden");
-        body.style.overflow = "";
+      if (isSearchOpen && !isInSearchBar) {
+        closeSearch();
         return;
       }
       /* 검색창이 닫히고, 헤더를 벗어나면 헤더 배경 해제 */
-      if (!currentSearchBar && !currentHeader) {
+      /* openSearch에서 항상 bg-white를 활성화 하고, 외부 클릭할 때(=헤더를 벗어날 때)만 지우면 됨. */
+      if (!isInSearchBar && !isInHeader) {
         headerNav.forEach((item) => item.classList.remove("bg-white"));
       }
     });
@@ -125,7 +114,7 @@ allSearch.init();
 
 const selectLang = {
   init: function () {
-    const openLang = document.querySelector(".language > div");
+    const openLang = document.querySelector(".open-lang");
     const langList = document.querySelector(".language-list");
     const langBtn = document.querySelector(".language-btn");
     openLang.addEventListener("click", () => {
@@ -162,58 +151,49 @@ const pcMenu = {
     const header = document.querySelector("header");
     const pcAllMenu = document.getElementById("pc-allmenu");
     const pcMainMenu = document.querySelector(".pc-menu ul");
-    let activeMenuName = null;
-    
+    const pcMenuNav = document.querySelector(".pc-menu");
+    const allPanels = pcAllMenu.querySelectorAll(".pc-panel-list");
+
+    /* 항목이 있는 메뉴만 open */
+    function openPanel(panelId) {
+      allPanels.forEach((panelItem) => {
+        const activePanel = panelItem.id === `panel-${panelId}`;
+        panelItem.classList.toggle("hidden", !activePanel);
+        panelItem.classList.toggle("flex", activePanel);
+      });
+    }
+
+    function closePanel() {
+      pcAllMenu.style.height = "0";
+      allPanels.forEach((panelItem) => {
+        panelItem.classList.replace("flex", "hidden");
+      });
+    }
 
     // 메뉴 영역(ul) 위에서 마우스가 움직일 때만 감시
     pcMainMenu.addEventListener("mouseover", (e) => {
-      /* li의 data-menu를 정확히 찾기 위해 closest */
+      /* 메인 메뉴만 선택(여백 등 무시) */
       const dataMenu = e.target.closest("li");
       if (!dataMenu) return;
 
       /* dataset.menu = data-menu */
       const subMenuName = dataMenu.dataset.menu;
-
-      // 하위 메뉴가 없는 메뉴일 때 닫음
+      /* 하위 메뉴(ul) 미포함 */
       if (!subMenuName) {
-        pcAllMenu.style.height = "0";
-        /* 이전 activeMenuName을 null로 지워 '초기화'함. */
-        /* 하위 메뉴가 없어서 0으로 닫더라도, 다음 동작을 이전에 저장된 정보를 갖지 않고 원활하게 하기 위해 초기화를 하면서 0으로 닫는다. */
-        if (activeMenuName !== null) {
-          const otherMenu = document.getElementById(`panel-${activeMenuName}`);
-          otherMenu.classList.remove("flex");
-          otherMenu.classList.add("hidden");
-          activeMenuName = null;
-        }
+        closePanel();
         return;
       }
-
       /* 하위 메뉴 포함 */
       const haveSubMenu = document.getElementById(`panel-${subMenuName}`);
-
-      if (activeMenuName !== null && activeMenuName !== subMenuName) {
-        /* ★★★ 여기서는 초기화가 이루어지지 않음. 하위 메뉴 포함 -> 하위 메뉴 포함 간 이동이기 때문에 null로 지워버리면 작동을 안 함. */
-        otherMenu.classList.remove("flex");
-        otherMenu.classList.add("hidden");
-      }
-
-      /* 실제 실행이 이루어지는 곳 */
-      haveSubMenu.classList.remove("hidden");
-      haveSubMenu.classList.add("flex");
+      openPanel(subMenuName);
       pcAllMenu.style.height = haveSubMenu.scrollHeight + "px";
     });
 
-    // 헤더 전체를 나갈 때만 닫기
+    /* 헤더 떠날 시 */
     header.addEventListener("mouseleave", () => {
       pcAllMenu.style.height = "0";
-      if (activeMenuName !== null) {
-        const currentPanel = document.getElementById(`panel-${activeMenuName}`);
-        currentPanel.classList.remove("flex");
-        currentPanel.classList.add("hidden");
-        activeMenuName = null;
-      }
+      allPanels.forEach((item) => item.classList.replace("flex", "hidden"));
     });
-
   },
 };
 
@@ -226,8 +206,16 @@ const mobileAllmenu = {
     const exitbtn = document.querySelector(".exit-btn");
 
     const toggleMenu = () => {
-      mobileMenu.classList.toggle("-translate-x-full");
-      mobileMenu.classList.toggle("translate-x-0");
+      const openMoMenu = "translate-x-0";
+      const closeMoMenu = "-translate-x-full";
+      mobileMenu.classList.toggle(closeMoMenu);
+      mobileMenu.classList.toggle(openMoMenu);
+
+      if (mobileMenu.classList.contains(openMoMenu)) {
+        trigger.setAttribute("aria-expanded", true);
+      } else {
+        trigger.setAttribute("aria-expanded", false);
+      }
     };
 
     trigger.addEventListener("click", toggleMenu);
@@ -241,58 +229,61 @@ const mobileMenuToggle = {
     const openMainMenu = document.querySelectorAll(".openMenu");
     const openSubMenu = document.querySelectorAll(".openSubMenu");
 
-    const openItem = (item) => {
+    const setItem = (menu, menuActived) => {
       /* 메뉴 / 볼드체 / 플러스 아이콘 순 */
-      item.querySelector("ul").classList.add("active");
-      item.querySelector("a").classList.add("bold");
-      item.querySelector(".menuPlus")?.classList.add("icon-active");
-    };
-    const closeItem = (item) => {
-      item.querySelector("ul").classList.remove("active");
-      item.querySelector("a").classList.remove("bold");
-      item.querySelector(".menuPlus")?.classList.remove("icon-active");
-    };
-    const toggleItem = (item) => {
-      item.querySelector("ul").classList.toggle("active");
-      item.querySelector("a").classList.toggle("bold");
-      item.querySelector(".menuPlus")?.classList.toggle("icon-active");
+      menu.querySelector("ul").classList.toggle("active", menuActived);
+      menu.querySelector("a").classList.toggle("bold", menuActived);
+      menu
+        .querySelector(".menuPlus")
+        ?.classList.toggle("icon-active", menuActived);
     };
 
     /* 2단 아코디언 */
     openSubMenu.forEach((subItem) => {
       subItem.addEventListener("click", (e) => {
         e.stopPropagation();
-        toggleItem(subItem);
+        const subMenuActived = subItem
+          .querySelector("ul")
+          .classList.contains("active");
+        /* = toggle */
+        if (subMenuActived) {
+          setItem(subItem, false);
+        } else {
+          setItem(subItem, true);
+        }
       });
     });
     /* 1단 아코디언 */
     openMainMenu.forEach((mainItem) => {
       mainItem.addEventListener("click", (e) => {
-        /* 이중 아코디언 이벤트 버블링 방지 */
         e.stopPropagation();
+        /* 하위 메뉴 클릭 시에 1단이 접히면 안 됨. */
         const mainMenu = mainItem.querySelector("ul");
-        /* 이중 아코디언 메뉴가 아니라면 이벤트 발생 안 함 */
         if (mainMenu.contains(e.target)) return;
-        /* 쿼리 셀렉터와 달리 toggle의 특성 상 변수 선언을 했어도 실행이 됨. 실행하고 변수 저장 -> 따라서 1단 아코디언도 실행 가능(toggle) */
-        /* + 해당 요소 빼고 나머지를 닫아야 하므로 isOpen: toggle -> contain, 나머지는 remove로 변경 */
-        const isOpen = mainMenu.classList.contains("active");
 
-        /* 전부 닫고 선택한 것만 열게 함
-        foreach로 전부 돌면서 닫고, 닫혀 있을 때 열면서(!isOpen) + openItem(mainItem) toggle 역할 */
-        openMainMenu.forEach(closeItem);
+        const mainMenuActived = mainMenu.classList.contains("active");
+
+        /* 일단 전부 닫기 */
+        openMainMenu.forEach((mainItem) => {
+          setItem(mainItem, false);
+          mainItem.querySelector("a").setAttribute("aria-expanded", false);
+        });
 
         const currentSubItem = mainItem.querySelector(".openSubMenu");
-        if (!isOpen) {
-          openItem(mainItem);
-          if (!currentSubItem) return;
+        /* 선택한 것만 열기 */
+        if (!mainMenuActived) {
+          setItem(mainItem, true);
+          mainItem.querySelector("a").setAttribute("aria-expanded", true);
+
           /* 자동 열림 */
+          if (!currentSubItem) return;
           setTimeout(() => {
             if (mainMenu.classList.contains("active")) {
-              openItem(currentSubItem);
+              setItem(currentSubItem, true);
             }
           }, 500);
         } else {
-          closeItem(currentSubItem);
+          setItem(currentSubItem, false);
         }
       });
     });
@@ -307,7 +298,7 @@ const footerInfo = {
     footerInfoBtn.addEventListener("click", () => {
       /* 버튼 */
       footerInfoBtn.classList.toggle("footer-btn-active");
-      footerToggle = footerAllInfo.style;
+      const footerToggle = footerAllInfo.style;
       if (footerToggle.maxHeight === "") {
         footerAllInfo.classList.add("footer-open");
         footerToggle.maxHeight = footerAllInfo.scrollHeight + "px";

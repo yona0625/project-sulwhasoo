@@ -28,10 +28,10 @@
 
 /* === visual slide === */
 .text-area {
-  @apply z-10 flex w-full max-w-[1440px] flex-[3_3_0%] flex-col justify-end px-[5%] text-center tracking-[-1.5px] drop-shadow-[0_0_2px_rgba(0,0,0,0.2)] tablet:absolute tablet:bottom-[30%] tablet:left-1/2 tablet:-translate-x-1/2 tablet:px-[50px] tablet:text-left pc:pl-[80px] wide:bottom-[24%] wide:px-0 wide:pl-[140px] min-[1661px]:pl-0;
+  @apply z-10 flex w-full max-w-[1440px] flex-[3_3_0%] flex-col justify-end px-[5%] text-center tracking-[-1.5px] drop-shadow-[0_0_2px_rgba(0,0,0,0.2)] tablet:absolute tablet:bottom-[30%] tablet:left-1/2 tablet:-translate-x-1/2 tablet:px-[50px] tablet:text-left wide:bottom-[30%] wide:px-0 wide:pl-[140px] min-[1661px]:pl-0 tablet:pl-[7%] min-[1661px]:bottom-[25%]
 }
 .text-subTitle {
-  @apply mb-[8px] translate-y-10 text-[18px] font-light opacity-0 transition-all delay-[800ms] duration-1000 tablet:mb-[12px] wide:mb-[20px] wide:text-[19px] [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100;
+  @apply mb-[8px] translate-y-10 text-[14px] font-light opacity-0 transition-all delay-[800ms] duration-1000 tablet:mb-[12px] wide:mb-[20px] wide:text-[19px] [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100;
 }
 .text-mainTitle {
   @apply translate-y-10 text-[26px] font-semibold opacity-0 transition-all delay-[900ms] duration-1000 tablet:text-[26px] wide:text-[35px] [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100;
