@@ -8,6 +8,21 @@
       content="시간의 흐름에 지지 않는 아름다움을 위한 여정 | 설화수"
     />
     <title>시간의 흐름에 지지 않는 아름다움을 위한 여정 | 설화수</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="public/images/common/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="public/images/common/favicon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="public/images/common/apple-touch-icon.png"
+    />
+
+    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +31,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600&display=swap"
       onload="this.rel = 'stylesheet'"
     />
+    <!-- css & js -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -30,7 +46,7 @@
     <script src="./src/js/main.js" defer></script>
   </head>
   <body class="mx-auto min-w-[320px] bg-white font-main">
-    <div class="relative w-full mx-auto wrapper min-w-80">
+    <div class="wrapper relative mx-auto w-full min-w-80">
       <!-- dimmed -->
       <div class="dimmed fixed inset-0 z-[5] hidden bg-black/50"></div>
       <!-- top -->
@@ -40,14 +56,14 @@
         <button
           type="button"
           tabindex="0"
-          class="go-top-btn pointer-events-auto ml-auto flex h-[40px] w-[40px] cursor-pointer bg-black/50 pc:h-[60px] pc:w-[60px]"
+          class="go-top-btn pointer-events-auto ml-auto flex h-[40px] w-[40px] cursor-pointer bg-black/50 hover:bg-black/70 pc:h-[60px] pc:w-[60px]"
           aria-label="페이지 상단으로 이동"
         >
           <img
-            src="public/images/top-btn.png"
+            src="public/images/common/top-btn.png"
             alt=""
             aria-hidden="true"
-            class="object-contain w-full h-full"
+            class="h-full w-full object-contain"
             width="70"
             height="70"
           />
@@ -62,7 +78,7 @@
         >
           <!-- mobile -->
           <div
-            class="flex items-center justify-between h-full p-5 mobile-nav pc:hidden"
+            class="mobile-nav flex h-full items-center justify-between p-5 pc:hidden"
           >
             <button
               type="button"
@@ -76,10 +92,10 @@
             </button>
             <a
               href="index.html"
-              class="flex items-center justify-center h-10 color-reverse w-28"
+              class="color-reverse flex h-10 w-28 items-center justify-center"
             >
               <img
-                src="public/images/main-logo.webp"
+                src="public/images/common/main-logo.webp"
                 alt="설화수 로고"
                 width="220"
                 height="43"
@@ -88,10 +104,10 @@
             <button
               type="button"
               aria-label="검색창 열기"
-              class="flex items-center justify-center w-6 h-6 mobile-search"
+              class="mobile-search flex h-6 w-6 items-center justify-center"
             >
               <img
-                src="public/images/search-icon.svg"
+                src="public/images/layout/search-icon.svg"
                 alt=""
                 aria-hidden="true"
                 class="color-reverse [.searchBtn-active_&]:hidden"
@@ -99,7 +115,7 @@
                 height="23"
               />
               <img
-                src="public/images/search-close-x.png"
+                src="public/images/layout/search-close.png"
                 alt=""
                 aria-hidden="true"
                 class="hidden [.searchBtn-active_&]:block"
@@ -115,7 +131,7 @@
           >
             <div class="flex w-full items-center pc:-mt-[35px] pc:w-fit">
               <img
-                src="public/images/search-icon.svg"
+                src="public/images/layout/search-icon.svg"
                 alt=""
                 class="absolute ml-[15px] hidden pc:block pc:h-[20px] pc:w-[20px] pc:brightness-0"
                 width="23"
@@ -138,7 +154,7 @@
                 class="search-close absolute bottom-[10px] left-1/2 flex h-5 w-5 items-center justify-center"
               >
                 <img
-                  src="public/images/search-close.png"
+                  src="public/images/layout/search-fold.png"
                   alt=""
                   class="hidden rotate-180 pc:-mt-[7px] pc:block"
                   width="14"
@@ -152,7 +168,7 @@
           <div class="relative hidden h-full w-full px-[7%] pc:block">
             <div class="mx-auto flex w-full max-w-[1100px] justify-between">
               <!-- 언어 선택 -->
-              <div class="relative z-30 flex flex-col mt-4 language">
+              <div class="language relative z-30 mt-4 flex flex-col">
                 <div
                   class="open-lang flex [&>a]:text-[15px]"
                   tabindex="0"
@@ -164,7 +180,7 @@
                     class="language-btn ml-2 mt-1 flex h-5 w-5 cursor-pointer items-center justify-center [&.open]:rotate-180"
                   >
                     <img
-                      src="public/images/dropdown-icon.png"
+                      src="public/images/layout/dropdown-icon.png"
                       alt=""
                       class="brightness-0 invert group-hover:invert-0 group-[.bg-white]:invert-0"
                       width="14"
@@ -217,7 +233,7 @@
                 class="logo color-reverse absolute left-1/2 top-1/2 mx-auto flex h-[40px] w-[165px] -translate-x-1/2 -translate-y-1/2 items-center justify-center"
               >
                 <img
-                  src="public/images/main-logo.webp"
+                  src="public/images/common/main-logo.webp"
                   alt="설화수 로고"
                   width="220"
                   height="43"
@@ -235,14 +251,14 @@
                   aria-label="검색"
                 >
                   <img
-                    src="public/images/search-icon.svg"
+                    src="public/images/layout/search-icon.svg"
                     alt=""
                     class="brightness-0 invert group-hover:invert-0 group-[.bg-white]:invert-0 [.searchBtn-active_&]:hidden"
                     width="23"
                     height="23"
                   />
                   <img
-                    src="public/images/search-close-x.png"
+                    src="public/images/layout/search-close.png"
                     alt=""
                     class="hidden [.searchBtn-active_&]:block"
                     width="46"
@@ -288,28 +304,28 @@
           <!-- pc: all menu(panel) -->
           <div
             id="pc-allmenu"
-            class="absolute left-0 h-0 w-full overflow-hidden bg-white transition-[height] duration-300 ease-in-out [&>ul>li]:font-light"
+            class="absolute left-0 h-0 w-full overflow-hidden bg-white transition-[height] duration-300 ease-in-out [&>ul>li]:font-normal [&>ul]:relative"
           >
-            <ul id="panel-product" class="hidden pc-panel-list">
+            <ul id="panel-product" class="pc-panel-list left-16 hidden">
               <li><a href="#none">스킨케어</a></li>
               <li><a href="#none">메이크업</a></li>
               <li><a href="#none">남성</a></li>
             </ul>
-            <ul id="panel-spa" class="hidden pc-panel-list">
+            <ul id="panel-spa" class="pc-panel-list left-24 hidden">
               <li><a href="#none">소개</a></li>
               <li><a href="#none">스파 프로그램</a></li>
               <li><a href="#none">예약</a></li>
               <li><a href="#none">매장 찾기</a></li>
             </ul>
-            <ul id="panel-store" class="hidden pc-panel-list">
+            <ul id="panel-store" class="pc-panel-list -right-52 hidden">
               <li><a href="#none">플래그십 스토어</a></li>
               <li><a href="#none">설화수 북촌</a></li>
               <li><a href="#none">설화수 도산</a></li>
             </ul>
-            <ul id="panel-about" class="hidden pc-panel-list">
+            <ul id="panel-about" class="pc-panel-list -right-32 hidden">
               <li><a href="#none">브랜드 스토리</a></li>
               <li>
-                <div class="space-y-3 px-4 [&_a]:block">
+                <div class="space-y-3 [&_a]:block">
                   <a href="#none">브랜드 지속가능성</a>
                   <a href="#none">지속가능성</a>
                   <a href="#none">위조품 방지</a>
@@ -325,15 +341,15 @@
         </div>
         <!-- mobile-menu -->
         <div
-          class="fixed top-0 z-30 flex flex-col w-full h-screen overflow-y-auto text-black transition-transform duration-300 -translate-x-full bg-white mobile-menu"
+          class="mobile-menu fixed top-0 z-30 flex h-screen w-full -translate-x-full flex-col overflow-y-auto bg-white text-black transition-transform duration-300"
         >
           <div
             class="title-area flex h-[60px] w-full items-center justify-between border-b border-b-gray-200 bg-white p-4"
           >
             <!-- logo -->
-            <div class="flex items-center justify-center h-10 logo w-28">
+            <div class="logo flex h-10 w-28 items-center justify-center">
               <img
-                src="public/images/main-logo.webp"
+                src="public/images/common/main-logo.webp"
                 alt="설화수 로고"
                 width="220"
                 height="43"
@@ -341,13 +357,13 @@
             </div>
             <!-- exit button -->
             <div
-              class="flex items-center justify-center w-6 h-6 cursor-pointer exit-btn"
+              class="exit-btn flex h-6 w-6 cursor-pointer items-center justify-center"
               role="button"
               tabindex="0"
               aria-label="사이드 바 메뉴 닫기"
             >
               <img
-                src="public/images/sidebar-close.png"
+                src="public/images/layout/sidebar-close.png"
                 alt=""
                 width="46"
                 height="46"
@@ -477,7 +493,7 @@
                   <a href="#none">브랜드 스토리</a>
                 </li>
                 <!-- + more -->
-                <li class="border-b openSubMenu border-b-gray-200">
+                <li class="openSubMenu border-b border-b-gray-200">
                   <a
                     href="#none"
                     class="relative flex [&.bold]:font-semibold"
@@ -561,40 +577,38 @@
           class="visual-slide swiper relative aspect-[320/488] w-full overflow-hidden tablet:aspect-[720/250] pc:h-[35vw]"
         >
           <h2 class="sr-only">설화수 메인 비주얼 슬라이드</h2>
-          <div class="h-full swiper-wrapper">
-            <div class="flex flex-col swiper-slide">
-              <div class="text-white text-area">
+          <div class="swiper-wrapper h-full">
+            <div class="swiper-slide flex flex-col" data-href="#none">
+              <div class="text-area text-black">
                 <div
                   class="mb-[10px] flex flex-col gap-y-1 text-wrap pc:mb-[5px]"
                 >
-                  <h3 class="text-subTitle">
-                    다시 짙어지지 않고* 맑게 이어지는 피부
-                  </h3>
-                  <p class="text-mainTitle">설화수 자정앰플세럼</p>
+                  <h3 class="text-subTitle">어떤 시간에도 단단한 윤빛 피부</h3>
+                  <p class="text-mainTitle">윤조 에센스</p>
                 </div>
               </div>
               <div class="image-area z-10 w-full flex-[7_7_0%]"></div>
               <picture>
                 <source
-                  srcset="./public/images/pc_coverpage-1.jpg"
+                  srcset="./public/images/main/pc_coverpage-1.jpg"
                   media="(min-width: 1024px)"
                 />
                 <source
-                  srcset="./public/images/tab_coverpage-1.jpg"
+                  srcset="./public/images/main/tab_coverpage-1.jpg"
                   media="(min-width: 721px)"
                 />
                 <img
-                  src="./public/images/mobile_coverpage-1.webp"
-                  alt="설화수 자정앰플세럼을 들고 있는 여성 모델"
-                  class="absolute inset-0 object-cover object-center w-full h-full"
+                  src="./public/images/main/mobile_coverpage-1.webp"
+                  alt="설화수 윤조에센스를 들고 있는 여성 모델"
+                  class="absolute inset-0 h-full w-full object-cover object-center"
                   fetchpriority="high"
                   width="720"
                   height="1100"
                 />
               </picture>
             </div>
-            <div class="flex flex-col swiper-slide">
-              <div class="text-black text-area">
+            <div class="swiper-slide flex flex-col" data-href="#none">
+              <div class="text-area text-black">
                 <div
                   class="mb-[10px] flex flex-col gap-y-1 text-wrap pc:mb-[5px]"
                 >
@@ -607,25 +621,25 @@
               <div class="image-area z-10 w-full flex-[7_7_0%]"></div>
               <picture>
                 <source
-                  srcset="./public/images/pc_coverpage-2.jpg"
+                  srcset="./public/images/main/pc_coverpage-2.jpg"
                   media="(min-width: 1024px)"
                 />
                 <source
-                  srcset="./public/images/tab_coverpage-2.jpg"
+                  srcset="./public/images/main/tab_coverpage-2.jpg"
                   media="(min-width: 721px)"
                 />
                 <img
-                  src="./public/images/mobile_coverpage-2.webp"
+                  src="./public/images/main/mobile_coverpage-2.webp"
                   alt="설화수 인퓨전 트리트먼트 제품이 놓여있는 모습"
-                  class="absolute inset-0 object-cover object-center w-full h-full"
+                  class="absolute inset-0 h-full w-full object-cover object-center"
                   loading="lazy"
                   width="720"
                   height="1100"
                 />
               </picture>
             </div>
-            <div class="flex flex-col swiper-slide">
-              <div class="text-white text-area">
+            <div class="swiper-slide flex flex-col" data-href="#none">
+              <div class="text-area text-white">
                 <div
                   class="mb-[10px] flex flex-col gap-y-1 text-wrap pc:mb-[5px]"
                 >
@@ -638,46 +652,75 @@
               <div class="image-area z-10 w-full flex-[7_7_0%]"></div>
               <picture>
                 <source
-                  srcset="./public/images/pc_coverpage-3.jpg"
+                  srcset="./public/images/main/pc_coverpage-3.jpg"
                   media="(min-width: 1024px)"
                 />
                 <source
-                  srcset="./public/images/tab_coverpage-3.jpg"
+                  srcset="./public/images/main/tab_coverpage-3.jpg"
                   media="(min-width: 721px)"
                 />
                 <img
-                  src="./public/images/mobile_coverpage-3.webp"
+                  src="./public/images/main/mobile_coverpage-3.webp"
                   alt="설화수 자음생크림 제품이 놓여있는 모습"
-                  class="absolute inset-0 object-cover object-center w-full h-full"
+                  class="absolute inset-0 h-full w-full object-cover object-center"
                   loading="lazy"
                   width="720"
                   height="1100"
                 />
               </picture>
             </div>
-            <div class="flex flex-col swiper-slide">
-              <div class="text-black text-area">
+            <div class="swiper-slide flex flex-col" data-href="#none">
+              <div class="text-area text-black">
                 <div
                   class="mb-[10px] flex flex-col gap-y-1 text-wrap pc:mb-[5px]"
                 >
-                  <h3 class="text-subTitle">AMORE MALL (3/23 ~ 3/29)</h3>
-                  <p class="text-mainTitle">오픈런 [설화수]</p>
+                  <h3 class="text-subTitle">4/10 ~ 4/19</h3>
+                  <p class="text-mainTitle">윤조에센스 팝업스토어</p>
                 </div>
               </div>
               <div class="image-area z-10 w-full flex-[7_7_0%]"></div>
               <picture>
                 <source
-                  srcset="./public/images/pc_coverpage-4.jpg"
+                  srcset="./public/images/main/pc_coverpage-4.jpg"
                   media="(min-width: 1024px)"
                 />
                 <source
-                  srcset="./public/images/tab_coverpage-4.jpg"
+                  srcset="./public/images/main/tab_coverpage-4.jpg"
                   media="(min-width: 721px)"
                 />
                 <img
-                  src="./public/images/mobile_coverpage-4.webp"
-                  alt="설화수 자정앰플세럼과 함께 있는 여성 모델"
-                  class="absolute inset-0 object-cover object-center w-full h-full"
+                  src="./public/images/main/mobile_coverpage-4.webp"
+                  alt="설화수 윤조에센스가 놓여있는 모습"
+                  class="absolute inset-0 h-full w-full object-cover object-center"
+                  loading="lazy"
+                  width="720"
+                  height="1100"
+                />
+              </picture>
+            </div>
+            <div class="swiper-slide flex flex-col" data-href="#none">
+              <div class="text-area text-black">
+                <div
+                  class="mb-[10px] flex flex-col gap-y-1 text-wrap pc:mb-[5px]"
+                >
+                  <h3 class="text-subTitle">AMORE MALL (3/30 ~ 4/12)</h3>
+                  <p class="text-mainTitle">윤조 페스티벌</p>
+                </div>
+              </div>
+              <div class="image-area z-10 w-full flex-[7_7_0%]"></div>
+              <picture>
+                <source
+                  srcset="./public/images/main/pc_coverpage-5.jpg"
+                  media="(min-width: 1024px)"
+                />
+                <source
+                  srcset="./public/images/main/tab_coverpage-5.jpg"
+                  media="(min-width: 721px)"
+                />
+                <img
+                  src="./public/images/main/mobile_coverpage-5.webp"
+                  alt="설화수 윤조에센스와 함께 있는 여성 모델"
+                  class="absolute inset-0 h-full w-full object-cover object-center"
                   loading="lazy"
                   width="720"
                   height="1100"
@@ -691,27 +734,29 @@
             <div class="visual-pagination"></div>
             <!-- autoplay btn -->
             <div
-              class="z-10 flex items-center justify-center w-5 h-5 text-white border border-white cursor-pointer visual-autoplay"
+              class="visual-autoplay z-10 flex h-5 w-5 cursor-pointer items-center justify-center border border-white text-white"
               role="button"
               tabindex="0"
               aria-label="슬라이드 자동재생"
             >
-              <div class="hidden play-btn">
+              <div class="play-btn hidden items-center justify-center">
                 <img
-                  src="public/images/autoplay-play.png"
+                  src="public/images/main/autoplay-play_white.png"
                   alt=""
                   aria-hidden="true"
                   width="8"
                   height="12"
+                  class="tablet:h-2 tablet:w-auto pc:h-[10px] pc:w-[8px]"
                 />
               </div>
-              <div class="pause-btn">
+              <div class="pause-btn flex items-center justify-center">
                 <img
-                  src="public/images/autoplay-pause.png"
+                  src="public/images/main/autoplay-pause_white.png"
                   alt=""
                   aria-hidden="true"
                   width="8"
                   height="10"
+                  class="tablet:h-2 tablet:w-auto pc:h-[10px] pc:w-[8px]"
                 />
               </div>
             </div>
@@ -719,7 +764,7 @@
 
           <div class="swiper-button-prev visual-button-prev after:hidden">
             <img
-              src="public/images/slide-arrow-left.png"
+              src="public/images/common/slide-arrow-left.png"
               alt="이전 슬라이드"
               width="68"
               height="68"
@@ -727,7 +772,7 @@
           </div>
           <div class="swiper-button-next visual-button-next after:hidden">
             <img
-              src="public/images/slide-arrow-right.png"
+              src="public/images/common/slide-arrow-right.png"
               alt="다음 슬라이드"
               width="68"
               height="68"
@@ -749,12 +794,12 @@
           class="recommend-slide swiper relative mt-[40px] w-full bg-white tablet:mt-[20px] wide:mt-[30px]"
         >
           <div class="swiper-wrapper">
-            <div class="flex flex-col swiper-slide">
+            <div class="swiper-slide flex flex-col" data-href="#none">
               <div class="slide-img aspect-[1/1]">
                 <img
-                  src="public/images/reco_1.webp"
+                  src="public/images/main/reco_product-1.webp"
                   alt=""
-                  class="object-cover w-full h-full"
+                  class="h-full w-full object-cover"
                   width="640"
                   height="640"
                 />
@@ -775,12 +820,12 @@
                 >
               </div>
             </div>
-            <div class="flex flex-col swiper-slide">
+            <div class="swiper-slide flex flex-col" data-href="#none">
               <div class="slide-img aspect-[1/1]">
                 <img
-                  src="public/images/reco_2.webp"
+                  src="public/images/main/reco_product-2.webp"
                   alt=""
-                  class="object-cover w-full h-full"
+                  class="h-full w-full object-cover"
                   width="640"
                   height="640"
                 />
@@ -801,12 +846,12 @@
                 >
               </div>
             </div>
-            <div class="flex flex-col swiper-slide">
+            <div class="swiper-slide flex flex-col" data-href="#none">
               <div class="slide-img aspect-[1/1]">
                 <img
-                  src="public/images/reco_3.webp"
+                  src="public/images/main/reco_product-3.webp"
                   alt=""
-                  class="object-cover w-full h-full"
+                  class="h-full w-full object-cover"
                   width="640"
                   height="640"
                 />
@@ -827,12 +872,12 @@
                 >
               </div>
             </div>
-            <div class="flex flex-col swiper-slide">
+            <div class="swiper-slide flex flex-col" data-href="#none">
               <div class="slide-img aspect-[1/1]">
                 <img
-                  src="public/images/reco_4.webp"
+                  src="public/images/main/reco_product-4.webp"
                   alt=""
-                  class="object-cover w-full h-full"
+                  class="h-full w-full object-cover"
                   width="640"
                   height="640"
                 />
@@ -853,12 +898,12 @@
                 >
               </div>
             </div>
-            <div class="flex flex-col swiper-slide">
+            <div class="swiper-slide flex flex-col" data-href="#none">
               <div class="slide-img aspect-[1/1]">
                 <img
-                  src="public/images/reco_5.webp"
+                  src="public/images/main/reco_product-5.webp"
                   alt=""
-                  class="object-cover w-full h-full"
+                  class="h-full w-full object-cover"
                   width="640"
                   height="640"
                 />
@@ -879,12 +924,12 @@
                 </span>
               </div>
             </div>
-            <div class="flex flex-col swiper-slide">
+            <div class="swiper-slide flex flex-col" data-href="#none">
               <div class="slide-img aspect-[1/1]">
                 <img
-                  src="public/images/reco_6.webp"
+                  src="public/images/main/reco_product-6.webp"
                   alt=""
-                  class="object-cover w-full h-full"
+                  class="h-full w-full object-cover"
                   width="640"
                   height="640"
                 />
@@ -914,27 +959,29 @@
               class="reco-pagination relative [&_.swiper-pagination-progressbar-fill]:bg-black [.recommend-slide_&]:top-auto tablet:[.recommend-slide_&]:w-[300px] pc:[.recommend-slide_&]:w-[420px]"
             ></div>
             <div
-              class="z-10 flex items-center justify-center w-5 h-5 text-black border border-black cursor-pointer reco-autoplay"
+              class="reco-autoplay z-10 flex h-5 w-5 cursor-pointer items-center justify-center border border-black text-black"
               role="button"
               tabindex="0"
               aria-label="슬라이드 자동재생"
             >
-              <div class="hidden play-btn">
+              <div class="play-btn hidden items-center justify-center">
                 <img
-                  src="public/images/autoplay-play_b.svg"
+                  src="public/images/main/autoplay-play_black.svg"
                   alt=""
                   aria-hidden="true"
                   width="10"
                   height="11"
+                  class="tablet:h-2 tablet:w-auto pc:h-[11px] pc:w-[10px]"
                 />
               </div>
-              <div class="pause-btn">
+              <div class="pause-btn flex items-center justify-center">
                 <img
-                  src="public/images/autoplay-pause_b.svg"
+                  src="public/images/main/autoplay-pause_black.svg"
                   alt=""
                   aria-hidden="true"
                   width="10"
                   height="11"
+                  class="tablet:h-2 tablet:w-auto pc:h-[11px] pc:w-[10px]"
                 />
               </div>
             </div>
@@ -943,7 +990,7 @@
           <!-- prev / next -->
           <div class="swiper-button-prev reco-button-prev after:hidden">
             <img
-              src="public/images/slide-arrow-left.png"
+              src="public/images/common/slide-arrow-left.png"
               alt="이전 슬라이드"
               width="68"
               height="68"
@@ -951,7 +998,7 @@
           </div>
           <div class="swiper-button-next reco-button-next after:hidden">
             <img
-              src="public/images/slide-arrow-right.png"
+              src="public/images/common/slide-arrow-right.png"
               alt="다음 슬라이드"
               width="68"
               height="68"
@@ -964,16 +1011,17 @@
       <section class="mx-auto mt-[80px] w-full max-w-[1440px] bg-white px-5">
         <div
           class="promo-img relative aspect-[280/365] tablet:aspect-[680/255]"
+          data-href="#none"
         >
           <picture>
             <source
               media="(min-width: 721px)"
-              srcset="public/images/bestseller_pc.jpg"
+              srcset="public/images/main/bestseller_pc.jpg"
             />
             <img
-              src="public/images/bestseller_mobile.webp"
+              src="public/images/main/bestseller_mobile.webp"
               alt=""
-              class="object-cover w-full h-full"
+              class="h-full w-full object-cover"
               width="640"
               height="840"
             />
@@ -1012,19 +1060,19 @@
         <div
           class="season-wrapper mt-[30px] grid grid-cols-2 gap-x-4 gap-y-24 tablet:grid-cols-[158fr_328fr_158fr] tablet:items-center wide:mt-[30px]"
         >
-          <div class="relative h-full col-span-2 tablet:col-span-1">
-            <div class="w-full h-full season-img">
+          <div class="relative col-span-2 h-full tablet:col-span-1">
+            <div class="season-img h-full w-full">
               <picture>
                 <source
                   media="(min-width: 721px)"
-                  srcset="public/images/season_pc.webp"
+                  srcset="public/images/main/pc_season.webp"
                 />
                 <img
-                  src="public/images/season_pc.webp"
+                  src="public/images/main/mobile_season.webp"
                   alt=""
-                  class="object-cover w-full h-full"
-                  width="708"
-                  height="546"
+                  class="h-full w-full object-cover"
+                  width="640"
+                  height="470"
                 />
               </picture>
             </div>
@@ -1045,16 +1093,17 @@
           </div>
           <div
             class="bg-[#ededed] tablet:col-start-1 tablet:row-start-1 tablet:h-full"
+            data-href="#none"
           >
-            <picture class="block w-full overflow-hidden aspect-square">
+            <picture class="block aspect-square w-full overflow-hidden">
               <source
                 media="(min-width: 721px)"
-                srcset="public/images/season_item1.webp"
+                srcset="public/images/main/season_item-1.webp"
               />
               <img
-                src="public/images/season_item1.webp"
+                src="public/images/main/season_item-1.webp"
                 alt=""
-                class="object-cover w-full h-full"
+                class="h-full w-full object-cover"
                 width="640"
                 height="640"
               />
@@ -1080,16 +1129,17 @@
           </div>
           <div
             class="bg-[#ededed] tablet:col-start-3 tablet:row-start-1 tablet:h-full"
+            data-href="#none"
           >
-            <picture class="block w-full overflow-hidden aspect-square">
+            <picture class="block aspect-square w-full overflow-hidden">
               <source
                 media="(min-width: 721px)"
-                srcset="public/images/season_item2.webp"
+                srcset="public/images/main/season_item-2.webp"
               />
               <img
-                src="public/images/season_item2.webp"
+                src="public/images/main/season_item-2.webp"
                 alt=""
-                class="object-cover w-full h-full"
+                class="h-full w-full object-cover"
                 width="640"
                 height="640"
               />
@@ -1119,14 +1169,14 @@
       <section class="mx-auto mt-[120px] max-w-[1440px] px-5 text-center">
         <h2 class="sr-only">설화수 플래그십 스토어</h2>
         <div
-          class="grid store-wrapper gap-y-8 tablet:grid-cols-2 tablet:gap-x-5"
+          class="store-wrapper grid gap-y-8 tablet:grid-cols-2 tablet:gap-x-5"
         >
-          <div class="item">
+          <div class="item" data-href="#none">
             <div class="store-img aspect-[280/235]">
               <img
-                src="public/images/store_bukchon.webp"
+                src="public/images/main/store_bukchon.webp"
                 alt="설화수 북촌 플래그십 스토어 외관"
-                class="object-contain w-full h-full"
+                class="h-full w-full object-contain"
                 width="708"
                 height="600"
               />
@@ -1147,12 +1197,12 @@
               </a>
             </div>
           </div>
-          <div class="item">
+          <div class="item" data-href="#none">
             <div class="store-img aspect-[280/235]">
               <img
-                src="public/images/store_dosan.webp"
+                src="public/images/main/store_dosan.webp"
                 alt="설화수 도산 플래그십 스토어 외관"
-                class="object-contain w-full h-full"
+                class="h-full w-full object-contain"
                 width="708"
                 height="600"
               />
@@ -1179,15 +1229,15 @@
       <footer class="mt-16">
         <!-- mobile -->
         <div
-          class="block bg-white border-t footer-mobile border-t-gray pc:hidden"
+          class="footer-mobile border-t-gray block border-t bg-white pc:hidden"
         >
           <div class="footer-inner">
             <div class="footer-sns flex h-[55px] w-full bg-white">
-              <ul class="flex items-center justify-center gap-2 mx-auto">
+              <ul class="mx-auto flex items-center justify-center gap-2">
                 <li class="block">
                   <a href="#none">
                     <img
-                      src="public/images/facebook-icon.png"
+                      src="public/images/common/facebook-icon.png"
                       alt="페이스북 바로가기"
                       width="30"
                       height="30"
@@ -1197,7 +1247,7 @@
                 <li class="block">
                   <a href="#none">
                     <img
-                      src="public/images/insta-icon.png"
+                      src="public/images/common/insta-icon.png"
                       alt="인스타그램 바로가기"
                       width="30"
                       height="30"
@@ -1207,7 +1257,7 @@
                 <li class="block">
                   <a href="#none">
                     <img
-                      src="public/images/youtube-icon.png"
+                      src="public/images/common/youtube-icon.png"
                       alt="유튜브 바로가기"
                       width="30"
                       height="30"
@@ -1217,7 +1267,7 @@
                 <li class="block">
                   <a href="#none">
                     <img
-                      src="public/images/kakao-icon.png"
+                      src="public/images/common/kakao-icon.png"
                       alt="카카오 채널 바로가기"
                       width="30"
                       height="30"
@@ -1228,7 +1278,7 @@
             </div>
             <!-- copy -->
             <div
-              class="footer-copy border-t-gray relative flex items-center gap-1 border-t bg-[#f8f7f5] px-4 py-[5%] text-[3.3vw] text-gray-500 tablet-footer:h-[55px] tablet-footer:py-0 tablet-footer:text-[1.2vw]"
+              class="footer-copy border-t-gray relative flex cursor-pointer items-center gap-1 border-t bg-[#f8f7f5] px-4 py-[5%] text-[3.3vw] text-gray-500 tablet-footer:h-[55px] tablet-footer:py-0 tablet-footer:text-[1.2vw]"
             >
               @
               <span class="font-semibold"> AMOREPACIFIC </span>
@@ -1243,7 +1293,7 @@
                 aria-expanded="false"
               >
                 <img
-                  src="public/images/footer-more.png"
+                  src="public/images/layout/footer-more.png"
                   alt=""
                   width="31"
                   height="18"
@@ -1299,7 +1349,7 @@
                 >
                   <a href="#none">
                     <img
-                      src="public/images/web-mark.png"
+                      src="public/images/layout/web-mark.png"
                       alt="웹 접근성 통과 마크"
                       width="511"
                       height="349"
@@ -1311,8 +1361,8 @@
           </div>
         </div>
         <!-- pc -->
-        <div class="hidden bg-white footer-pc pc:block">
-          <div class="w-full border-t footer-wrap border-t-gray-200">
+        <div class="footer-pc hidden bg-white pc:block">
+          <div class="footer-wrap w-full border-t border-t-gray-200">
             <div class="footer-inner">
               <div
                 class="footer-menu mx-auto h-[55px] w-full max-w-[1200px] bg-white px-10 font-light text-gray-700"
@@ -1341,22 +1391,24 @@
                   </li>
                 </ul>
               </div>
-              <div class="w-full border-t info-wrap border-t-gray-200">
+              <div class="info-wrap w-full border-t border-t-gray-200">
                 <div
                   class="info relative mx-auto flex max-w-[1200px] flex-col gap-1 bg-white p-10 pb-8 pt-5 text-[1vw] text-gray-500 wide:text-[15px]"
                 >
                   고객서비스센터(수신자요금부담) : 080-023-5454 (월~금: AM
                   09:00~PM 06:00)
-                  <span class="block wide:text-[13px] [&:hover]:text-black">
+                  <span
+                    class="block w-fit wide:text-[13px] [&:hover]:text-black"
+                  >
                     © AMOREPACIFIC CORPORATION. All rights reserved.
                   </span>
                   <ul
                     class="absolute bottom-5 right-10 flex gap-[3px] min-[1171px]:bottom-[107px] [&_li]:h-10 [&_li]:w-10"
                   >
-                    <li class="block mr-3">
+                    <li class="mr-3 block">
                       <a href="#none">
                         <img
-                          src="public/images/web-mark.png"
+                          src="public/images/layout/web-mark.png"
                           alt="웹 접근성 마크"
                           width="511"
                           height="349"
@@ -1366,7 +1418,7 @@
                     <li>
                       <a href="#none">
                         <img
-                          src="public/images/facebook-icon.png"
+                          src="public/images/common/facebook-icon.png"
                           alt="페이스북 바로가기"
                           width="30"
                           height="30"
@@ -1376,7 +1428,7 @@
                     <li>
                       <a href="#none">
                         <img
-                          src="public/images/insta-icon.png"
+                          src="public/images/common/insta-icon.png"
                           alt="인스타그램 바로가기"
                           width="30"
                           height="30"
@@ -1386,7 +1438,7 @@
                     <li>
                       <a href="#none">
                         <img
-                          src="public/images/youtube-icon.png"
+                          src="public/images/common/youtube-icon.png"
                           alt="유튜브 바로가기"
                           width="30"
                           height="30"
@@ -1396,7 +1448,7 @@
                     <li>
                       <a href="#none">
                         <img
-                          src="public/images/kakao-icon.png"
+                          src="public/images/common/kakao-icon.png"
                           alt="카카오 채널 바로가기"
                           width="30"
                           height="30"

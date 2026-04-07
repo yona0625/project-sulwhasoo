@@ -1,3 +1,18 @@
+const hrefLink = {
+  init: function() {
+    document.querySelectorAll('[data-href]').forEach(clickItem => {
+      clickItem.style.cursor = 'pointer';
+      clickItem.addEventListener("click", e => {
+        /* 본연의 a 링크 포함 시 무시 */
+        if (e.target.closest('a')) return;
+        const href = clickItem.dataset.href;
+        if(href && href !== '#none') 
+          window.location.href = href;
+      });
+    });
+  }
+}
+hrefLink.init();
 const goTop = {
   init: function () {
     const goTopWrapper = document.querySelector(".go-top");
@@ -130,16 +145,19 @@ const slideAutoPlay = (autoBtn, swiper) => {
   const autoPlay = document.querySelector(autoBtn);
   const playBtn = autoPlay.querySelector(".play-btn");
   const pauseBtn = autoPlay.querySelector(".pause-btn");
+
+  const slideAutoToggle = (slidePlay, slidePause)  => {
+    slidePlay.classList.replace("hidden", "flex");
+    slidePause.classList.replace("flex", "hidden");
+  }
   autoPlay.addEventListener("click", () => {
     /* swiper로 변경 */
     if (swiper.autoplay.running) {
       swiper.autoplay.stop();
-      pauseBtn.classList.add("hidden");
-      playBtn.classList.remove("hidden");
+      slideAutoToggle(playBtn, pauseBtn);
     } else {
       swiper.autoplay.start();
-      playBtn.classList.add("hidden");
-      pauseBtn.classList.remove("hidden");
+      slideAutoToggle(pauseBtn, playBtn);
     }
   });
 };
@@ -151,8 +169,10 @@ const pcMenu = {
     const header = document.querySelector("header");
     const pcAllMenu = document.getElementById("pc-allmenu");
     const pcMainMenu = document.querySelector(".pc-menu ul");
-    const pcMenuNav = document.querySelector(".pc-menu");
     const allPanels = pcAllMenu.querySelectorAll(".pc-panel-list");
+
+    let firstEnterTimer = null;
+    let isFirstEnter = true;
 
     /* 항목이 있는 메뉴만 open */
     function openPanel(panelId) {
@@ -170,6 +190,12 @@ const pcMenu = {
       });
     }
 
+    function openSubMenu(subMenuName) {
+      const haveSubMenu = document.getElementById(`panel-${subMenuName}`);
+      openPanel(subMenuName);
+      pcAllMenu.style.height = haveSubMenu.scrollHeight + "px";
+    }
+
     // 메뉴 영역(ul) 위에서 마우스가 움직일 때만 감시
     pcMainMenu.addEventListener("mouseover", (e) => {
       /* 메인 메뉴만 선택(여백 등 무시) */
@@ -183,14 +209,26 @@ const pcMenu = {
         closePanel();
         return;
       }
+      
+      /* 최초 접근 시 딜레이 */
+      if (isFirstEnter) {
+        if (firstEnterTimer) return;
+        firstEnterTimer = setTimeout(() => {
+          isFirstEnter = false;
+          openSubMenu(subMenuName);
+        }, 300);
+        return;
+      }
       /* 하위 메뉴 포함 */
-      const haveSubMenu = document.getElementById(`panel-${subMenuName}`);
-      openPanel(subMenuName);
-      pcAllMenu.style.height = haveSubMenu.scrollHeight + "px";
+      openSubMenu(subMenuName);
     });
 
     /* 헤더 떠날 시 */
     header.addEventListener("mouseleave", () => {
+      clearTimeout(firstEnterTimer);
+      /* 다시 처음으로 초기화 */
+      firstEnterTimer = null;
+      isFirstEnter = true;
       pcAllMenu.style.height = "0";
       allPanels.forEach((item) => item.classList.replace("flex", "hidden"));
     });
