@@ -3,7 +3,6 @@ const hrefLink = {
     document.querySelectorAll('[data-href]').forEach(clickItem => {
       clickItem.style.cursor = 'pointer';
       clickItem.addEventListener("click", e => {
-        /* 본연의 a 링크 포함 시 무시 */
         if (e.target.closest('a')) return;
         const href = clickItem.dataset.href;
         if(href && href !== '#none') 
@@ -79,7 +78,6 @@ const allSearch = {
       header.classList.add("searchBtn-active");
       dimmed.classList.remove("hidden");
       body.style.overflow = "hidden";
-      /* closeSearch가 아니라 외부 클릭에서 제어 */
       headerNav.forEach((item) => item.classList.add("bg-white"));
     }
     function closeSearch() {
@@ -112,13 +110,10 @@ const allSearch = {
       const isInSearchBar = searchBar.contains(e.target);
       const isSearchOpen = searchBar.classList.contains("active");
 
-      /* 검색창 활성화인 상태에서 검색창을 벗어나면, 검색창만 닫음 */
       if (isSearchOpen && !isInSearchBar) {
         closeSearch();
         return;
       }
-      /* 검색창이 닫히고, 헤더를 벗어나면 헤더 배경 해제 */
-      /* openSearch에서 항상 bg-white를 활성화 하고, 외부 클릭할 때(=헤더를 벗어날 때)만 지우면 됨. */
       if (!isInSearchBar && !isInHeader) {
         headerNav.forEach((item) => item.classList.remove("bg-white"));
       }
@@ -198,13 +193,10 @@ const pcMenu = {
 
     // 메뉴 영역(ul) 위에서 마우스가 움직일 때만 감시
     pcMainMenu.addEventListener("mouseover", (e) => {
-      /* 메인 메뉴만 선택(여백 등 무시) */
       const dataMenu = e.target.closest("li");
       if (!dataMenu) return;
 
-      /* dataset.menu = data-menu */
       const subMenuName = dataMenu.dataset.menu;
-      /* 하위 메뉴(ul) 미포함 */
       if (!subMenuName) {
         closePanel();
         return;

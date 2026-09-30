@@ -1,9 +1,6 @@
-memo
 memo/
 memo.*
 backup/
 backup.*
 node_modules/
-dist/
 .DS_Store
-prettier.config.js
